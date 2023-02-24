@@ -15,10 +15,9 @@ export const insertWaste = (data, result) => {
 
 
 //get (random chosen) motivation fact
-export const getMotivationfact = (id, result) => {
+export const getMotivationfact = (result) => {
   db.query(
-    "SELECT motivating_fact FROM waste ORDER BY RAND() LIMIT 1",
-    [id],
+    "SELECT motivating_fact FROM motivating_facts ORDER BY RAND() LIMIT 1",
     (err, results) => {
       if (err) {
         console.log(err);
