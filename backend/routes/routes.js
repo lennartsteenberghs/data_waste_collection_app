@@ -11,7 +11,7 @@ import {
 const router = express.Router();
 
 // Create waste Data
-router.post("/waste", createWaste);
+router.post("/waste/:idbin", createWaste);
 
 //get motivation fact
 router.get("/waste", showMotivationfact);

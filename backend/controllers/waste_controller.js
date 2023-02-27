@@ -1,4 +1,5 @@
 //import functions from Product model
+import { json } from "express";
 import {
   insertWaste,
   getMotivationfact
@@ -6,13 +7,15 @@ import {
 
 //insert waste into database
 export const createWaste = (req, res) => {
-  const data = req.body;
-  insertWaste(data, (err, results) => {
+  const idbin = req.params.idbin;
+  const waste = req.body;
+  console.log(waste)
+  insertWaste(waste, idbin, (err, results) => {
     if (err) {
       res.send(err);
     } else {
       res.json(results);
-    }
+      }
   });
 };
 

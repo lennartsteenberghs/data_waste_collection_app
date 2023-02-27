@@ -2,8 +2,10 @@
 import db from "../config/database.js";
 
 //insert waste to database
-export const insertWaste = (data, result) => {
-  db.query("INSERT INTO waste SET ?", [data], (err, results) => {
+export const insertWaste = (data, idbin, result) => {
+  db.query("INSERT INTO waste SET id_type = ?, amount = ?, id_bin = ?", 
+  [data.plastic_type, data.amount, idbin],
+  (err, results) => {
     if (err) {
       console.log(err);
       result(err, null);
