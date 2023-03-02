@@ -1,0 +1,18 @@
+
+- UI deftig maken
+
+
+
+- na upload data een thank you page maken
+    - route via knop
+    - async maken dus enkel als succesvol gepost naar thank you page gaan
+
+
+
+LATER
+
+- support multiple languages
+
+- add loading icon for when waste data is uploaded and thank you message is fetched
+
+- Knop voor extra afval (de user kan zelf intypen)
