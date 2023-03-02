@@ -7,7 +7,7 @@ const getMessages = () => {
     const message = ref('');
     const error = ref(null);
 
-    
+
     const load1 = () => {
         let messages = thankYouMessages
         message.value = messages[0].message;
@@ -21,6 +21,7 @@ const getMessages = () => {
                 throw Error("no data available");
             }
             message.value = await data.json();
+            message.value = message.value[0].motivating_fact
         } catch (err) {
             message.value = thankYouMessages[0].message;
             error.value = err.message;

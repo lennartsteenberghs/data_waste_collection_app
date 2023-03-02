@@ -9,7 +9,7 @@ const postWasteData = () => {
         const body = turnIntoJSON(list)
         const url = "https://jsonplaceholder.typicode.com/posts"
         const url2 = "http://localhost:5000/waste/" + binId
-        console.log("posting data to: ",url)
+        console.log("posting data to: ",url2)
 
         const requestOptions = {
             method: 'POST',
@@ -25,8 +25,10 @@ const postWasteData = () => {
             // give permission to go to thankyou page
             router.push({ name: 'thankyou' })
 
+
             // postSuccessful.value = true
             console.log("post succesful")
+            console.log(body)
         } catch (err) {
             error.value = err.message;
             console.log(error.value);
