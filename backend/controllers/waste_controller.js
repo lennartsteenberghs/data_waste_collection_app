@@ -8,7 +8,6 @@ import {
 export async function createWaste(req, res) {
   const idbin = req.params.idbin;
   const waste = req.body;
-  console.log(waste)
   for(let i = 0; i < waste.length; i++) {
     await insertWaste(waste[i], idbin)
   }
