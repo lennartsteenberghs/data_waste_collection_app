@@ -6,9 +6,8 @@
   </div>
   <div class="submit">
     <!-- <router-link :to="{ name: 'thankyou' }"> -->
-      <button class="btn" @click="uploadData">Upload Data</button>
+      <button class="bg-aw-orange btn" @click="uploadData">Upload Data</button>
     <!-- </router-link> -->
-    |
   </div>
 </template>
 
@@ -34,7 +33,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 button {
   background: #0b6dff;
   border: 0;

@@ -1,16 +1,20 @@
 <template>
-  <div class="waste-item">
-    <div class="row no-wrap flex-center text-center">
-      <div class="col-3">
-        <q-icon :name="fasBottleWater" />
-      </div>
-      <div class="col-6">
-        <h6>{{ item.name }}</h6>
-      </div>
-      <div class="col-3">
-        <Counter @countChange="changeCount"/>
-      </div>
-    </div>
+  <div class="waste-item bg-aw-blue">
+    <q-card class="waste-item-container-outer bg-grey" flat bordered>
+      <q-card-section class="waste-item-container" horizontal>
+        <q-card-section class="waste-icon-container bg-purple-8">
+          <q-icon class="waste-icon" :name="fasBottleWater" />
+        </q-card-section>
+
+        <q-card-section class="waste-name-container bg-aw-red">
+          <div class="text-h5">{{ item.name }}</div>
+        </q-card-section>
+
+        <q-card-section class="counter-container bg-aw-orange">
+          <Counter class="counter" @countChange="changeCount" />
+        </q-card-section>
+      </q-card-section>
+    </q-card>
   </div>
 </template>
 
@@ -22,17 +26,24 @@ export default {
   props: ["item"],
   components: { Counter },
   setup(props) {
-
     const changeCount = (newCount) => {
       props.item.count = newCount;
-    }
+    };
     return { fasBottleWater, changeCount };
   },
 };
 </script>
 
-<style>
-.waste-item {
-  align-content: space-around;
+<style scoped>
+.waste-item-container-outer {
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid green;
+  width: 600px;
+}
+.waste-item-container {
+  align-items: center;
+  text-align: center;
 }
 </style>

@@ -1,25 +1,25 @@
 const wasteItemData = [
   {
     id: 1,
-    icon: 'Plastic Bottle',
+    icon: 'Bottle Icon',
     name: "Plastic Bottle",
     count: 0
   },
   {
     id: 2,
-    icon: "Second Post",
+    icon: "Second Icon",
     name: "Aluminium Can",
     count: 0
   },
   {
     id: 3,
-    icon: "Third Post",
+    icon: "Bag Icon",
     name: "Plastic Bag",
     count: 0
   },
   {
     id: 4,
-    icon: "Fourth Post",
+    icon: "Spoon Icon",
     name: "Plastic Spoon",
     count: 0
   }

@@ -6,7 +6,6 @@
         <WasteList :wasteItems="wasteItems" :binId="binId" />
       </div>
       <div v-else>Loading application...</div>
-      <router-view />
     </q-page-container>
   </q-layout>
 </template>
@@ -98,5 +97,32 @@ button {
   margin-top: 10px;
   font-size: 0.8em;
   font-weight: bold;
+}
+
+/* Custom colors */
+
+.text-aw-red {
+  color: #C8102E !important;
+}
+.bg-aw-red {
+  background: #C8102E !important;
+}
+.text-aw-blue {
+  color: #418FDE !important;
+}
+.bg-aw-blue {
+  background: #418FDE !important;
+}
+.text-aw-yellow {
+  color: #FBE122 !important;
+}
+.bg-aw-yellow {
+  background: #FBE122 !important;
+}
+.text-aw-orange {
+  color: #e69100 !important;
+}
+.bg-aw-orange {
+  background: #e69100 !important;
 }
 </style>

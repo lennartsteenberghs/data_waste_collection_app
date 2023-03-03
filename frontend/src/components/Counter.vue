@@ -1,22 +1,35 @@
 <template>
-  <div class="hello">
-    <div class="row items-center">
-      <div class="col">
-        <div class="btn-wrapper">
-          <button class="round-button" @click="decrement">-</button>
-        </div>
-      </div>
-      <div class="col">
-        <h6>{{ count }}</h6>
-      </div>
-      <div class="col">
-        <div class="btn-wrapper">
-          <button class="round-button" @click="increment">+</button>
-        </div>
-        
-      </div>
-    </div>
-  </div>
+  <q-card class="counter-card-outer" flat bordered>
+    <q-card-section class="counter-card" horizontal>
+      <q-card-section class="btn-wrapper">
+          <q-btn
+          class="counter-button bg-aw-blue"
+          color="gray"
+          round
+          flat
+          dense
+          icon='-'
+          @click="decrement"
+        />
+      </q-card-section>
+
+      <q-card-section class="">
+        <div class="counter-number">{{ count }}</div>
+      </q-card-section>
+
+      <q-card-section class="btn-wrapper">
+        <q-btn
+          class="counter-button bg-aw-blue"
+          color="gray"
+          round
+          flat
+          dense
+          icon='+'
+          @click="increment"
+        />
+      </q-card-section>
+    </q-card-section>
+  </q-card>
 </template>
 
 <script>
@@ -43,57 +56,32 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
-h1,
-h2 {
-  font-weight: normal;
+.counter-card {
+  align-items: center;
+  text-align: center;
 }
-
-ul {
-  list-style-type: none;
-  padding: 0;
+button {
+  height: 40px;
+  width: 40px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
-
-li {
-  display: inline-block;
-  margin: 0;
-}
-
-a {
-  color: #42b983;
-}
-
 .btn-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  align-items: center;
+  padding: 0px;
 }
-
-.btn {
-  width: 25px;
-  height: 10px;
-  border: 1px solid black;
-  border-radius: 10px;
-  margin: 15px;
-  color: white;
-  font-size: 10px;
+.counter-button {
+  border-radius: 50px;
+  margin: auto;
+  text-align: center;
 }
-
-.btn:hover {
+.counter-button:hover {
   cursor: pointer;
 }
-
-.round-button {
-  background-color: white;
-  color: black;
-  border-radius: 50%;
-  padding: 10px 20px;
-  border: none;
-  box-shadow: 0 0 0 2px black inset;
-}
-
-.round-button:hover {
-  background-color: #f2f2f2;
-  cursor: pointer;
+.counter-number {
+  margin: auto;
+  font-size: larger;
 }
 </style>

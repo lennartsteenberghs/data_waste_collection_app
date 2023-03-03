@@ -7,9 +7,9 @@ const postWasteData = () => {
 
     const post = async (list, binId, router) => {
         const body = turnIntoJSON(list)
-        const url = "https://jsonplaceholder.typicode.com/posts"
-        const url2 = "http://localhost:5000/waste/" + binId
-        console.log("posting data to: ",url2)
+        const testUrl = "https://jsonplaceholder.typicode.com/posts"
+        const url = "https://data-waste-collection-app-backend.onrender.com/waste/" + binId
+        console.log("posting data to: ",url)
 
         const requestOptions = {
             method: 'POST',
@@ -18,7 +18,7 @@ const postWasteData = () => {
         };
 
         try {
-            let response = await fetch(url2, requestOptions);
+            let response = await fetch(url, requestOptions);
             if (!response.ok) {
                 throw Error("post failed");
             }
