@@ -1,18 +1,23 @@
 <template>
   <div class="post-list">
-    <div v-for="item in wasteItems" :key="item.id">
+    <div class="list-item" v-for="item in wasteItems" :key="item.id">
       <SingleWaste :item="item" />
     </div>
   </div>
   <div class="submit">
-    <!-- <router-link :to="{ name: 'thankyou' }"> -->
-      <button class="bg-aw-orange btn" @click="uploadData">Upload Data</button>
-    <!-- </router-link> -->
+    <q-btn
+      class="bg-aw-orange"
+      round
+      flat
+      @click="uploadData"
+      label="Upload Data"
+      style="width: 200px"
+    />
   </div>
 </template>
 
 <script>
-import { useRouter } from 'vue-router'
+import { useRouter } from "vue-router";
 import SingleWaste from "./SingleWaste.vue";
 import postWasteData from "src/composables/postWasteData";
 
@@ -21,7 +26,7 @@ export default {
   components: { SingleWaste },
   setup(props) {
     const { error, post } = postWasteData();
-    const router = useRouter()
+    const router = useRouter();
 
     const uploadData = () => {
       let finalWasteItems = props.wasteItems.filter((item) => item.count > 0);
@@ -35,17 +40,16 @@ export default {
 
 <style scoped>
 button {
-  background: #0b6dff;
   border: 0;
   padding: 10px 20px;
   margin-top: 20px;
   color: white;
   border-radius: 20px;
 }
-.submit {
-  text-align: center;
-}
 .btn:hover {
   cursor: pointer;
+}
+.submit {
+  text-align: center;
 }
 </style>
