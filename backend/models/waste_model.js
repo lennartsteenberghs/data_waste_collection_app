@@ -1,10 +1,11 @@
 //import connection
 import pool from "../config/database.js";
 
+
 //insert waste data to database
 export async function insertWaste(data, idbin) {
-  await pool.query("INSERT INTO waste (id_type, amount, id_bin) VALUES (?, ?, ?)",
-  [data.plastic_type, data.amount, idbin])
+  await pool.query("INSERT INTO waste (id_type, amount, recycled, id_bin) VALUES (?, ?, ?, ?)",
+  [data.plastic_type, data.amount, data.recycled, idbin])
 }
 
 //get (random chosen) motivation fact
