@@ -1,8 +1,8 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-page-container>
-      <h1>Waste Data Collection</h1>
-      <h3>{{ message }}</h3>
+      <div class="text-h1 text-center">Waste Data Collection</div>
+      <div class="text-h3 text-center">{{ message }}</div>
       <router-view />
     </q-page-container>
   </q-layout>

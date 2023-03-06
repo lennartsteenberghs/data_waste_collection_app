@@ -1,0 +1,17 @@
+Gedaan op 1 maart:
+- Meeting met Alba over meer functies voor de app
+- Kabel kopen voor tweede scherm
+- Primitieve 'thankyou' pagina + GET request voor interesting/motivation fact te krijgen uit database
+- Enkel naar 'thankyou' pagina gaan als POST van data succesvol is
+- Frontend pushen naar GitHub
+
+2 maart:
+- Front en backend gelinkt (juiste adressen en return data van GET/POST requests)
+- Kijken hoe je er makkelijk een PWA van maakt en onderzoek doen naar wat een PWA eigenlijk is
+- Beginnen met CSS mooier maken
+
+3 maart:
+- UI: Change all html components to Quasar components
+- UI: improve UI to be decent
+- Analyse waste of trashbins at the university (which types, how much, how heavy)
+- Implement Tailwind CSS into Quasar project

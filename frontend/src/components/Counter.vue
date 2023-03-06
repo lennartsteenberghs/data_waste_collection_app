@@ -1,13 +1,11 @@
 <template>
-  <q-card class="counter-card-outer" flat bordered>
+  <q-card class="counter-card-outer bg-grey-1" flat>
     <q-card-section class="counter-card" horizontal>
       <q-card-section class="btn-wrapper">
           <q-btn
           class="counter-button bg-aw-blue"
-          color="gray"
           round
           flat
-          dense
           icon='-'
           @click="decrement"
         />
@@ -20,10 +18,8 @@
       <q-card-section class="btn-wrapper">
         <q-btn
           class="counter-button bg-aw-blue"
-          color="gray"
           round
           flat
-          dense
           icon='+'
           @click="increment"
         />
@@ -61,12 +57,6 @@ export default {
 .counter-card {
   align-items: center;
   text-align: center;
-}
-button {
-  height: 40px;
-  width: 40px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
-    0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 .btn-wrapper {
   align-items: center;

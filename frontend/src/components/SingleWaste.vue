@@ -1,16 +1,16 @@
 <template>
-  <div class="waste-item bg-aw-blue">
-    <q-card class="waste-item-container-outer bg-grey" flat bordered>
+  <div class="waste-item">
+    <q-card class="waste-item-container-outer bg-grey-1" flat bordered>
       <q-card-section class="waste-item-container" horizontal>
-        <q-card-section class="waste-icon-container bg-purple-8">
+        <q-card-section class="waste-icon-container pos-in-middle">
           <q-icon class="waste-icon" :name="fasBottleWater" />
         </q-card-section>
 
-        <q-card-section class="waste-name-container bg-aw-red">
+        <q-card-section class="waste-name-container pos-in-middle">
           <div class="text-h5">{{ item.name }}</div>
         </q-card-section>
 
-        <q-card-section class="counter-container bg-aw-orange">
+        <q-card-section class="counter-container pos-in-middle">
           <Counter class="counter" @countChange="changeCount" />
         </q-card-section>
       </q-card-section>
@@ -39,11 +39,17 @@ export default {
   margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
-  border: 3px solid green;
+  border: 2px solid rgb(234, 221, 221);
   width: 600px;
+  border-radius: 80px;
 }
 .waste-item-container {
   align-items: center;
   text-align: center;
+
+}
+.pos-in-middle {
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
