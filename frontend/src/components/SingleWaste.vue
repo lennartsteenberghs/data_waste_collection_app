@@ -22,7 +22,7 @@
           <q-card-section>
             <Counter class="" @countChange="changeCount" />
           </q-card-section>
-          <q-card-section horizontal v-show="item.count">
+          <q-card-section v-show="item.count">
             <RecycleSwitch :item="item" class="" @recycledChange="changeRecycled"/>
           </q-card-section>
         </q-card-section>
