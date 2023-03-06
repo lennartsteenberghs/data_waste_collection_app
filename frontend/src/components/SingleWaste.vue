@@ -1,17 +1,30 @@
 <template>
-  <div class="waste-item">
-    <q-card class="waste-item-container-outer bg-grey-1" flat bordered>
-      <q-card-section class="waste-item-container" horizontal>
-        <q-card-section class="waste-icon-container pos-in-middle">
-          <q-icon class="waste-icon" :name="fasBottleWater" />
+  <div class="mx-4 my-8 flex items-center justify-center">
+    <q-card class="w-full mx-60 p-4 rounded-lg shadow-md bg-white">
+      <q-card-section class="flex items-center">
+        <q-card-section
+          class="flex items-center justify-center w-28 h-28 rounded-full p-2 bg-primary text-white"
+        >
+          <img
+            class="rounded-full mx-auto"
+            src=".\..\assets\can355ml.jpg"
+            alt=""
+            width="600"
+            height="600"
+          />
         </q-card-section>
 
-        <q-card-section class="waste-name-container pos-in-middle">
-          <div class="text-h5">{{ item.name }}</div>
-        </q-card-section>
+        <q-card-section class="flex-1 text-3xl font-bold ml-4">{{
+          item.name
+        }}</q-card-section>
 
-        <q-card-section class="counter-container pos-in-middle">
-          <Counter class="counter" @countChange="changeCount" />
+        <q-card-section>
+          <q-card-section>
+            <Counter class="" @countChange="changeCount" />
+          </q-card-section>
+          <q-card-section horizontal v-show="item.count">
+            <RecycleSwitch :item="item" class="" @recycledChange="changeRecycled"/>
+          </q-card-section>
         </q-card-section>
       </q-card-section>
     </q-card>
@@ -19,37 +32,26 @@
 </template>
 
 <script>
-import { fasBottleWater } from "@quasar/extras/fontawesome-v6";
+import { ref } from "vue";
 import Counter from "./Counter.vue";
+import RecycleSwitch from "./RecycleSwitch.vue"
 
 export default {
   props: ["item"],
-  components: { Counter },
+  components: { Counter, RecycleSwitch },
   setup(props) {
     const changeCount = (newCount) => {
       props.item.count = newCount;
     };
-    return { fasBottleWater, changeCount };
+    const changeRecycled = (newValue) => {
+      props.item.recycled = newValue;
+    };
+    return {
+      changeCount,
+      changeRecycled
+    };
   },
 };
 </script>
 
-<style scoped>
-.waste-item-container-outer {
-  margin-bottom: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 2px solid rgb(234, 221, 221);
-  width: 600px;
-  border-radius: 80px;
-}
-.waste-item-container {
-  align-items: center;
-  text-align: center;
-
-}
-.pos-in-middle {
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
+<style scoped></style>

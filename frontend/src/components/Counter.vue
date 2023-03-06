@@ -1,32 +1,19 @@
 <template>
-  <q-card class="counter-card-outer bg-grey-1" flat>
-    <q-card-section class="counter-card" horizontal>
-      <q-card-section class="btn-wrapper">
-          <q-btn
-          class="counter-button bg-aw-blue"
-          round
-          flat
-          icon='-'
-          @click="decrement"
-        />
+  <q-card class="flex max-w-sm p-4 rounded-lg shadow-md bg-white">
+    <q-card-section class="flex items-center" horizontal>
+      <q-card-section class="mr-2">
+        <q-btn class="text-xl" icon="-" color="primary" @click="decrement" />
       </q-card-section>
 
-      <q-card-section class="">
-        <div class="counter-number">{{ count }}</div>
-      </q-card-section>
+      <q-card-section class="flex-1 text-center text-2xl font-bold">{{ count }}</q-card-section>
 
-      <q-card-section class="btn-wrapper">
-        <q-btn
-          class="counter-button bg-aw-blue"
-          round
-          flat
-          icon='+'
-          @click="increment"
-        />
+      <q-card-section class="ml-2">
+        <q-btn class="text-xl" icon="+" color="primary" @click="increment" />
       </q-card-section>
     </q-card-section>
   </q-card>
 </template>
+
 
 <script>
 import { ref } from "vue";
@@ -54,24 +41,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
 <style scoped>
-.counter-card {
-  align-items: center;
-  text-align: center;
-}
-.btn-wrapper {
-  align-items: center;
-  padding: 0px;
-}
-.counter-button {
-  border-radius: 50px;
-  margin: auto;
-  text-align: center;
-}
-.counter-button:hover {
-  cursor: pointer;
-}
-.counter-number {
-  margin: auto;
-  font-size: larger;
-}
 </style>

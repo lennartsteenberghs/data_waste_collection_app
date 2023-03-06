@@ -1,11 +1,15 @@
 
 - UI deftig maken
 
+- Load 'getMessages' immediately when starting website
+
+- recycledbin:
+  - small error message when wrong item is in wrong bin (when switch is switched)
+  -change colours switch so non recycled is also green when correct
+
 - naam bovenaan van 'quasar-todo' veranderen
 
-- keuze tussen twee bins
 
-- niet meer wachten na 'post data'
 
 LATER
 
@@ -15,4 +19,11 @@ LATER
 
 - Knop voor extra afval (de user kan zelf intypen)
 
-- Verschillende bins kiezen (recycle of niet recycle)
+
+
+GEDAAN
+
+- redirect router bij opstart. Van '/' naar '/input/8500'
+- icon naar img veranderd
+- bij data: 'recycled' en 'mustBeRecycled' toegevoegd
+- made separate component for switch recycled bin

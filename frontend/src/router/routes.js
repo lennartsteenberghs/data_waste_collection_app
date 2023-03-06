@@ -13,6 +13,11 @@ const routes = [
     name: 'thankyou',
     component: ThankYouLayout
   },
+  //redirect
+  {
+    path: '/',
+    redirect: './input/8500'
+  },
   {
     path: '/:catchAll(.*)*',
     component: () => import('pages/ErrorNotFound.vue')
