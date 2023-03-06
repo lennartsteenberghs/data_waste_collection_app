@@ -22,8 +22,8 @@ const postWasteData = () => {
             if (!response.ok) {
                 throw Error("post failed");
             }
-            // give permission to go to thankyou page
-            router.push({ name: 'thankyou' })
+            // // give permission to go to thankyou page
+            // router.push({ name: 'thankyou' })
 
 
             // postSuccessful.value = true

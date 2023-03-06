@@ -32,7 +32,6 @@ export default defineComponent({
 </script>
 
 <style>
-
 /* Custom colors */
 
 .text-aw-red {

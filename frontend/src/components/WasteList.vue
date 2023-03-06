@@ -30,6 +30,8 @@ export default {
 
     const uploadData = () => {
       let finalWasteItems = props.wasteItems.filter((item) => item.count > 0);
+      // go to next page with router
+      router.push({ name: 'thankyou' })
       post(finalWasteItems, props.binId, router);
       console.log(finalWasteItems);
     };
