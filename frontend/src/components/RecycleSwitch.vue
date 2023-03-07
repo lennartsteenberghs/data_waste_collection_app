@@ -1,35 +1,34 @@
 <template>
   <q-card class="flex max-w-sm p-4 rounded-lg shadow-md bg-white">
-    <q-card-section class="flex items-center">
-      <q-card-section class="flex items-center" horizontal>
-        <q-card-section class="mr-2">
-          <q-icon class="text-2xl" :name="fasTrashCan" />
-        </q-card-section>
-
-        <q-card-section class="flex-1 text-center text-2xl font-bold">
-          <q-toggle
-            v-if="mustBeRecycled"
-            v-model="inRecycleBin"
-            checked-icon="check"
-            color="green"
-            unchecked-icon="clear"
-            size="lg"
-            @click="$emit('recycledChange', inRecycleBin)" />
-          <q-toggle
-            v-else
-            v-model="inRecycleBin"
-            checked-icon="clear"
-            color="green"
-            unchecked-icon="check"
-            size="lg"
-            @click="$emit('recycledChange', inRecycleBin)"
-        /></q-card-section>
-
-        <q-card-section class="ml-2">
-          <q-icon class="text-2xl" :name="fasRecycle" />
-        </q-card-section>
+    <q-card-section class="flex items-center" horizontal>
+      <q-card-section class="mr-2">
+        <q-icon class="text-2xl" :name="fasTrashCan" />
       </q-card-section>
-      <div
+
+      <q-card-section class="flex-1 text-center text-2xl font-bold">
+        <q-toggle
+          v-if="mustBeRecycled"
+          v-model="inRecycleBin"
+          checked-icon="check"
+          color="green"
+          unchecked-icon="clear"
+          size="lg"
+          @click="$emit('recycledChange', inRecycleBin)" />
+        <q-toggle
+          v-else
+          v-model="inRecycleBin"
+          checked-icon="clear"
+          color="green"
+          unchecked-icon="check"
+          size="lg"
+          @click="$emit('recycledChange', inRecycleBin)"
+      /></q-card-section>
+
+      <q-card-section class="ml-2">
+        <q-icon class="text-2xl" :name="fasRecycle" />
+      </q-card-section>
+    </q-card-section>
+    <!-- <div
         class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
         role="alert"
       >
@@ -37,8 +36,7 @@
         <span class="block sm:inline">This item should be thrown in the recycle bin</span>
         <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
         </span>
-      </div>
-    </q-card-section>
+      </div> -->
   </q-card>
 </template>
 
