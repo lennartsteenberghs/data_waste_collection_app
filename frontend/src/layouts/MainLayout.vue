@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-page-container>
-    <div class="text-h1 text-center">Waste Data Collection</div>
+    <div class="text-h1 text-center">Don't Waste Data!</div>
       <div v-if="wasteItems.length">
         <WasteList :wasteItems="wasteItems" :binId="binId" />
       </div>
