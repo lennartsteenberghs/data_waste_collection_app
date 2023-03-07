@@ -24,6 +24,6 @@ export async function showMotivationfact(req, res) {
 
 //get waste sorts
 export async function showwastetypes(req, res) {
-  const waste_sorts = await getwastesorts()
+  const waste_sorts = await getwastetypes()
   res.send(waste_sorts)
 };

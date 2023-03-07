@@ -5,7 +5,7 @@ import express from "express";
 import {
   createWaste,
   showMotivationfact,
-  showwastesorts
+  showwastetypes
 } from "../controllers/waste_controller.js";
 
 //init express router
@@ -18,7 +18,7 @@ router.post("/wasteinput/:idbin", createWaste);
 router.get("/co2safed/:idbin", showMotivationfact);
 
 //get all waste types
-router.get("/wastetypes", showwastesorts)
+router.get("/wastetypes", showwastetypes)
 
 //export default router
 export default router;
