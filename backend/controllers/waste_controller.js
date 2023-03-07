@@ -1,7 +1,8 @@
 //import functions from waste model
 import {
   insertWaste,
-  getMotivationfact
+  getMotivationfact,
+  getwastetypes
 } from "../models/waste_model.js";
 
 //insert waste into database
@@ -14,8 +15,15 @@ export async function createWaste(req, res) {
   res.send("insertion succeed")
 }
 
-//get (random) motivation quote
+//get Motivation fact by bin
 export async function showMotivationfact(req, res) {
-  const mot_fact = await getMotivationfact()
+  const idbin = req.params.idbin;
+  const mot_fact = await getMotivationfact(idbin)
   res.send(mot_fact)
+};
+
+//get waste sorts
+export async function showwastetypes(req, res) {
+  const waste_sorts = await getwastesorts()
+  res.send(waste_sorts)
 };
