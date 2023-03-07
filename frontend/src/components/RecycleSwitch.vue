@@ -1,32 +1,33 @@
 <template>
   <q-card class="flex max-w-sm p-4 rounded-lg shadow-md bg-white">
     <q-card-section class="flex items-center" horizontal>
-      <q-card-section class="mr-2">
+      <!-- <q-card-section class="mr-2">
         <q-icon class="text-2xl" :name="fasTrashCan" />
-      </q-card-section>
+      </q-card-section> -->
 
       <q-card-section class="flex-1 text-center text-2xl font-bold">
-        <q-toggle
-          v-if="mustBeRecycled"
-          v-model="inRecycleBin"
-          checked-icon="check"
-          color="green"
-          unchecked-icon="clear"
-          size="lg"
-          @click="$emit('recycledChange', inRecycleBin)" />
-        <q-toggle
-          v-else
-          v-model="inRecycleBin"
-          checked-icon="clear"
-          color="green"
-          unchecked-icon="check"
-          size="lg"
-          @click="$emit('recycledChange', inRecycleBin)"
-      /></q-card-section>
-
+        <div>
+          <q-btn-toggle
+            v-model="inRecycleBin"
+            class="my-custom-toggle"
+            no-caps
+            rounded
+            unelevated
+            toggle-color="primary"
+            color="white"
+            text-color="primary"
+            :options="[
+              { label: 'Normal bin', value: false },
+              { label: 'Recycle bin', value: true },
+            ]"
+            @click="$emit('recycledChange', inRecycleBin)"
+          />
+        </div>
+      </q-card-section>
+      <!--
       <q-card-section class="ml-2">
         <q-icon class="text-2xl" :name="fasRecycle" />
-      </q-card-section>
+      </q-card-section> -->
     </q-card-section>
     <!-- <div
         class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
@@ -56,4 +57,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.my-custom-toggle {
+  border: 1px solid #027be3;
+}
+</style>

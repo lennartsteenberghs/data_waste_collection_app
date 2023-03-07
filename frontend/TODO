@@ -12,8 +12,6 @@
 
 - naam bovenaan van 'quasar-todo' veranderen
 
-- recycledbin:
-  - change to button toggle
 
 
 LATER
@@ -40,4 +38,5 @@ GEDAAN 7 maart
 - Change URL for post and get
 - Already load co2Saved upon mainLayout and then pass it on to ThankYouLayout
 - Removed warning for wrong bin
+- Changed toggle button for choice bin
 
