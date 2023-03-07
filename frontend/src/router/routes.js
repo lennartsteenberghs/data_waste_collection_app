@@ -11,7 +11,8 @@ const routes = [
   {
     path: '/thankyou',
     name: 'thankyou',
-    component: ThankYouLayout
+    component: ThankYouLayout,
+    props: true
   },
   //redirect
   {

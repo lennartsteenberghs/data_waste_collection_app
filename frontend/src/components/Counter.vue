@@ -5,7 +5,9 @@
         <q-btn class="text-xl" icon="-" color="primary" @click="decrement" />
       </q-card-section>
 
-      <q-card-section class="flex-1 text-center text-2xl font-bold">{{ count }}</q-card-section>
+      <q-card-section class="flex-1 text-center text-2xl font-bold">{{
+        count
+      }}</q-card-section>
 
       <q-card-section class="ml-2">
         <q-btn class="text-xl" icon="+" color="primary" @click="increment" />
@@ -13,7 +15,6 @@
     </q-card-section>
   </q-card>
 </template>
-
 
 <script>
 import { ref } from "vue";
@@ -40,5 +41,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
-<style scoped>
-</style>
+<style scoped></style>

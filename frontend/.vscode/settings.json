@@ -1,4 +1,5 @@
 {
   "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": true
+  "editor.guides.bracketPairs": true,
+  "vue3snippets.enable-compile-vue-file-on-did-save-code": true
 }

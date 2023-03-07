@@ -2,11 +2,11 @@ import { ref } from "vue";
 
 const postWasteData = () => {
 
-    const error = ref(null);
+    const postDataError = ref(null);
 
-    const post = async (list, binId, router) => {
+    const post = async (list, binId) => {
         const body = turnIntoJSON(list)
-        const url = "https://data-waste-collection-app-backend.onrender.com/waste/" + binId
+        const url = "https://data-waste-collection-app-backend.onrender.com/wasteinput/" + binId
         console.log("posting data to: ",url)
 
         const requestOptions = {
@@ -20,13 +20,10 @@ const postWasteData = () => {
             if (!response.ok) {
                 throw Error("post failed");
             }
-            // // give permission to go to thankyou page
-            // router.push({ name: 'thankyou' })
-
             console.log("post succesful")
         } catch (err) {
-            error.value = err.message;
-            console.log(error.value);
+            postDataError.value = err.message;
+            console.log(postDataError.value);
         }
     }
 
@@ -42,6 +39,6 @@ const postWasteData = () => {
         return jsonOutput
     }
 
-    return { error, post }
+    return { postDataError: postDataError, post }
 }
 export default postWasteData

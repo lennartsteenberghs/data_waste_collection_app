@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-page-container>
-    <div class="text-h1 text-center">Don't Waste Data!</div>
+      <div class="text-h1 text-center">Let's collect data!</div>
       <div v-if="wasteItems.length">
         <WasteList :wasteItems="wasteItems" :binId="binId" />
       </div>
@@ -17,15 +17,15 @@ import wasteItemData from "../../data/waste_items_data.js";
 
 export default defineComponent({
   name: "MainLayout",
-  props: ['id'],
+  props: ["id"],
   components: { WasteList },
   setup(props) {
     const wasteItems = ref(wasteItemData);
-    const binId = ref(props.id)
+    const binId = ref(props.id);
 
     return {
       wasteItems,
-      binId
+      binId,
     };
   },
 });
@@ -35,22 +35,22 @@ export default defineComponent({
 /* Custom colors */
 
 .text-aw-red {
-  color: #C8102E !important;
+  color: #c8102e !important;
 }
 .bg-aw-red {
-  background: #C8102E !important;
+  background: #c8102e !important;
 }
 .text-aw-blue {
-  color: #418FDE !important;
+  color: #418fde !important;
 }
 .bg-aw-blue {
-  background: #418FDE !important;
+  background: #418fde !important;
 }
 .text-aw-yellow {
-  color: #FBE122 !important;
+  color: #fbe122 !important;
 }
 .bg-aw-yellow {
-  background: #FBE122 !important;
+  background: #fbe122 !important;
 }
 .text-aw-orange {
   color: #e69100 !important;

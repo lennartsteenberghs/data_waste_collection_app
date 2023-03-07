@@ -1,11 +1,16 @@
 
-- UI deftig maken
+- UI aanpasbaar maken aan schermgrootte
 
 - Load 'getMessages' immediately when starting website
+  - prop meegeven met router
+  - data anders parsen en url aanpassen in getCO2Amount.js |OK|
+  - als we niks krijgen uit get request, een andere message geven dan die van de kg |OK|
+
+Via ENV variables de urls doen
 
 - recycledbin:
   - small error message when wrong item is in wrong bin (when switch is switched)
-  -change colours switch so non recycled is also green when correct
+  - change to button toggle
 
 - naam bovenaan van 'quasar-todo' veranderen
 
@@ -15,15 +20,21 @@ LATER
 
 - support multiple languages
 
-- add loading icon for when waste data is uploaded and thank you message is fetched
-
-- Knop voor extra afval (de user kan zelf intypen)
 
 
-
-GEDAAN
-
+GEDAAN 6 maart
 - redirect router bij opstart. Van '/' naar '/input/8500'
 - icon naar img veranderd
 - bij data: 'recycled' en 'mustBeRecycled' toegevoegd
 - made separate component for switch recycled bin
+
+- route.push(thankyou) verplaats van 'wanneer post succesvol' is naar 'voor post executen'
+  - omdat we zo sneller op de thankyou pagina komen
+  - goede gebruikersexperience is belangrijker dan feit of post succesvol is of niet
+
+GEDAAN 7 maart
+- Change getMessages to getCO2, now returns CO2 in kg instead of a message
+- Change URL for post and get
+- Already load co2Saved upon mainLayout and then pass it on to ThankYouLayout
+
+
