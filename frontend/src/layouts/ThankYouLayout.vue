@@ -16,7 +16,12 @@ import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "ThankYouLayout",
-  props: ["amount"],
+  props: {
+    amount: {
+      type: String,
+      required: true,
+    },
+  },
   components: {},
   setup(props) {
     console.log("co2amount in ThankYouLayout: ", props.amount);

@@ -12,7 +12,7 @@ const routes = [
     path: '/thankyou',
     name: 'thankyou',
     component: ThankYouLayout,
-    props: true
+    props: (route) => ({ amount: route.params.amount })
   },
   //redirect
   {

@@ -4,14 +4,14 @@
       <SingleWaste :item="item" />
     </div>
   </div>
-  <div class="submit">
+  <div class="submit pb-4 align-top items-start">
     <router-link :to="{ name: 'thankyou', params: { amount: 69 } }">
       <q-btn
-        class="bg-aw-orange"
+        class="bg-aw-red"
         round
         flat
         @click="uploadData"
-        label="Upload Data"
+        label="Submit"
         style="width: 200px"
       />
     </router-link>
@@ -43,7 +43,7 @@ export default {
       post(finalWasteItems, props.binId);
       console.log(finalWasteItems);
     };
-    return { uploadData };
+    return { uploadData, co2Amount };
   },
 };
 </script>
@@ -51,8 +51,6 @@ export default {
 <style scoped>
 button {
   border: 0;
-  padding: 10px 20px;
-  margin-top: 20px;
   color: white;
   border-radius: 20px;
 }
