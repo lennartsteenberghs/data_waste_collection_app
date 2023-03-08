@@ -1,8 +1,8 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-page-container>
-      <div class="text-h1 text-center">Let's collect data!</div>
-      <div v-if="wasteItems.length">
+      <div class="text-center text-4xl pt-10 pb-0">Let's collect data!</div>
+      <div class="" v-if="wasteItems.length">
         <WasteList :wasteItems="wasteItems" :binId="binId" />
       </div>
       <div v-else>Loading application...</div>

@@ -1,16 +1,28 @@
 <template>
-  <q-card class="flex max-w-sm p-4 rounded-lg shadow-md bg-white">
-    <q-card-section class="flex items-center" horizontal>
-      <q-card-section class="mr-2">
-        <q-btn class="text-xl" icon="-" color="primary" @click="decrement" />
+  <q-card class="flex-1 max-w-sm p-0 rounded-lg shadow-none bg-white">
+    <q-card-section class="flex items-center justify-between px-0" horizontal>
+      <q-card-section class="p-0">
+        <q-btn
+          class="p-0 text-xs"
+          icon="-"
+          color="primary"
+          round
+          size="sm"
+          @click="decrement"
+        />
       </q-card-section>
 
-      <q-card-section class="flex-1 text-center text-2xl font-bold">{{
-        count
-      }}</q-card-section>
+      <q-card-section class="flex-1 text-center text-xs p-1">{{ count }}</q-card-section>
 
-      <q-card-section class="ml-2">
-        <q-btn class="text-xl" icon="+" color="primary" @click="increment" />
+      <q-card-section class="p-0">
+        <q-btn
+          class="p-0 text-xs"
+          icon="+"
+          color="primary"
+          round
+          size="sm"
+          @click="increment"
+        />
       </q-card-section>
     </q-card-section>
   </q-card>

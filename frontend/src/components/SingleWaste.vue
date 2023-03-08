@@ -1,29 +1,24 @@
 <template>
-  <div class="mx-4 my-8 flex items-center justify-center">
-    <q-card class="w-full mx-60 p-4 rounded-lg shadow-md bg-white">
-      <q-card-section class="flex items-center">
+  <div class="my-4 w-full flex items-center justify-center">
+    <q-card class="mx-4 w-full py-1 px-2 rounded-lg shadow-md bg-white">
+      <q-card-section class="p-0 flex items-center justify-between">
         <q-card-section
-          class="flex items-center justify-center w-28 h-28 rounded-full p-2 bg-primary text-white"
+          class="flex items-center justify-center w-14 rounded-full p-0.5 bg-primary text-white"
         >
-          <img
-            class="rounded-full mx-auto"
-            src=".\..\assets\can355ml.jpg"
-            alt=""
-            width="600"
-            height="600"
-          />
+          <q-img class="rounded-full mx-auto" src=".\..\assets\can355ml.jpg" />
         </q-card-section>
 
-        <q-card-section class="flex-1 text-3xl font-bold ml-4">{{
-          item.name
-        }}</q-card-section>
+        <q-card-section
+          class="flex-1 text-md text-left sm:text-xl md:text-2xl font-bold px-1"
+          >{{ item.name }}</q-card-section
+        >
 
-        <q-card-section>
-          <q-card-section>
+        <q-card-section class="p-0 w-20">
+          <q-card-section class="p-0">
             <Counter class="" @countChange="changeCount" />
           </q-card-section>
-          <q-card-section v-show="item.count">
-            <RecycleSwitch :item="item" class="" @recycledChange="changeRecycled"/>
+          <q-card-section class="p-0" v-show="true">
+            <RecycleSwitch :item="item" class="" @recycledChange="changeRecycled" />
           </q-card-section>
         </q-card-section>
       </q-card-section>
@@ -34,7 +29,7 @@
 <script>
 import { ref } from "vue";
 import Counter from "./Counter.vue";
-import RecycleSwitch from "./RecycleSwitch.vue"
+import RecycleSwitch from "./RecycleSwitch.vue";
 
 export default {
   props: ["item"],
@@ -48,7 +43,7 @@ export default {
     };
     return {
       changeCount,
-      changeRecycled
+      changeRecycled,
     };
   },
 };
