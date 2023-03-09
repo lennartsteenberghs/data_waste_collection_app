@@ -1,6 +1,7 @@
 
 - UI aanpasbaar maken aan schermgrootte
-- split name into name and subname
+
+-ThankYouLayout UI aanpassen
 
 - url een var maken
 - juiste images toevoegen
@@ -22,7 +23,7 @@ LATER
 - support multiple languages
 - recycledbin:
   - small error message when wrong item is in wrong bin (when switch is switched)
-
+- make question mark for pop up info on how to use the app
 - Via ENV variables de urls doen
 
 
@@ -45,5 +46,8 @@ GEDAAN 7 maart
 - Changed toggle button for choice bin
 
 GEDAAN 8 maart
-- Change UI so it works better for a phone
+- Change Mainlayout UI so it works better for a phone
+
+GEDAAN 9 maart
+- split name into name and subname
 

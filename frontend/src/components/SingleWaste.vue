@@ -10,8 +10,10 @@
 
         <q-card-section
           class="flex-1 text-md text-left sm:text-xl md:text-2xl font-bold px-1"
-          >{{ item.name }}</q-card-section
-        >
+          >{{ item.name }}
+          <br />
+          {{ item.subName }}
+        </q-card-section>
 
         <q-card-section class="p-0 w-20">
           <q-card-section class="p-0">
