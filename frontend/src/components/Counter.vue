@@ -3,9 +3,19 @@
     <q-card-section class="flex items-center justify-between px-0" horizontal>
       <q-card-section class="p-0">
         <q-btn
+          v-if="mustBeRecycled"
           class="p-0 text-xs"
           icon="-"
-          color="primary"
+          color="green"
+          round
+          size="sm"
+          @click="decrement"
+        />
+        <q-btn
+          v-else
+          class="p-0 text-xs"
+          icon="-"
+          color="paper-yellow"
           round
           size="sm"
           @click="decrement"
@@ -16,9 +26,19 @@
 
       <q-card-section class="p-0">
         <q-btn
+          v-if="mustBeRecycled"
           class="p-0 text-xs"
           icon="+"
-          color="primary"
+          color="green"
+          round
+          size="sm"
+          @click="increment"
+        />
+        <q-btn
+          v-else
+          class="p-0 text-xs"
+          icon="+"
+          color="paper-yellow"
           round
           size="sm"
           @click="increment"
@@ -33,8 +53,10 @@ import { ref } from "vue";
 
 export default {
   name: "hello",
+  props: ["item"],
   setup(props, { emit }) {
     const count = ref(0);
+    const mustBeRecycled = ref(props.item.mustBeRecycled);
 
     const decrement = () => {
       if (count.value) {
@@ -46,7 +68,7 @@ export default {
       count.value += 1;
       emit("countChange", count.value);
     };
-    return { count, decrement, increment };
+    return { count, decrement, increment, mustBeRecycled };
   },
 };
 </script>

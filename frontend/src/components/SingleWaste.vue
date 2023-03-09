@@ -9,7 +9,7 @@
           <q-img class="rounded-full mx-auto" src=".\..\assets\can355ml.jpg" />
         </q-card-section>
         <q-card-section
-          v-if="!item.mustBeRecycled"
+          v-else
           class="flex items-center justify-center w-14 rounded-full p-0.5 bg-yellow-500"
         >
           <q-img class="rounded-full mx-auto" src=".\..\assets\can355ml.jpg" />
@@ -24,7 +24,7 @@
 
         <q-card-section class="p-0 w-20">
           <q-card-section class="p-0">
-            <Counter class="" @countChange="changeCount" />
+            <Counter :item="item" class="" @countChange="changeCount" />
           </q-card-section>
           <q-card-section class="p-0" v-show="true">
             <RecycleSwitch :item="item" class="" @recycledChange="changeRecycled" />

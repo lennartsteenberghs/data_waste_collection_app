@@ -1,15 +1,9 @@
 
-- UI aanpasbaar maken aan schermgrootte
-
-
 
 - Banner toevoegen
 
 -ThankYouLayout UI aanpassen
 
-- aanpassen Mainlayout
-  - adding two setions for (non)-recyclable and icons
-  - change circle colors (green and yellow)
 
 - juiste images toevoegen
 
@@ -27,6 +21,7 @@
 
 LATER
 
+- UI aanpasbaar maken aan schermgrootte
 - support multiple languages
 - recycledbin:
   - small error message when wrong item is in wrong bin (when switch is switched)
@@ -58,3 +53,4 @@ GEDAAN 8 maart
 GEDAAN 9 maart
 - split name into name and subname
 - split list into recyclable and non-recyclable
+- separate colors for (non-)recyclable

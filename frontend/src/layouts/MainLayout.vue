@@ -58,4 +58,12 @@ export default defineComponent({
 .bg-aw-orange {
   background: #e69100 !important;
 }
+
+/* same as yellow-500 in Tailwind CSS */
+.text-paper-yellow {
+  background: #ecc94b !important;
+}
+.bg-paper-yellow {
+  background: #ecc94b !important;
+}
 </style>
