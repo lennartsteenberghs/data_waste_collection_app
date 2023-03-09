@@ -1,6 +1,15 @@
 <template>
-  <div class="post-list">
-    <div class="list-item" v-for="item in wasteItems" :key="item.id">
+  <div class="">
+    <div class="pt-2 pl-5 pb-0 text-left">
+      <q-icon class="text-green text-2xl" :name="fasRecycle" />
+    </div>
+    <div class="" v-for="item in wasteItemsRecyclable" :key="item.id">
+      <SingleWaste :item="item" />
+    </div>
+    <div class="pl-5 pb-0 text-left">
+      <q-icon class="text-2xl text-yellow-500 text-opacity-85" :name="fasTrash" />
+    </div>
+    <div class="" v-for="item in wasteItemsNonRecyclable" :key="item.id">
       <SingleWaste :item="item" />
     </div>
   </div>
@@ -19,10 +28,12 @@
 </template>
 
 <script>
+import { computed } from "vue";
 import { useRouter } from "vue-router";
 import SingleWaste from "./SingleWaste.vue";
 import postWasteData from "src/composables/postWasteData";
 import getCO2Amount from "src/composables/getCO2Amount";
+import { fasRecycle, fasTrash } from "@quasar/extras/fontawesome-v6";
 
 export default {
   props: ["wasteItems", "binId"],
@@ -30,6 +41,14 @@ export default {
   setup(props) {
     const { postDataError, post } = postWasteData();
     const router = useRouter();
+
+    const wasteItemsRecyclable = computed(() => {
+      return props.wasteItems.filter((item) => item.mustBeRecycled);
+    });
+
+    const wasteItemsNonRecyclable = computed(() => {
+      return props.wasteItems.filter((item) => !item.mustBeRecycled);
+    });
 
     const { co2Amount, getCO2AmountError, loadCO2Amount } = getCO2Amount();
     loadCO2Amount(props.binId);
@@ -43,7 +62,14 @@ export default {
       post(finalWasteItems, props.binId);
       console.log(finalWasteItems);
     };
-    return { uploadData, co2Amount };
+    return {
+      uploadData,
+      co2Amount,
+      wasteItemsRecyclable,
+      wasteItemsNonRecyclable,
+      fasRecycle,
+      fasTrash,
+    };
   },
 };
 </script>

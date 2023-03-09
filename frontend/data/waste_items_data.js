@@ -2,7 +2,8 @@ const wasteItemData = [
   {
     id: 1,
     img: 'NA',
-    name: "Small plastic bottle (< 500 ml)",
+    name: "Small plastic bottle",
+    subName: '(< 500 ml)',
     mustBeRecycled: true,
     count: 0,
     recycled: true
@@ -10,7 +11,8 @@ const wasteItemData = [
   {
     id: 2,
     img: "NA",
-    name: "Big plastic bottle (> 500 ml)",
+    name: "Big plastic bottle",
+    subName: '(> 500 ml)',
     mustBeRecycled: true,
     count: 0,
     recycled: true
@@ -18,7 +20,8 @@ const wasteItemData = [
   {
     id: 3,
     img: 'can355ml.jpg',
-    name: "Small can (< 500 ml)",
+    name: "Small can",
+    subName: '(< 500 ml)',
     mustBeRecycled: true,
     count: 0,
     recycled: true
@@ -26,7 +29,8 @@ const wasteItemData = [
   {
     id: 4,
     img: "NA",
-    name: "Big can (> 500 ml)",
+    name: "Big can",
+    subName: '(> 500 ml)',
     mustBeRecycled: true,
     count: 0,
     recycled: true
@@ -35,6 +39,7 @@ const wasteItemData = [
     id: 5,
     img: "NA",
     name: "Other recyclabes",
+    subName: '',
     mustBeRecycled: true,
     count: 0,
     recycled: true
@@ -43,6 +48,7 @@ const wasteItemData = [
     id: 6,
     img: "NA",
     name: "Paper cup",
+    subName: '',
     mustBeRecycled: false,
     count: 0,
     recycled: false
@@ -51,6 +57,7 @@ const wasteItemData = [
     id: 7,
     img: "NA",
     name: "Food box",
+    subName: '',
     mustBeRecycled: false,
     count: 0,
     recycled: false
@@ -59,6 +66,7 @@ const wasteItemData = [
     id: 9,
     img: "NA",
     name: "Other non-recyclabes",
+    subName: '',
     mustBeRecycled: false,
     count: 0,
     recycled: false

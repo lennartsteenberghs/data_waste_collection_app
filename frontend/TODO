@@ -1,8 +1,10 @@
 
-- UI aanpasbaar maken aan schermgrootte
-- split name into name and subname
 
-- url een var maken
+- Header toevoegen
+
+- ThankYouLayout UI aanpassen
+
+
 - juiste images toevoegen
 
 - Load 'getMessages' immediately when starting website
@@ -13,16 +15,16 @@
 
 - Fix dat het werkt als PWA
 
-- naam bovenaan van 'quasar-todo' veranderen
 
 
 
 LATER
 
+- UI aanpasbaar maken aan schermgrootte
 - support multiple languages
 - recycledbin:
   - small error message when wrong item is in wrong bin (when switch is switched)
-
+- make question mark for pop up info on how to use the app
 - Via ENV variables de urls doen
 
 
@@ -45,5 +47,10 @@ GEDAAN 7 maart
 - Changed toggle button for choice bin
 
 GEDAAN 8 maart
-- Change UI so it works better for a phone
+- Change Mainlayout UI so it works better for a phone
 
+GEDAAN 9 maart
+- split name into name and subname
+- split list into recyclable and non-recyclable
+- separate colors for (non-)recyclable
+- changed package and app name

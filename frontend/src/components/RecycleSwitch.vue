@@ -1,14 +1,34 @@
 <template>
   <div class="pt-2">
     <q-btn-toggle
+      v-if="mustBeRecycled"
       v-model="inRecycleBin"
-      class="my-custom-toggle"
+      class="my-custom-toggle-green"
       no-caps
       rounded
       unelevated
-      toggle-color="primary"
+      toggle-color="green"
       color="white"
-      text-color="primary"
+      text-color="green"
+      size="xs"
+      padding="none"
+      :options="[
+        { label: 'Normal bin', value: false },
+        { label: 'Recycle bin', value: true },
+      ]"
+      @click="$emit('recycledChange', inRecycleBin)"
+    />
+
+    <q-btn-toggle
+      v-else
+      v-model="inRecycleBin"
+      class="my-custom-toggle-yellow"
+      no-caps
+      rounded
+      unelevated
+      toggle-color="paper-yellow"
+      color="white"
+      text-color="amber-12"
       size="xs"
       padding="none"
       :options="[
@@ -37,7 +57,10 @@ export default {
 </script>
 
 <style scoped>
-.my-custom-toggle {
-  border: 1px solid #027be3;
+.my-custom-toggle-yellow {
+  border: 1px solid #ecc94b;
+}
+.my-custom-toggle-green {
+  border: 1px solid green;
 }
 </style>

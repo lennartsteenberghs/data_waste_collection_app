@@ -1,12 +1,21 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-page-container>
-      <div class="text-h1 text-center">Waste Data Collection</div>
-      <div v-if="amount" class="text-h3 text-center">
+      <div class="text-center text-4xl pt-10 pb-0">Let's collect data!</div>
+      <div v-if="amount" class="text-center text-3xl pt-10 pb-0">
         This recycle bin already saved {{ amount }} kg of CO2!
       </div>
-      <div v-else class="text-h3 text-center">Thank you for registering your waste!</div>
-      <router-view />
+      <div v-else class="text-center text-3xl pt-10 pb-0">
+        Thank you for registering your waste!
+      </div>
+      <div class="border rounded-2xl m-5 py-3 px-2 shadow-md">
+        <div class="text-center text-xl pt-0 pb-0">
+          Would you be so kind to give some feedback on the app?
+        </div>
+        <div class="text-center text-md pt-1 pb-0">
+          <a href="https://forms.gle/YhFdzeCWb13hBQAV6">{{ feedbackUrl }}</a>
+        </div>
+      </div>
     </q-page-container>
   </q-layout>
 </template>
@@ -26,8 +35,10 @@ export default defineComponent({
   setup(props) {
     console.log("co2amount in ThankYouLayout: ", props.amount);
     const amount = ref(props.amount);
+    const feedbackUrl = ref("https://forms.gle/YhFdzeCWb13hBQAV6");
+    //amount.value = 5123;
     console.log("co2amount in ThankYouLayout: ", amount.value);
-    return { amount };
+    return { amount, feedbackUrl };
   },
 });
 </script>
