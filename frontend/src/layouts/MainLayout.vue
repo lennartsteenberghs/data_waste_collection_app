@@ -1,7 +1,10 @@
 <template>
   <q-layout view="lHh Lpr lFf">
+    <q-header elevated>
+      <div class="text-center text-4xl pt-5 pb-2 bg-green">Let's collect data!</div>
+    </q-header>
     <q-page-container>
-      <div class="text-center text-4xl pt-10 pb-0">Let's collect data!</div>
+      <div class="text-center text-2xl pt-8 pb-2">What did you throw in the bin?</div>
       <div class="" v-if="wasteItems.length">
         <WasteList :wasteItems="wasteItems" :binId="binId" />
       </div>
