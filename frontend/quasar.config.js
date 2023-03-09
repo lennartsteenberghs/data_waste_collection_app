@@ -140,9 +140,9 @@ module.exports = configure(function (ctx) {
 
 
       manifest: {
-        name: `Quasar Todo`,
-        short_name: `Quasar Todo`,
-        description: `A todo app built with Quasar`,
+        name: `Don't waste data`,
+        short_name: `Don't waste data`,
+        description: `A waste data collection app`,
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',

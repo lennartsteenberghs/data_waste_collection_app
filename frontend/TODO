@@ -1,8 +1,8 @@
 
 
-- Banner toevoegen
+- Header toevoegen
 
--ThankYouLayout UI aanpassen
+- ThankYouLayout UI aanpassen
 
 
 - juiste images toevoegen
@@ -15,7 +15,6 @@
 
 - Fix dat het werkt als PWA
 
-- naam bovenaan van 'quasar-todo' veranderen
 
 
 
@@ -54,3 +53,4 @@ GEDAAN 9 maart
 - split name into name and subname
 - split list into recyclable and non-recyclable
 - separate colors for (non-)recyclable
+- changed package and app name

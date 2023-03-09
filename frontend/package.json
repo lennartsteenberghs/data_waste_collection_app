@@ -1,8 +1,8 @@
 {
-  "name": "quasar-todo",
+  "name": "waste-data-collection",
   "version": "0.0.1",
-  "description": "A todo app built with Quasar",
-  "productName": "Quasar Todo",
+  "description": "A waste data collection app",
+  "productName": "Don't Waste Data",
   "author": "ThiersTech <michiel.thiers@hotmail.com>",
   "private": true,
   "scripts": {
