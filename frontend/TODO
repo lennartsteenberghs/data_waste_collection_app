@@ -1,11 +1,16 @@
 
 - UI aanpasbaar maken aan schermgrootte
 
+
+
 - Banner toevoegen
 
 -ThankYouLayout UI aanpassen
 
-- url een var maken
+- aanpassen Mainlayout
+  - adding two setions for (non)-recyclable and icons
+  - change circle colors (green and yellow)
+
 - juiste images toevoegen
 
 - Load 'getMessages' immediately when starting website
@@ -52,4 +57,4 @@ GEDAAN 8 maart
 
 GEDAAN 9 maart
 - split name into name and subname
-
+- split list into recyclable and non-recyclable

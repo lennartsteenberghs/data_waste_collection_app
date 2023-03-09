@@ -3,7 +3,14 @@
     <q-card class="mx-4 w-full py-1 px-2 rounded-lg shadow-md bg-white">
       <q-card-section class="p-0 flex items-center justify-between">
         <q-card-section
-          class="flex items-center justify-center w-14 rounded-full p-0.5 bg-primary text-white"
+          v-if="item.mustBeRecycled"
+          class="flex items-center justify-center w-14 rounded-full p-0.5 bg-green"
+        >
+          <q-img class="rounded-full mx-auto" src=".\..\assets\can355ml.jpg" />
+        </q-card-section>
+        <q-card-section
+          v-if="!item.mustBeRecycled"
+          class="flex items-center justify-center w-14 rounded-full p-0.5 bg-yellow-500"
         >
           <q-img class="rounded-full mx-auto" src=".\..\assets\can355ml.jpg" />
         </q-card-section>
@@ -29,7 +36,6 @@
 </template>
 
 <script>
-import { ref } from "vue";
 import Counter from "./Counter.vue";
 import RecycleSwitch from "./RecycleSwitch.vue";
 
