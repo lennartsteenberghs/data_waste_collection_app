@@ -52,19 +52,13 @@ import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "ThankYouLayout",
-  props: {
-    amount: {
-      type: String,
-      required: true,
-    },
-  },
+  props: ["amount"],
   components: {},
   setup(props) {
-    console.log("co2amount in ThankYouLayout: ", props.amount);
     const amount = ref(props.amount);
+    amount.value = amount.value / 1000;
+    amount.value = Math.round(amount.value * 1000) / 1000;
     const feedbackUrl = ref("https://forms.gle/YhFdzeCWb13hBQAV6");
-    //amount.value = 5123;
-    console.log("co2amount in ThankYouLayout: ", amount.value);
     return { amount, feedbackUrl };
   },
 });

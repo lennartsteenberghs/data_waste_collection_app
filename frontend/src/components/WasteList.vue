@@ -57,7 +57,12 @@ export default {
         console.log("co2amount in wasteList: ", co2Amount.value);
         post(finalWasteItems, props.binId);
         console.log(finalWasteItems);
-        router.push({ name: "thankyou", params: { co2Amount: 69 } });
+        router.push({
+          name: "thankyou",
+          replace: false,
+          props: true,
+          params: { amount: co2Amount.value },
+        });
       } else {
         console.log("No data was entered");
       }

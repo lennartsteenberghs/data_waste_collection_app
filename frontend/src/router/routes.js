@@ -9,10 +9,10 @@ const routes = [
     props: true
   },
   {
-    path: '/thankyou',
+    path: '/thankyou/:amount',
     name: 'thankyou',
     component: ThankYouLayout,
-    props: (route) => ({ amount: route.params.amount })
+    props: true
   },
   //redirect
   {

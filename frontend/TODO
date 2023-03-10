@@ -7,8 +7,6 @@
   - data anders parsen en url aanpassen in getCO2Amount.js |OK|
   - als we niks krijgen uit get request, een andere message geven dan die van de kg |OK|
 
-  - on empty submit, disable post method
-
   - add texts 'recycle bin' and 'normal bin'
 
 
@@ -26,6 +24,7 @@ LATER
 - change font
 - Fix dat het werkt als PWA
 - add dark mode
+- animate amount of waste
 
 
 
@@ -63,3 +62,5 @@ GEDAAN 10 maart
 - added support for if img is not available
 - added Aruba flag header
 - added gif
+- make empty submit impossible
+- fixed bug of passing co2Saved to second screen
