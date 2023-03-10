@@ -4,15 +4,21 @@
       <q-card-section class="p-0 flex items-center justify-between">
         <q-card-section
           v-if="item.mustBeRecycled"
-          class="flex items-center justify-center w-14 rounded-full p-0.5 bg-green"
+          class="flex items-center justify-center w-14 rounded-full p-0.5 bg-green overflow-hidden"
         >
-          <q-img class="rounded-full mx-auto" src=".\..\assets\can355ml.jpg" />
+          <img
+            class="rounded-full mx-auto bg-white w-14 h-14 object-contain"
+            :src="getImgUrl()"
+          />
         </q-card-section>
         <q-card-section
           v-else
-          class="flex items-center justify-center w-14 rounded-full p-0.5 bg-yellow-500"
+          class="flex items-center justify-center w-14 rounded-full p-0.5 bg-yellow-500 overflow-hidden"
         >
-          <q-img class="rounded-full mx-auto" src=".\..\assets\can355ml.jpg" />
+          <img
+            class="rounded-full mx-auto bg-white w-14 h-14 object-contain"
+            :src="getImgUrl()"
+          />
         </q-card-section>
 
         <q-card-section
@@ -36,6 +42,7 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import Counter from "./Counter.vue";
 import RecycleSwitch from "./RecycleSwitch.vue";
 
@@ -43,15 +50,23 @@ export default {
   props: ["item"],
   components: { Counter, RecycleSwitch },
   setup(props) {
+    const img = ref("../assets/image2.jpg");
+
     const changeCount = (newCount) => {
       props.item.count = newCount;
     };
     const changeRecycled = (newValue) => {
       props.item.recycled = newValue;
     };
+
+    const getImgUrl = () => {
+      return require("../assets/image" + props.item.id + ".png");
+    };
     return {
       changeCount,
       changeRecycled,
+      getImgUrl,
+      img,
     };
   },
 };

@@ -3,7 +3,7 @@
 - Header toevoegen
   - add parrot and app icon into header
 
-- change font
+- change color scheme
 
 - ThankYouLayout UI aanpassen
   - add gif
@@ -18,8 +18,6 @@
   - als we niks krijgen uit get request, een andere message geven dan die van de kg |OK|
 
 
-- Fix dat het werkt als PWA
-
 
 
 
@@ -31,6 +29,8 @@ LATER
   - small error message when wrong item is in wrong bin (when switch is switched)
 - make question mark for pop up info on how to use the app
 - Via ENV variables de urls doen
+- change font
+- Fix dat het werkt als PWA
 
 
 
@@ -61,3 +61,6 @@ GEDAAN 9 maart
 - changed package and app name
 - added basic header
 - changed content in ThankYouLayout
+
+GEDAAN 10 maart
+- correct image is now shown per item
