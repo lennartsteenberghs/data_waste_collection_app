@@ -1,8 +1,4 @@
 
-
-- Header toevoegen
-  - add parrot and app icon into header
-
 - ThankYouLayout UI aanpassen
   - add gif
   - add flashing red border to the link box
@@ -26,6 +22,7 @@ LATER
 - Via ENV variables de urls doen
 - change font
 - Fix dat het werkt als PWA
+- add dark mode
 
 
 
@@ -61,3 +58,4 @@ GEDAAN 10 maart
 - correct image is now shown per item
 - made all colors customizable, changed color palette
 - added support for if img is not available
+- added Aruba flag header

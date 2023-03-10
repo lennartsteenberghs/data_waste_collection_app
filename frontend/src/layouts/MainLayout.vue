@@ -1,20 +1,21 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <q-toolbar class="pt-5 pb-2 bg-space-cadet">
-        <q-avatar>
-          <img :src="getImgUrl()" />
+      <q-toolbar class="px-5 pt-5 pb-2 bg-space-cadet">
+        <q-avatar square>
+          <img class="" :src="require('../assets/aruba.png')" />
         </q-avatar>
 
         <q-toolbar-title class="text-center text-2xl"
           >Let's collect data!</q-toolbar-title
         >
-
-        <q-btn flat round dense icon="whatshot" />
+        <q-avatar square>
+          <img class="" :src="require('../assets/aruba.png')" />
+        </q-avatar>
       </q-toolbar>
     </q-header>
     <q-page-container>
-      <div class="text-center text-2xl pt-8 pb-2">What did you throw in the bin?</div>
+      <div class="text-center text-2xl pt-8 pb-2">What did you throw away?</div>
       <div class="" v-if="wasteItems.length">
         <WasteList :wasteItems="wasteItems" :binId="binId" />
       </div>
@@ -36,14 +37,9 @@ export default defineComponent({
     const wasteItems = ref(wasteItemData);
     const binId = ref(props.id);
 
-    const getImgUrl = () => {
-      return require("../assets/aruba.png");
-    };
-
     return {
       wasteItems,
       binId,
-      getImgUrl,
     };
   },
 });
