@@ -1,13 +1,13 @@
 <template>
   <div class="">
     <div class="pt-2 pl-5 pb-0 text-left">
-      <q-icon class="text-green text-2xl" :name="fasRecycle" />
+      <q-icon class="text-recycle-green text-2xl" :name="fasRecycle" />
     </div>
     <div class="" v-for="item in wasteItemsRecyclable" :key="item.id">
       <SingleWaste :item="item" />
     </div>
     <div class="pl-5 pb-0 text-left">
-      <q-icon class="text-2xl text-yellow-500 text-opacity-85" :name="fasTrash" />
+      <q-icon class="text-2xl text-paper-yellow text-opacity-85" :name="fasTrash" />
     </div>
     <div class="" v-for="item in wasteItemsNonRecyclable" :key="item.id">
       <SingleWaste :item="item" />
@@ -16,7 +16,7 @@
   <div class="submit pb-4 align-top items-start">
     <router-link :to="{ name: 'thankyou', params: { amount: 69 } }">
       <q-btn
-        class="bg-aw-red"
+        class="bg-space-cadet"
         round
         flat
         @click="uploadData"

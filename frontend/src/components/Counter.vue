@@ -6,7 +6,7 @@
           v-if="mustBeRecycled"
           class="p-0 text-xs"
           icon="-"
-          color="green"
+          color="recycle-green"
           round
           size="sm"
           @click="decrement"
@@ -29,7 +29,7 @@
           v-if="mustBeRecycled"
           class="p-0 text-xs"
           icon="+"
-          color="green"
+          color="recycle-green"
           round
           size="sm"
           @click="increment"

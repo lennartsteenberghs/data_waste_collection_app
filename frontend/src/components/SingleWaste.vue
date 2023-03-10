@@ -4,7 +4,7 @@
       <q-card-section class="p-0 flex items-center justify-between">
         <q-card-section
           v-if="item.mustBeRecycled"
-          class="flex items-center justify-center w-14 rounded-full p-0.5 bg-green overflow-hidden"
+          class="flex items-center justify-center w-14 rounded-full p-0.5 bg-recycle-green overflow-hidden"
         >
           <img
             class="rounded-full mx-auto bg-white w-14 h-14 object-contain"
@@ -13,7 +13,7 @@
         </q-card-section>
         <q-card-section
           v-else
-          class="flex items-center justify-center w-14 rounded-full p-0.5 bg-yellow-500 overflow-hidden"
+          class="flex items-center justify-center w-14 rounded-full p-0.5 bg-paper-yellow overflow-hidden"
         >
           <img
             class="rounded-full mx-auto bg-white w-14 h-14 object-contain"

@@ -9,9 +9,6 @@
   - add gif
   - add flashing red border to the link box
 
-
-- juiste images toevoegen
-
 - Load 'getMessages' immediately when starting website
   - prop meegeven met router
   - data anders parsen en url aanpassen in getCO2Amount.js |OK|
@@ -64,3 +61,4 @@ GEDAAN 9 maart
 
 GEDAAN 10 maart
 - correct image is now shown per item
+- made all colors customizable, changed color palette

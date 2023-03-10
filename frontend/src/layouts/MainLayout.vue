@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <div class="text-center text-4xl pt-5 pb-2 bg-green">Let's collect data!</div>
+      <div class="text-center text-4xl pt-5 pb-2 bg-space-cadet">Let's collect data!</div>
     </q-header>
     <q-page-container>
       <div class="text-center text-2xl pt-8 pb-2">What did you throw in the bin?</div>
@@ -17,6 +17,7 @@
 import { defineComponent, ref } from "vue";
 import WasteList from "../components/WasteList.vue";
 import wasteItemData from "../../data/waste_items_data.js";
+import { getCssVar } from "quasar";
 
 export default defineComponent({
   name: "MainLayout",
@@ -64,9 +65,21 @@ export default defineComponent({
 
 /* same as yellow-500 in Tailwind CSS */
 .text-paper-yellow {
-  background: #ecc94b !important;
+  color: #eab308 !important;
 }
 .bg-paper-yellow {
-  background: #ecc94b !important;
+  background: #eab308 !important;
+}
+.text-space-cadet {
+  color: #151e3f;
+}
+.bg-space-cadet {
+  background: #151e3f;
+}
+.text-recycle-green {
+  color: #4caf50;
+}
+.bg-recycle-green {
+  background: #4caf50;
 }
 </style>

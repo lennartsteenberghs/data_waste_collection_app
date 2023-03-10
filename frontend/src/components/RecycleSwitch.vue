@@ -7,9 +7,9 @@
       no-caps
       rounded
       unelevated
-      toggle-color="green"
+      toggle-color="recycle-green"
       color="white"
-      text-color="green"
+      text-color="recycle-green"
       size="xs"
       padding="none"
       :options="[
@@ -28,7 +28,7 @@
       unelevated
       toggle-color="paper-yellow"
       color="white"
-      text-color="amber-12"
+      text-color="paper-yellow"
       size="xs"
       padding="none"
       :options="[
@@ -58,9 +58,9 @@ export default {
 
 <style scoped>
 .my-custom-toggle-yellow {
-  border: 1px solid #ecc94b;
+  border: 1px solid #eab308;
 }
 .my-custom-toggle-green {
-  border: 1px solid green;
+  border: 1px solid #4caf50;
 }
 </style>
