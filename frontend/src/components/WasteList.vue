@@ -14,16 +14,14 @@
     </div>
   </div>
   <div class="submit pb-4 align-top items-start">
-    <router-link :to="{ name: 'thankyou', params: { amount: 69 } }">
-      <q-btn
-        class="bg-space-cadet"
-        round
-        flat
-        @click="uploadData"
-        label="Submit"
-        style="width: 200px"
-      />
-    </router-link>
+    <q-btn
+      class="bg-space-cadet"
+      round
+      flat
+      @click="uploadData"
+      label="Submit"
+      style="width: 200px"
+    />
   </div>
 </template>
 
@@ -55,12 +53,14 @@ export default {
 
     const uploadData = () => {
       let finalWasteItems = props.wasteItems.filter((item) => item.count > 0);
-      // go to next page with router
-      // TODO: add prop of co2Amount
-      // router.push({ name: "thankyou", params: { co2Amount: 69 } });
-      console.log("co2amount in wasteList: ", co2Amount.value);
-      post(finalWasteItems, props.binId);
-      console.log(finalWasteItems);
+      if (finalWasteItems.length) {
+        console.log("co2amount in wasteList: ", co2Amount.value);
+        post(finalWasteItems, props.binId);
+        console.log(finalWasteItems);
+        router.push({ name: "thankyou", params: { co2Amount: 69 } });
+      } else {
+        console.log("No data was entered");
+      }
     };
     return {
       uploadData,

@@ -34,7 +34,7 @@
         </div>
       </div>
       <div
-        class="border w-5/6 max-w-sm rounded-2xl py-3 px-2 shadow-md mx-auto fixed bottom-5 left-1/2 transform -translate-x-1/2"
+        class="border w-5/6 max-w-sm rounded-2xl py-3 px-2 shadow-md mx-auto fixed bottom-10 left-1/2 transform -translate-x-1/2"
       >
         <div class="text-center text-xl pt-0 pb-0">
           Would you be so kind to give some feedback on the app?
