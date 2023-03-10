@@ -63,7 +63,25 @@ const wasteItemData = [
     recycled: false
   },
   {
+    id: 8,
+    img: "NA",
+    name: "Organic caste",
+    subName: '',
+    mustBeRecycled: false,
+    count: 0,
+    recycled: false
+  },
+  {
     id: 9,
+    img: "NA",
+    name: "Glass",
+    subName: '',
+    mustBeRecycled: false,
+    count: 0,
+    recycled: false
+  },
+  {
+    id: 10,
     img: "NA",
     name: "Other non-recyclabes",
     subName: '',
