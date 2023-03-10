@@ -1,7 +1,17 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <div class="text-center text-4xl pt-5 pb-2 bg-space-cadet">Let's collect data!</div>
+      <q-toolbar class="pt-5 pb-2 bg-space-cadet">
+        <q-avatar>
+          <img :src="getImgUrl()" />
+        </q-avatar>
+
+        <q-toolbar-title class="text-center text-2xl"
+          >Let's collect data!</q-toolbar-title
+        >
+
+        <q-btn flat round dense icon="whatshot" />
+      </q-toolbar>
     </q-header>
     <q-page-container>
       <div class="text-center text-2xl pt-8 pb-2">What did you throw in the bin?</div>
@@ -17,7 +27,6 @@
 import { defineComponent, ref } from "vue";
 import WasteList from "../components/WasteList.vue";
 import wasteItemData from "../../data/waste_items_data.js";
-import { getCssVar } from "quasar";
 
 export default defineComponent({
   name: "MainLayout",
@@ -27,9 +36,14 @@ export default defineComponent({
     const wasteItems = ref(wasteItemData);
     const binId = ref(props.id);
 
+    const getImgUrl = () => {
+      return require("../assets/aruba.png");
+    };
+
     return {
       wasteItems,
       binId,
+      getImgUrl,
     };
   },
 });

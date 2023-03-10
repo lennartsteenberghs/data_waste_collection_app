@@ -9,6 +9,7 @@
           <img
             class="rounded-full mx-auto bg-white w-14 h-14 object-contain"
             :src="getImgUrl()"
+            @error="getAltImgUrl()"
           />
         </q-card-section>
         <q-card-section
@@ -18,6 +19,7 @@
           <img
             class="rounded-full mx-auto bg-white w-14 h-14 object-contain"
             :src="getImgUrl()"
+            @error="getAltImgUrl()"
           />
         </q-card-section>
 
@@ -50,8 +52,6 @@ export default {
   props: ["item"],
   components: { Counter, RecycleSwitch },
   setup(props) {
-    const img = ref("../assets/image2.jpg");
-
     const changeCount = (newCount) => {
       props.item.count = newCount;
     };
@@ -60,13 +60,23 @@ export default {
     };
 
     const getImgUrl = () => {
-      return require("../assets/image" + props.item.id + ".png");
+      let imgUrl = require("../assets/app-icon.png");
+      try {
+        imgUrl = require("../assets/image" + props.item.id + ".png");
+      } catch (e) {
+        console.log("image could not be found for item with id =", props.item.id);
+        imgUrl = require("../assets/app-icon.png");
+      }
+      return imgUrl;
+    };
+    const getAltImgUrl = () => {
+      return require("../assets/app-icon.png");
     };
     return {
       changeCount,
       changeRecycled,
       getImgUrl,
-      img,
+      getAltImgUrl,
     };
   },
 };

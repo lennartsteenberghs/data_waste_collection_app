@@ -65,7 +65,7 @@ const wasteItemData = [
   {
     id: 8,
     img: "NA",
-    name: "Organic caste",
+    name: "Organic waste",
     subName: '',
     mustBeRecycled: false,
     count: 0,

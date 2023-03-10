@@ -3,8 +3,6 @@
 - Header toevoegen
   - add parrot and app icon into header
 
-- change color scheme
-
 - ThankYouLayout UI aanpassen
   - add gif
   - add flashing red border to the link box
@@ -62,3 +60,4 @@ GEDAAN 9 maart
 GEDAAN 10 maart
 - correct image is now shown per item
 - made all colors customizable, changed color palette
+- added support for if img is not available
