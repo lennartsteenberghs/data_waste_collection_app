@@ -1,8 +1,13 @@
 
 
 - Header toevoegen
+  - add parrot and app icon into header
+
+- change font
 
 - ThankYouLayout UI aanpassen
+  - add gif
+  - add flashing red border to the link box
 
 
 - juiste images toevoegen
@@ -54,3 +59,5 @@ GEDAAN 9 maart
 - split list into recyclable and non-recyclable
 - separate colors for (non-)recyclable
 - changed package and app name
+- added basic header
+- changed content in ThankYouLayout
