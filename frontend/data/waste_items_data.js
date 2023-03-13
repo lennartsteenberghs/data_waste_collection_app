@@ -3,7 +3,7 @@ const wasteItemData = [
     id: 1,
     img: 'NA',
     name: "Small plastic bottle",
-    subName: '(< 500 ml)',
+    subName: '(< 550 ml)',
     mustBeRecycled: true,
     count: 0,
     recycled: true
@@ -12,7 +12,7 @@ const wasteItemData = [
     id: 2,
     img: "NA",
     name: "Big plastic bottle",
-    subName: '(> 500 ml)',
+    subName: '(> 550 ml)',
     mustBeRecycled: true,
     count: 0,
     recycled: true

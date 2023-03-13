@@ -2,12 +2,7 @@
 - ThankYouLayout UI aanpassen
   - add flashing red border to the link box
 
-- Load 'getMessages' immediately when starting website
-  - prop meegeven met router
-  - data anders parsen en url aanpassen in getCO2Amount.js |OK|
-  - als we niks krijgen uit get request, een andere message geven dan die van de kg |OK|
-
-  - add texts 'recycle bin' and 'normal bin'
+- add texts 'recycle bin' and 'normal bin'
 
 
 
@@ -25,6 +20,7 @@ LATER
 - Fix dat het werkt als PWA
 - add dark mode
 - animate amount of waste
+- fix 404 page
 
 
 

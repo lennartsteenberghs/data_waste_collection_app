@@ -33,14 +33,16 @@
           ></iframe>
         </div>
       </div>
-      <div
-        class="border w-5/6 max-w-sm rounded-2xl py-3 px-2 shadow-md mx-auto fixed bottom-10 left-1/2 transform -translate-x-1/2"
-      >
-        <div class="text-center text-xl pt-0 pb-0">
-          Would you be so kind to give some feedback on the app?
-        </div>
-        <div class="text-center text-lg pt-1 pb-0 text-bold">
-          <a href="https://forms.gle/YhFdzeCWb13hBQAV6">Click here</a>
+      <div class="">
+        <div
+          class="border w-5/6 max-w-sm rounded-2xl py-3 px-2 shadow-md mx-auto fixed bottom-10 left-1/2 transform -translate-x-1/2"
+        >
+          <div class="text-center text-xl pt-0 pb-0">
+            Would you be so kind to give some feedback on the app?
+          </div>
+          <div class="text-center text-lg pt-1 pb-0 text-bold">
+            <a href="https://forms.gle/YhFdzeCWb13hBQAV6">Click here</a>
+          </div>
         </div>
       </div>
     </q-page-container>
@@ -64,9 +66,4 @@ export default defineComponent({
 });
 </script>
 
-<style>
-h1,
-h3 {
-  text-align: center;
-}
-</style>
+<style scoped></style>
