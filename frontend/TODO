@@ -1,10 +1,4 @@
-
-- ThankYouLayout UI aanpassen
-  - add flashing red border to the link box
-
-- add texts 'recycle bin' and 'normal bin'
-
-
+ - namen van items aanpasbaar maken aan taal
 
 
 
@@ -60,3 +54,14 @@ GEDAAN 10 maart
 - added gif
 - make empty submit impossible
 - fixed bug of passing co2Saved to second screen
+
+GEDAAN 13 maart
+- meeting with alba about workshops and test phase of the app
+- implement i18n plugin for vue
+
+GEDAAN 14 maart:
+- first demo and feeback on that + future demo plans
+- change all hardcoded texts to variables for i18n translation
+
+GEDAAN 20 maart:
+- made dropdown menu with flags to change the language

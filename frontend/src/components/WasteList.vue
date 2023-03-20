@@ -19,7 +19,7 @@
       round
       flat
       @click="uploadData"
-      label="Submit"
+      :label="$t('submitButton')"
       style="width: 200px"
     />
   </div>

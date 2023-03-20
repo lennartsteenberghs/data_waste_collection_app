@@ -16,9 +16,12 @@
     "quasar": "^2.6.0",
     "tailwindcss": "^3.2.7",
     "vue": "^3.0.0",
+    "vue-flag-icon": "^2.1.0",
+    "vue-i18n": "^9.3.0-beta.16",
     "vue-router": "^4.0.0"
   },
   "devDependencies": {
+    "@intlify/vue-i18n-loader": "^4.2.0",
     "@quasar/app-webpack": "^3.0.0",
     "workbox-webpack-plugin": "^6.5.4"
   },
