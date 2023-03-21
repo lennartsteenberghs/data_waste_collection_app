@@ -45,10 +45,10 @@
               v-else-if="item.mustBeRecycled"
               class="text-red-500 text-xs font-bold text-center"
             >
-              This item belongs in the recycling bin
+              {{ $t("hasToBeRecyclingBin") }}
             </div>
             <div v-else class="text-red-500 text-xs font-bold text-center">
-              This item belongs in the non-recycling bin
+              {{ $t("hasToBeNonRecyclingBin") }}
             </div>
           </q-card-section>
         </q-card-section>

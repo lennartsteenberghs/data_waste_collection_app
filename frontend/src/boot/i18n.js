@@ -30,7 +30,9 @@ const messages = {
     clickHere: "Click here",
     normalBin: "Normal bin",
     recyclingBin: "Recycling bin",
-    nonRecyclingBin: "Non-recycling bin"
+    nonRecyclingBin: "Non-recycling bin",
+    hasToBeRecyclingBin: "This item belongs in the recycling bin",
+    hasToBeNonRecyclingBin: "This item belongs in the non-recycling bin"
   },
   'nl': {
     toolbarTitle: "Laten we data verzamelen!",
@@ -44,7 +46,9 @@ const messages = {
     clickHere: "Klik hier",
     normalBin: "Normale vuilbak",
     recyclingBin: "Recyclingvuilbak",
-    nonRecyclingBin: "Niet-recyclingvuilbak"
+    nonRecyclingBin: "Niet-recyclingvuilbak",
+    hasToBeRecyclingBin: "Dit item behoort in de recyclingvuilbak",
+    hasToBeNonRecyclingBin: "Dit item behoort in de niet-recyclingvuilbak"
   },
   'es': {
     toolbarTitle: "Laten we data verzamelen!",
@@ -58,7 +62,9 @@ const messages = {
     clickHere: "Klik hier",
     normalBin: "Normale vuilbak",
     recyclingBin: "Recyclage vuilbak",
-    nonRecyclingBin: "Non-recycling bin"
+    nonRecyclingBin: "Non-recycling bin",
+    hasToBeRecyclingBin: "This item belongs in the recycling bin",
+    hasToBeNonRecyclingBin: "This item belongs in the non-recycling bin"
   },
   'aw': {
     toolbarTitle: "Laten we data verzamelen!",
@@ -72,6 +78,8 @@ const messages = {
     clickHere: "Klik hier",
     normalBin: "Normale vuilbak",
     recyclingBin: "Recyclage vuilbak",
-    nonRecyclingBin: "Non-recycling bin"
+    nonRecyclingBin: "Non-recycling bin",
+    hasToBeRecyclingBin: "This item belongs in the recycling bin",
+    hasToBeNonRecyclingBin: "This item belongs in the non-recycling bin"
   }
 };

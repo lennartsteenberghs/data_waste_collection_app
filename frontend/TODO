@@ -1,4 +1,4 @@
- - make items unclickable when it is not a recycling bin
+ - retrieve what type of bin it is
 
  - make images clickable to make them bigger
  - beginning screen to choose between camera or form
@@ -71,4 +71,5 @@ GEDAAN 20 maart:
 GEDAAN 21 maart:
 - removed RecycleSwitch button and functionality
 - added recycle bin and non recycle bin title
+- added functionality for different kinds of bins
 
