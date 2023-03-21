@@ -1,4 +1,5 @@
- - namen van items aanpasbaar maken aan taal
+ - add recycle bin and non recycle bin badge
+
  - make images clickable to make them bigger
  - beginning screen to choose between camera or form
 
@@ -65,3 +66,8 @@ GEDAAN 14 maart:
 
 GEDAAN 20 maart:
 - made dropdown menu with flags to change the language
+- made itemnames adaptable to language
+
+GEDAAN 21 maart:
+- removed RecycleSwitch button and functionality
+

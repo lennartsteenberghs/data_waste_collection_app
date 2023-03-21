@@ -54,7 +54,6 @@ export default {
     const uploadData = () => {
       let finalWasteItems = props.wasteItems.filter((item) => item.count > 0);
       if (finalWasteItems.length) {
-        console.log("co2amount in wasteList: ", co2Amount.value);
         post(finalWasteItems, props.binId);
         console.log(finalWasteItems);
         router.push({

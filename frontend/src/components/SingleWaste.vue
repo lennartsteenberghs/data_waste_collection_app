@@ -34,9 +34,6 @@
           <q-card-section class="p-0">
             <Counter :item="item" class="" @countChange="changeCount" />
           </q-card-section>
-          <q-card-section class="p-0" v-show="true">
-            <RecycleSwitch :item="item" class="" @recycledChange="changeRecycled" />
-          </q-card-section>
         </q-card-section>
       </q-card-section>
     </q-card>
@@ -55,9 +52,6 @@ export default {
   setup(props) {
     const changeCount = (newCount) => {
       props.item.count = newCount;
-    };
-    const changeRecycled = (newValue) => {
-      props.item.recycled = newValue;
     };
 
     const getImgUrl = () => {
@@ -91,7 +85,6 @@ export default {
 
     return {
       changeCount,
-      changeRecycled,
       getImgUrl,
       getAltImgUrl,
       locale,
