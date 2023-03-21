@@ -19,6 +19,7 @@
             >
               <q-item-section>
                 <flag :iso="entry.flag" v-bind:squared="false" />
+                <div>{{ entry.value }}</div>
               </q-item-section>
             </q-item>
           </q-list>

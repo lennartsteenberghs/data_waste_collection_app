@@ -1,11 +1,11 @@
  - namen van items aanpasbaar maken aan taal
-
+ - make images clickable to make them bigger
+ - beginning screen to choose between camera or form
 
 
 LATER
 
 - UI aanpasbaar maken aan schermgrootte
-- support multiple languages
 - recycledbin:
   - small error message when wrong item is in wrong bin (when switch is switched)
 - make question mark for pop up info on how to use the app

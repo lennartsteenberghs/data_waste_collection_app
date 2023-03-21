@@ -25,7 +25,7 @@
 
         <q-card-section
           class="flex-1 text-md text-left sm:text-xl md:text-2xl font-bold px-1"
-          >{{ item.name }}
+          >{{ itemName }}
           <br />
           {{ item.subName }}
         </q-card-section>
@@ -44,9 +44,10 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { computed } from "vue";
 import Counter from "./Counter.vue";
 import RecycleSwitch from "./RecycleSwitch.vue";
+import { useI18n } from "vue-i18n";
 
 export default {
   props: ["item"],
@@ -72,11 +73,29 @@ export default {
     const getAltImgUrl = () => {
       return require("../assets/app-icon.png");
     };
+
+    const { locale } = useI18n({ useScope: "global" });
+
+    const itemName = computed(() => {
+      switch (locale.value) {
+        case "en":
+          return props.item.name.en;
+        case "aw":
+          return props.item.name.aw;
+        case "es":
+          return props.item.name.es;
+        default:
+          return props.item.name.nl;
+      }
+    });
+
     return {
       changeCount,
       changeRecycled,
       getImgUrl,
       getAltImgUrl,
+      locale,
+      itemName,
     };
   },
 };
