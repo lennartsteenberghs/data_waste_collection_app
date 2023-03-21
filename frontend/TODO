@@ -6,7 +6,7 @@
 
 LATER
 
-- UI aanpasbaar maken aan schermgrootte
+- UI aanpasbaar maken aan schermgrootte (change dimensions to ratios)
 - recycledbin:
   - small error message when wrong item is in wrong bin (when switch is switched)
 - make question mark for pop up info on how to use the app

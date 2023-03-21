@@ -29,7 +29,7 @@
     <q-page-container>
       <div class="text-center text-2xl pt-8 pb-2">{{ $t("listTitle") }}</div>
       <div class="" v-if="wasteItems.length">
-        <WasteList :wasteItems="wasteItems" :binId="binId" />
+        <WasteList :wasteItems="wasteItems" :binId="binId" :binType="binType" />
       </div>
       <div v-else>Loading application...</div>
     </q-page-container>
@@ -48,6 +48,8 @@ export default defineComponent({
   props: ["id"],
   components: { WasteList },
   setup(props) {
+    const binType = ref(2); // 1 = both, 2 = only recycling, 3 = only non-recycling
+
     const wasteItems = ref(wasteItemData);
     const binId = ref(props.id);
 
@@ -67,6 +69,7 @@ export default defineComponent({
     return {
       wasteItems,
       binId,
+      binType,
       locale,
       languages,
       changeLocale,

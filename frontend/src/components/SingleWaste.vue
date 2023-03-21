@@ -30,9 +30,26 @@
           {{ item.subName }}
         </q-card-section>
 
-        <q-card-section class="p-0 w-20">
+        <q-card-section class="p-0 w-4/12">
           <q-card-section class="p-0">
-            <Counter :item="item" class="" @countChange="changeCount" />
+            <Counter
+              v-if="
+                (binType !== 3 && item.mustBeRecycled) ||
+                (binType !== 2 && !item.mustBeRecycled)
+              "
+              :item="item"
+              class=""
+              @countChange="changeCount"
+            />
+            <div
+              v-else-if="item.mustBeRecycled"
+              class="text-red-500 text-xs font-bold text-center"
+            >
+              This item belongs in the recycling bin
+            </div>
+            <div v-else class="text-red-500 text-xs font-bold text-center">
+              This item belongs in the non-recycling bin
+            </div>
           </q-card-section>
         </q-card-section>
       </q-card-section>
@@ -43,12 +60,11 @@
 <script>
 import { computed } from "vue";
 import Counter from "./Counter.vue";
-import RecycleSwitch from "./RecycleSwitch.vue";
 import { useI18n } from "vue-i18n";
 
 export default {
-  props: ["item"],
-  components: { Counter, RecycleSwitch },
+  props: ["item", "binType"],
+  components: { Counter },
   setup(props) {
     const changeCount = (newCount) => {
       props.item.count = newCount;

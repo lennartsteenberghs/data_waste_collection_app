@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="" v-for="item in wasteItemsRecyclable" :key="item.id">
-      <SingleWaste :item="item" />
+      <SingleWaste :item="item" :binType="binType" />
     </div>
     <div class="pt-2 pl-5 pb-0 text-left flex items-center">
       <q-icon class="text-2xl text-paper-yellow text-opacity-85" :name="fasTrash" />
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="" v-for="item in wasteItemsNonRecyclable" :key="item.id">
-      <SingleWaste :item="item" />
+      <SingleWaste :item="item" :binType="binType" />
     </div>
   </div>
   <div class="submit pb-4 align-top items-start">
@@ -40,7 +40,7 @@ import getCO2Amount from "src/composables/getCO2Amount";
 import { fasRecycle, fasTrash } from "@quasar/extras/fontawesome-v6";
 
 export default {
-  props: ["wasteItems", "binId"],
+  props: ["wasteItems", "binId", "binType"],
   components: { SingleWaste },
   setup(props) {
     const { postDataError, post } = postWasteData();

@@ -31,8 +31,7 @@ const postWasteData = () => {
         const newList = []
         for (let i = 0; i < list.length; i++) {
             console.log(list[i])
-            console.log(list[i].recycled)
-            const item = { 'plastic_type': list[i].id, 'amount': list[i].count, 'recycled': list[i].recycled }
+            const item = { 'plastic_type': list[i].id, 'amount': list[i].count}
             newList.push(item)
         }
         const jsonOutput = JSON.stringify(newList)
