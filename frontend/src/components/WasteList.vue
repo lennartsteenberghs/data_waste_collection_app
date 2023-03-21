@@ -1,13 +1,19 @@
 <template>
   <div class="">
-    <div class="pt-2 pl-5 pb-0 text-left">
+    <div class="pt-2 pl-5 pb-0 text-left flex items-center">
       <q-icon class="text-recycle-green text-2xl" :name="fasRecycle" />
+      <div class="ml-2 bg-recycle-green rounded-lg shadow-md py-1 px-2 text-white">
+        {{ $t("recyclingBin") }}
+      </div>
     </div>
     <div class="" v-for="item in wasteItemsRecyclable" :key="item.id">
       <SingleWaste :item="item" />
     </div>
-    <div class="pl-5 pb-0 text-left">
+    <div class="pt-2 pl-5 pb-0 text-left flex items-center">
       <q-icon class="text-2xl text-paper-yellow text-opacity-85" :name="fasTrash" />
+      <div class="ml-2 bg-paper-yellow rounded-lg shadow-md py-1 px-2 text-white">
+        {{ $t("nonRecyclingBin") }}
+      </div>
     </div>
     <div class="" v-for="item in wasteItemsNonRecyclable" :key="item.id">
       <SingleWaste :item="item" />

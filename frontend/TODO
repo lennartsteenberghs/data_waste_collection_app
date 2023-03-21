@@ -1,4 +1,4 @@
- - add recycle bin and non recycle bin badge
+ - make items unclickable when it is not a recycling bin
 
  - make images clickable to make them bigger
  - beginning screen to choose between camera or form
@@ -70,4 +70,5 @@ GEDAAN 20 maart:
 
 GEDAAN 21 maart:
 - removed RecycleSwitch button and functionality
+- added recycle bin and non recycle bin title
 

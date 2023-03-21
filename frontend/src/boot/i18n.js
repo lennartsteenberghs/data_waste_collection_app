@@ -29,7 +29,8 @@ const messages = {
     askFeedback: "Would you be so kind to give some feedback on the app?",
     clickHere: "Click here",
     normalBin: "Normal bin",
-    recycleBin: "Recycle bin"
+    recyclingBin: "Recycling bin",
+    nonRecyclingBin: "Non-recycling bin"
   },
   'nl': {
     toolbarTitle: "Laten we data verzamelen!",
@@ -42,7 +43,8 @@ const messages = {
     askFeedback: "Zou u aub wat feedback willen geven over de app?",
     clickHere: "Klik hier",
     normalBin: "Normale vuilbak",
-    recycleBin: "Recyclage vuilbak"
+    recyclingBin: "Recyclingvuilbak",
+    nonRecyclingBin: "Niet-recyclingvuilbak"
   },
   'es': {
     toolbarTitle: "Laten we data verzamelen!",
@@ -55,7 +57,8 @@ const messages = {
     askFeedback: "Zou u aub wat feedback willen geven over de app?",
     clickHere: "Klik hier",
     normalBin: "Normale vuilbak",
-    recycleBin: "Recyclage vuilbak"
+    recyclingBin: "Recyclage vuilbak",
+    nonRecyclingBin: "Non-recycling bin"
   },
   'aw': {
     toolbarTitle: "Laten we data verzamelen!",
@@ -68,6 +71,7 @@ const messages = {
     askFeedback: "Zou u aub wat feedback willen geven over de app?",
     clickHere: "Klik hier",
     normalBin: "Normale vuilbak",
-    recycleBin: "Recyclage vuilbak"
+    recyclingBin: "Recyclage vuilbak",
+    nonRecyclingBin: "Non-recycling bin"
   }
 };
