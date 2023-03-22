@@ -11,7 +11,7 @@ const getCO2Amount = () => {
   }
 
   const loadCO2Amount = async (binId) => {
-    const url = API_CO2_AMOUNT + binId
+    const url = process.env.API_CO2_AMOUNT + binId
     try {
       let data = await fetch(url);
       if (!data.ok) {
