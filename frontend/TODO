@@ -1,12 +1,13 @@
  - beginning screen to choose between camera or form
+
  - put content of wasteitemsdata in seperate folder
 
  - take picture and upload it
+
 LATER
 
 - UI aanpasbaar maken aan schermgrootte (change dimensions to ratios)
 - make question mark for pop up info on how to use the app
-- Via ENV variables de urls doen
 - change font
 - Fix dat het werkt als PWA
 - add dark mode
@@ -72,3 +73,4 @@ GEDAAN 21 maart:
 GEDAAN 22 maart:
 - images are now clickable for a more info dialog
 - binType is now dependent on URL
+- changed url to env variables

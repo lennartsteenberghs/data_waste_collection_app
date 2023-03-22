@@ -11,7 +11,7 @@ const getCO2Amount = () => {
   }
 
   const loadCO2Amount = async (binId) => {
-    const url = "https://data-waste-collection-app-backend.onrender.com/co2safed/" + binId
+    const url = API_CO2_AMOUNT + binId
     try {
       let data = await fetch(url);
       if (!data.ok) {

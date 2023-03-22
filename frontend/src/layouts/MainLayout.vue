@@ -27,7 +27,9 @@
       </q-toolbar>
     </q-header>
     <q-page-container>
-      <div class="text-center text-2xl pt-8 pb-2">{{ $t("listTitle") }}</div>
+      <div class="text-center text-2xl pt-8 pb-2">
+        {{ $t("listTitle") }}
+      </div>
       <div class="" v-if="wasteItems.length">
         <WasteList :wasteItems="wasteItems" :binId="binId" :binType="binType" />
       </div>
@@ -54,7 +56,6 @@ export default defineComponent({
     const binId = ref(props.id);
 
     const { locale } = useI18n({ useScope: "global" });
-
     const languages = ref([
       { flag: "us", value: "en", label: "English" },
       { flag: "aw", value: "aw", label: "Papiamentu" },
