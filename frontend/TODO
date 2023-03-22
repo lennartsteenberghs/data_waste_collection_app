@@ -1,6 +1,5 @@
- - retrieve what type of bin it is
+ - retrieve what type of bin it is in URL
 
- - make images clickable to make them bigger
  - beginning screen to choose between camera or form
 
 
@@ -73,3 +72,5 @@ GEDAAN 21 maart:
 - added recycle bin and non recycle bin title
 - added functionality for different kinds of bins
 
+GEDAAN 22 maart:
+- images are now clickable for a more info dialog

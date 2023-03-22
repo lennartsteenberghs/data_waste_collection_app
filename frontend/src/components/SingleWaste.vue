@@ -8,8 +8,9 @@
         >
           <img
             class="rounded-full mx-auto bg-white w-14 h-14 object-contain"
-            :src="getImgUrl()"
+            :src="getImgUrl('image1.png')"
             @error="getAltImgUrl()"
+            @click="openDialog"
           />
         </q-card-section>
         <q-card-section
@@ -18,8 +19,9 @@
         >
           <img
             class="rounded-full mx-auto bg-white w-14 h-14 object-contain"
-            :src="getImgUrl()"
+            :src="getImgUrl('image1.png')"
             @error="getAltImgUrl()"
+            @click="openDialog"
           />
         </q-card-section>
 
@@ -53,14 +55,43 @@
           </q-card-section>
         </q-card-section>
       </q-card-section>
+      <q-dialog v-model="dialogVisible"
+        ><q-carousel
+          transition-prev="slide-right"
+          transition-next="slide-left"
+          swipeable
+          animated
+          v-model="carouselSlide"
+          control-color="primary"
+          navigation-icon="radio_button_unchecked"
+          navigation
+          arrows
+          padding
+          class="bg-white shadow-1 rounded-lg"
+        >
+          <q-carousel-slide
+            v-for="contents in anotherTestContent"
+            :name="contents.id"
+            class="column no-wrap flex-center"
+          >
+            <img
+              class="rounded-none mx-auto bg-white w-fit h-fit object-contain"
+              :src="getImgUrl(contents.img)"
+              @error="getAltImgUrl()"
+            />
+            <div class="q-mt-md text-center">{{ contents.text }}</div>
+          </q-carousel-slide>
+        </q-carousel></q-dialog
+      >
     </q-card>
   </div>
 </template>
 
 <script>
-import { computed } from "vue";
+import { ref, computed } from "vue";
 import Counter from "./Counter.vue";
 import { useI18n } from "vue-i18n";
+import testContent from "../../data/test_content.js";
 
 export default {
   props: ["item", "binType"],
@@ -70,10 +101,10 @@ export default {
       props.item.count = newCount;
     };
 
-    const getImgUrl = () => {
+    const getImgUrl = (imageName) => {
       let imgUrl = require("../assets/app-icon.png");
       try {
-        imgUrl = require("../assets/image" + props.item.id + ".png");
+        imgUrl = require("../assets/item" + props.item.id + "/" + imageName);
       } catch (e) {
         console.log("image could not be found for item with id =", props.item.id);
         imgUrl = require("../assets/app-icon.png");
@@ -85,6 +116,11 @@ export default {
     };
 
     const { locale } = useI18n({ useScope: "global" });
+
+    const dialogVisible = ref(false);
+    const openDialog = () => {
+      dialogVisible.value = true;
+    };
 
     const itemName = computed(() => {
       switch (locale.value) {
@@ -99,12 +135,19 @@ export default {
       }
     });
 
+    const carouselSlide = ref(1);
+    const anotherTestContent = ref(props.item.content);
+
     return {
       changeCount,
       getImgUrl,
       getAltImgUrl,
       locale,
       itemName,
+      dialogVisible,
+      openDialog,
+      carouselSlide,
+      anotherTestContent,
     };
   },
 };
