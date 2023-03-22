@@ -36,8 +36,8 @@
           <q-card-section class="p-0">
             <Counter
               v-if="
-                (binType !== 3 && item.mustBeRecycled) ||
-                (binType !== 2 && !item.mustBeRecycled)
+                (binType !== '3' && item.mustBeRecycled) ||
+                (binType !== '2' && !item.mustBeRecycled)
               "
               :item="item"
               class=""
@@ -70,7 +70,7 @@
           class="bg-white shadow-1 rounded-lg"
         >
           <q-carousel-slide
-            v-for="contents in anotherTestContent"
+            v-for="contents in itemContent"
             :name="contents.id"
             class="column no-wrap flex-center"
           >
@@ -91,7 +91,6 @@
 import { ref, computed } from "vue";
 import Counter from "./Counter.vue";
 import { useI18n } from "vue-i18n";
-import testContent from "../../data/test_content.js";
 
 export default {
   props: ["item", "binType"],
@@ -136,7 +135,7 @@ export default {
     });
 
     const carouselSlide = ref(1);
-    const anotherTestContent = ref(props.item.content);
+    const itemContent = ref(props.item.content);
 
     return {
       changeCount,
@@ -147,7 +146,7 @@ export default {
       dialogVisible,
       openDialog,
       carouselSlide,
-      anotherTestContent,
+      itemContent,
     };
   },
 };

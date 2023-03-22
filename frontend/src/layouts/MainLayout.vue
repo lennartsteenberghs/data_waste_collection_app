@@ -45,10 +45,10 @@ import { fasGlobe } from "@quasar/extras/fontawesome-v6";
 
 export default defineComponent({
   name: "MainLayout",
-  props: ["id"],
+  props: ["id", "binId"],
   components: { WasteList },
   setup(props) {
-    const binType = ref(3); // 1 = both, 2 = only recycling, 3 = only non-recycling
+    const binType = ref(props.binId); // 1 = both, 2 = only recycling, 3 = only non-recycling
 
     const wasteItems = ref(wasteItemData);
     const binId = ref(props.id);

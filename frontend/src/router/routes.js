@@ -3,7 +3,7 @@ import ThankYouLayout from 'layouts/ThankYouLayout.vue'
 
 const routes = [
   {
-    path: '/input/:id',
+    path: '/input/:id/:binId',
     name: 'home',
     component: MainLayout,
     props: true
@@ -17,7 +17,7 @@ const routes = [
   //redirect
   {
     path: '/',
-    redirect: './input/8500'
+    redirect: './input/8500/1'
   },
   {
     path: '/:catchAll(.*)*',

@@ -1,6 +1,5 @@
- - retrieve what type of bin it is in URL
-
  - beginning screen to choose between camera or form
+ - put content of wasteitemsdata in seperate folder
 
 
 LATER
@@ -74,3 +73,4 @@ GEDAAN 21 maart:
 
 GEDAAN 22 maart:
 - images are now clickable for a more info dialog
+- binType is now dependent on URL
