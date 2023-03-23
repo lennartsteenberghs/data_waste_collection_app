@@ -4,8 +4,6 @@
 
  - take picture and upload it
 
- - put q-btn-dropdown in separate component
-
 LATER
 
 - UI aanpasbaar maken aan schermgrootte (change dimensions to ratios)
@@ -80,3 +78,4 @@ GEDAAN 22 maart:
 
 GEDAAN 23 maart:
 - put LanguageChooser in a seperate component
+- made basic homescreen
