@@ -5,13 +5,13 @@ import MenuLayout from 'layouts/MenuLayout.vue'
 const routes = [
   {
     path: '/input/:id/:binId',
-    name: 'home',
+    name: 'list',
     component: MainLayout,
     props: true
   },
   {
-    path: '/home/',
-    name: 'menu',
+    path: '/home/:id/:binId',
+    name: 'home',
     component: MenuLayout,
     props: true
   },
@@ -24,7 +24,7 @@ const routes = [
   //redirect
   {
     path: '/',
-    redirect: './input/8500/1'
+    redirect: './home/8500/1'
   },
   {
     path: '/:catchAll(.*)*',

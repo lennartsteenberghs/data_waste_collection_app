@@ -23,6 +23,7 @@
       <div class="text-center place-content-center flex items-center mx-auto">
         <div
           class="py-3 px-2 mx-2 w-24 bg-white text-space-cadet shadow-sm shadow-slate-600 rounded-xl"
+          @click="goToCamera"
         >
           <q-icon class="text-3xl pb-2" :name="fasCamera" />
 
@@ -31,6 +32,7 @@
         <div class="px-2">or</div>
         <div
           class="py-3 px-2 mx-2 w-24 bg-white text-space-cadet shadow-sm shadow-slate-600 rounded-xl"
+          @click="goToList"
         >
           <q-icon class="text-3xl pb-2" :name="fasList" />
           <div>Pick from the list</div>
@@ -42,15 +44,34 @@
 
 <script>
 import { defineComponent, ref } from "vue";
+import { useRouter } from "vue-router";
 import LanguageChooser from "src/components/LanguageChooser.vue";
 import { fasCamera, fasList } from "@quasar/extras/fontawesome-v6";
 
 export default defineComponent({
   name: "MenuLayout",
-  props: [],
+  props: ["id", "binId"],
   components: { LanguageChooser },
   setup(props) {
-    return { fasCamera, fasList };
+    const router = useRouter();
+    const goToList = () => {
+      router.push({
+        name: "list",
+        replace: false,
+        props: true,
+        params: { id: props.id, binId: props.binId },
+      });
+    };
+    const goToCamera = () => {
+      router.push({
+        name: "list",
+        replace: false,
+        props: true,
+        params: { id: props.id, binId: props.binId },
+      });
+    };
+
+    return { fasCamera, fasList, goToList, goToCamera };
   },
 });
 </script>

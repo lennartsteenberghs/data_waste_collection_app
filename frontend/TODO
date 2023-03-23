@@ -1,4 +1,4 @@
- - beginning screen to choose between camera or form
+  - remove hashtag inURL
 
  - put content of wasteitemsdata in seperate folder
 
@@ -80,3 +80,4 @@ GEDAAN 23 maart:
 - put LanguageChooser in a seperate component
 - made basic homescreen
 - updated layout 404 page and home page
+- added routing to home page
