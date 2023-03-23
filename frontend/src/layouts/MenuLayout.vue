@@ -13,7 +13,7 @@
       </q-toolbar>
     </q-header>
     <q-page-container
-      class="bg-space-cadet text-white h-screen flex-coljustify-center content-start"
+      class="bg-space-cadet text-white h-screen flex-col justify-center content-start"
     >
       <div class="text-center pt-32 pb-6">
         <div class="text-3xl pb-2">Welcome!</div>
@@ -64,7 +64,7 @@ export default defineComponent({
     };
     const goToCamera = () => {
       router.push({
-        name: "list",
+        name: "camera",
         replace: false,
         props: true,
         params: { id: props.id, binId: props.binId },

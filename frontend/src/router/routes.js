@@ -1,6 +1,7 @@
 import MainLayout from 'layouts/MainLayout.vue'
 import ThankYouLayout from 'layouts/ThankYouLayout.vue'
 import MenuLayout from 'layouts/MenuLayout.vue'
+import CameraLayout from 'layouts/CameraLayout.vue'
 
 const routes = [
   {
@@ -13,6 +14,12 @@ const routes = [
     path: '/home/:id/:binId',
     name: 'home',
     component: MenuLayout,
+    props: true
+  },
+  {
+    path: '/camera/:id/:binId',
+    name: 'camera',
+    component: CameraLayout,
     props: true
   },
   {
