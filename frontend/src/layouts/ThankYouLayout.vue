@@ -9,20 +9,7 @@
         <q-toolbar-title class="text-center text-2xl">
           {{ $t("toolbarTitle") }}</q-toolbar-title
         >
-        <q-btn-dropdown class="p-0 m-0" color="space-cadet" :icon="fasGlobe" size="12px">
-          <q-list>
-            <q-item
-              v-for="entry in languages"
-              clickable
-              v-close-popup
-              @click="changeLocale(entry.value)"
-            >
-              <q-item-section>
-                <flag :iso="entry.flag" v-bind:squared="false" />
-              </q-item-section>
-            </q-item>
-          </q-list>
-        </q-btn-dropdown>
+        <LanguageChooser />
       </q-toolbar>
     </q-header>
     <q-page-container class="flex-1 justify-between p-5">
@@ -62,32 +49,18 @@
 
 <script>
 import { defineComponent, ref } from "vue";
-import { useI18n } from "vue-i18n";
-import { fasGlobe } from "@quasar/extras/fontawesome-v6";
+import LanguageChooser from "src/components/LanguageChooser.vue";
 
 export default defineComponent({
   name: "ThankYouLayout",
   props: ["amount"],
-  components: {},
+  components: { LanguageChooser },
   setup(props) {
     const amount = ref(props.amount);
     amount.value = amount.value / 1000;
     amount.value = Math.round(amount.value * 1000) / 1000;
     const feedbackUrl = ref("https://forms.gle/YhFdzeCWb13hBQAV6");
-
-    const { locale } = useI18n({ useScope: "global" });
-
-    const languages = ref([
-      { flag: "us", value: "en", label: "English" },
-      { flag: "aw", value: "aw", label: "Papiamentu" },
-      { flag: "es", value: "es", label: "Español" },
-      { flag: "nl", value: "nl", label: "Nederlands" },
-    ]);
-
-    const changeLocale = (newLocale) => {
-      locale.value = newLocale;
-    };
-    return { amount, feedbackUrl, locale, languages, fasGlobe, changeLocale };
+    return { amount, feedbackUrl };
   },
 });
 </script>

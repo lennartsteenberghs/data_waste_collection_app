@@ -9,21 +9,7 @@
         <q-toolbar-title class="text-center text-2xl">
           {{ $t("toolbarTitle") }}</q-toolbar-title
         >
-        <q-btn-dropdown class="p-0 m-0" color="space-cadet" :icon="fasGlobe" size="12px">
-          <q-list>
-            <q-item
-              v-for="entry in languages"
-              clickable
-              v-close-popup
-              @click="changeLocale(entry.value)"
-            >
-              <q-item-section>
-                <flag :iso="entry.flag" v-bind:squared="false" />
-                <div>{{ entry.value }}</div>
-              </q-item-section>
-            </q-item>
-          </q-list>
-        </q-btn-dropdown>
+        <LanguageChooser />
       </q-toolbar>
     </q-header>
     <q-page-container>
@@ -42,39 +28,22 @@
 import { defineComponent, ref } from "vue";
 import WasteList from "../components/WasteList.vue";
 import wasteItemData from "../../data/waste_items_data.js";
-import { useI18n } from "vue-i18n";
-import { fasGlobe } from "@quasar/extras/fontawesome-v6";
+import LanguageChooser from "src/components/LanguageChooser.vue";
 
 export default defineComponent({
   name: "MainLayout",
   props: ["id", "binId"],
-  components: { WasteList },
+  components: { WasteList, LanguageChooser, LanguageChooser },
   setup(props) {
     const binType = ref(props.binId); // 1 = both, 2 = only recycling, 3 = only non-recycling
 
     const wasteItems = ref(wasteItemData);
     const binId = ref(props.id);
 
-    const { locale } = useI18n({ useScope: "global" });
-    const languages = ref([
-      { flag: "us", value: "en", label: "English" },
-      { flag: "aw", value: "aw", label: "Papiamentu" },
-      { flag: "es", value: "es", label: "Español" },
-      { flag: "nl", value: "nl", label: "Nederlands" },
-    ]);
-
-    const changeLocale = (newLocale) => {
-      locale.value = newLocale;
-    };
-
     return {
       wasteItems,
       binId,
       binType,
-      locale,
-      languages,
-      changeLocale,
-      fasGlobe,
     };
   },
 });

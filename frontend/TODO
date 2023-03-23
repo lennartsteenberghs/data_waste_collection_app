@@ -4,6 +4,8 @@
 
  - take picture and upload it
 
+ - put q-btn-dropdown in separate component
+
 LATER
 
 - UI aanpasbaar maken aan schermgrootte (change dimensions to ratios)
@@ -12,8 +14,8 @@ LATER
 - Fix dat het werkt als PWA
 - add dark mode
 - animate amount of waste
-- fix 404 page
 - put Mainlayout and ThankYouLayout in one page to have the same header
+- fix the return page bug
 
 
 
