@@ -33,7 +33,7 @@ import LanguageChooser from "src/components/LanguageChooser.vue";
 export default defineComponent({
   name: "MainLayout",
   props: ["id", "binId"],
-  components: { WasteList, LanguageChooser, LanguageChooser },
+  components: { WasteList, LanguageChooser },
   setup(props) {
     const binType = ref(props.binId); // 1 = both, 2 = only recycling, 3 = only non-recycling
 

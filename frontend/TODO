@@ -77,3 +77,6 @@ GEDAAN 22 maart:
 - images are now clickable for a more info dialog
 - binType is now dependent on URL
 - changed url to env variables
+
+GEDAAN 23 maart:
+- put LanguageChooser in a seperate component
