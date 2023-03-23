@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import { defineComponent, ref, onMounted } from "vue";
+import { defineComponent, ref, onMounted, onBeforeUnmount } from "vue";
 import { useRouter } from "vue-router";
 import LanguageChooser from "src/components/LanguageChooser.vue";
 import dataURItoBlob from "src/composables/dataURItoBlob";
@@ -69,6 +69,11 @@ export default defineComponent({
     onMounted(() => {
       initCamera();
     });
+    onBeforeUnmount(() => {
+      if (hasCameraSupport.value) {
+        disableCamera();
+      }
+    });
 
     const initCamera = () => {
       navigator.mediaDevices
@@ -84,13 +89,24 @@ export default defineComponent({
     };
 
     const captureImage = () => {
-      canvas.value.width = video.value.getBoundingClientRect().width;
-      canvas.value.height = video.value.getBoundingClientRect().height;
-      let context = canvas.value.getContext("2d");
-      context.drawImage(video.value, 0, 0, canvas.value.width, canvas.value.height);
       imageCaptured.value = !imageCaptured.value;
-      photo.value = dataURItoBlob(canvas.value.toDataURL());
-      console.log(photo.value);
+      if (imageCaptured.value) {
+        canvas.value.width = video.value.getBoundingClientRect().width;
+        canvas.value.height = video.value.getBoundingClientRect().height;
+        let context = canvas.value.getContext("2d");
+        context.drawImage(video.value, 0, 0, canvas.value.width, canvas.value.height);
+        photo.value = dataURItoBlob(canvas.value.toDataURL());
+        console.log(photo.value);
+        disableCamera();
+      } else {
+        initCamera();
+      }
+    };
+
+    const disableCamera = () => {
+      video.value.srcObject.getVideoTracks().forEach((track) => {
+        track.stop();
+      });
     };
 
     const router = useRouter();

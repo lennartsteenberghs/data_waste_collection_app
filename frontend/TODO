@@ -4,6 +4,8 @@
 
  - take picture and upload it
 
+ - fix camera access for mobile
+
 LATER
 
 - UI aanpasbaar maken aan schermgrootte (change dimensions to ratios)
@@ -81,3 +83,4 @@ GEDAAN 23 maart:
 - made basic homescreen
 - updated layout 404 page and home page
 - added routing to home page
+- added basic camera implementation
