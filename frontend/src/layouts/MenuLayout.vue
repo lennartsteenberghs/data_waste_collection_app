@@ -13,14 +13,14 @@
       </q-toolbar>
     </q-header>
     <q-page-container
-      class="bg-space-cadet text-white h-screen flex justify-center content-start"
+      class="bg-space-cadet text-white h-screen flex-coljustify-center content-start"
     >
       <div class="text-center pt-32 pb-6">
         <div class="text-3xl pb-2">Welcome!</div>
         <div>How will you register your waste?</div>
       </div>
 
-      <div class="text-center flex items-center">
+      <div class="text-center place-content-center flex items-center mx-auto">
         <div
           class="py-3 px-2 mx-2 w-24 bg-white text-space-cadet shadow-sm shadow-slate-600 rounded-xl"
         >
