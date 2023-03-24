@@ -80,7 +80,7 @@
               @error="getAltImgUrl()"
             />
             <div class="q-mt-md text-center">
-              {{ getContentText(contents.id) }}
+              {{ getContentText(contents) }}
             </div>
           </q-carousel-slide>
         </q-carousel></q-dialog
@@ -153,17 +153,16 @@ export default {
     });
     const carouselSlide = ref(itemContent.value[0].id);
 
-    const getContentText = (id) => {
-      let tempContent = wasteItemsContent.filter((i) => i.id === id);
+    const getContentText = (content) => {
       switch (locale.value) {
         case "en":
-          return tempContent[0].text_en;
+          return content.text_en;
         case "aw":
-          return tempContent[0].text_aw;
+          return content.text_aw;
         case "es":
-          return tempContent[0].text_es;
+          return content.text_es;
         default:
-          return tempContent[0].text_nl;
+          return content.text_nl;
       }
     };
 
