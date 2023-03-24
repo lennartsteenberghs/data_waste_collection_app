@@ -1,4 +1,6 @@
-  - remove hashtag in URL
+ - remove hashtag in URL
+
+ - fix post failed
 
  - put content of wasteitemsdata in seperate folder
  - content in different languages
@@ -90,3 +92,4 @@ GEDAAN 23 maart:
 
 GEDAAN 24 maart:
 - changed camera to front camera for mobile users
+- given more logical names to files
