@@ -31,7 +31,7 @@ import wasteItemData from "../../data/waste_items_data.js";
 import LanguageChooser from "src/components/LanguageChooser.vue";
 
 export default defineComponent({
-  name: "MainLayout",
+  name: "ListLayout",
   props: ["id", "binId"],
   components: { WasteList, LanguageChooser },
   setup(props) {

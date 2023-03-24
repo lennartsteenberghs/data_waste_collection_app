@@ -1,4 +1,4 @@
-import MainLayout from 'layouts/MainLayout.vue'
+import ListLayout from 'src/layouts/ListLayout.vue'
 import ThankYouLayout from 'layouts/ThankYouLayout.vue'
 import MenuLayout from 'layouts/MenuLayout.vue'
 import CameraLayout from 'layouts/CameraLayout.vue'
@@ -7,7 +7,7 @@ const routes = [
   {
     path: '/input/:id/:binId',
     name: 'list',
-    component: MainLayout,
+    component: ListLayout,
     props: true
   },
   {
