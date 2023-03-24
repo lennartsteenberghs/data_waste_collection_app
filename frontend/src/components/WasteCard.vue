@@ -79,7 +79,9 @@
               :src="getImgUrl(contents.img)"
               @error="getAltImgUrl()"
             />
-            <div class="q-mt-md text-center">{{ contents.text }}</div>
+            <div class="q-mt-md text-center">
+              {{ getContentText(contents.id) }}
+            </div>
           </q-carousel-slide>
         </q-carousel></q-dialog
       >
@@ -145,9 +147,25 @@ export default {
           return props.item.subname_nl;
       }
     });
+    const wasteItemsContent = require("../../data/wasteitemscontent.json");
+    const itemContent = computed(() => {
+      return wasteItemsContent.filter((i) => i.itemId === props.item.id);
+    });
+    const carouselSlide = ref(itemContent.value[0].id);
 
-    const carouselSlide = ref(1);
-    const itemContent = ref(props.item.content);
+    const getContentText = (id) => {
+      let tempContent = wasteItemsContent.filter((i) => i.id === id);
+      switch (locale.value) {
+        case "en":
+          return tempContent[0].text_en;
+        case "aw":
+          return tempContent[0].text_aw;
+        case "es":
+          return tempContent[0].text_es;
+        default:
+          return tempContent[0].text_nl;
+      }
+    };
 
     return {
       changeCount,
@@ -160,6 +178,7 @@ export default {
       openDialog,
       carouselSlide,
       itemContent,
+      getContentText,
     };
   },
 };

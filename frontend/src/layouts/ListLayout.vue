@@ -27,8 +27,6 @@
 <script>
 import { defineComponent, ref } from "vue";
 import WasteList from "../components/WasteList.vue";
-import wasteItemData2 from "../../data/waste_items_data.js";
-import wasteItemData from "src/composables/getWasteItemsData.js";
 import LanguageChooser from "src/components/LanguageChooser.vue";
 
 export default defineComponent({
@@ -38,11 +36,10 @@ export default defineComponent({
   setup(props) {
     const binType = ref(props.binId); // 1 = both, 2 = only recycling, 3 = only non-recycling
 
-    console.log(wasteItemData2);
-    console.log("tussenlijn0");
-    console.log(wasteItemData);
+    // const wasteItems = ref(wasteItemData);
+    const wasteItems = require("../../data/wasteitems.json");
+    console.log(wasteItems);
 
-    const wasteItems = ref(wasteItemData);
     const binId = ref(props.id);
 
     return {

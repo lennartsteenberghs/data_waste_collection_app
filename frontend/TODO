@@ -3,7 +3,7 @@
  - fix post failed
 
  - parse excel during build
- - retrieve items from new files
+ - retrieve content from new file
 
  - upload picture
  - make image quality better
@@ -95,3 +95,4 @@ GEDAAN 24 maart:
 - given more logical names to files
 - added excel to JSON parser
 - retrieve items from JSON file
+- content now also retrievable from JSON in all languages
