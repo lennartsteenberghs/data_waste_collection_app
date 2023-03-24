@@ -2,8 +2,8 @@
 
  - fix post failed
 
- - put content of wasteitemsdata in seperate folder
- - content in different languages
+ - parse excel during build
+ -
 
  - upload picture
  - make image quality better
@@ -93,3 +93,4 @@ GEDAAN 23 maart:
 GEDAAN 24 maart:
 - changed camera to front camera for mobile users
 - given more logical names to files
+- added excel to JSON parser
