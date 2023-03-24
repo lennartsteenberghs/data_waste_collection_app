@@ -29,7 +29,7 @@
           class="flex-1 text-md text-left sm:text-xl md:text-2xl font-bold px-1"
           >{{ itemName }}
           <br />
-          {{ item.subName }}
+          {{ itemSubName }}
         </q-card-section>
 
         <q-card-section class="p-0 w-4/12">
@@ -124,13 +124,25 @@ export default {
     const itemName = computed(() => {
       switch (locale.value) {
         case "en":
-          return props.item.name.en;
+          return props.item.name_en;
         case "aw":
-          return props.item.name.aw;
+          return props.item.name_aw;
         case "es":
-          return props.item.name.es;
+          return props.item.name_es;
         default:
-          return props.item.name.nl;
+          return props.item.name_nl;
+      }
+    });
+    const itemSubName = computed(() => {
+      switch (locale.value) {
+        case "en":
+          return props.item.subname_en;
+        case "aw":
+          return props.item.subname_aw;
+        case "es":
+          return props.item.subname_es;
+        default:
+          return props.item.subname_nl;
       }
     });
 
@@ -143,6 +155,7 @@ export default {
       getAltImgUrl,
       locale,
       itemName,
+      itemSubName,
       dialogVisible,
       openDialog,
       carouselSlide,

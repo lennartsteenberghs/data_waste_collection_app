@@ -3,7 +3,7 @@
  - fix post failed
 
  - parse excel during build
- -
+ - retrieve items from new files
 
  - upload picture
  - make image quality better
@@ -94,3 +94,4 @@ GEDAAN 24 maart:
 - changed camera to front camera for mobile users
 - given more logical names to files
 - added excel to JSON parser
+- retrieve items from JSON file
