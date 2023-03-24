@@ -1,6 +1,11 @@
 <template>
-  <q-btn-dropdown class="p-0 m-0" color="space-cadet" :icon="fasGlobe" size="12px">
-    <q-list>
+  <q-btn-dropdown
+    class="p-0 pl-1 m-0 shadow-none"
+    color="space-cadet"
+    :icon="fasGlobe"
+    size="12px"
+  >
+    <q-list class="shadow-none">
       <q-item
         v-for="entry in languages"
         clickable
