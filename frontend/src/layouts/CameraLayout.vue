@@ -78,7 +78,10 @@ export default defineComponent({
     const initCamera = () => {
       navigator.mediaDevices
         .getUserMedia({
-          video: true,
+          video: {
+            facingMode: "environment", // choose the back camera
+            height: 720, // set the height of the video stream to 720 pixels
+          },
         })
         .then((stream) => {
           video.value.srcObject = stream;
