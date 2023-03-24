@@ -80,7 +80,6 @@ export default defineComponent({
         .getUserMedia({
           video: {
             facingMode: "environment", // choose the back camera
-            height: 720, // set the height of the video stream to 720 pixels
           },
         })
         .then((stream) => {

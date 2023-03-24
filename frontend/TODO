@@ -1,13 +1,12 @@
-  - remove hashtag inURL
+  - remove hashtag in URL
 
  - put content of wasteitemsdata in seperate folder
  - content in different languages
 
- - take picture and upload it
+ - upload picture
+ - make image quality better
 
  - set carousel to fixed size so when image is loading it doesn't look different
-
- - fix camera access for mobile: front camera
 
 LATER
 
@@ -88,3 +87,6 @@ GEDAAN 23 maart:
 - added routing to home page
 - added basic camera implementation
 - disabled camera when not in use
+
+GEDAAN 24 maart:
+- changed camera to front camera for mobile users
