@@ -8,7 +8,7 @@
         >
           <img
             class="rounded-full mx-auto bg-white w-14 h-14 object-contain"
-            :src="getImgUrl('image1.png')"
+            :src="getImgUrl(itemContent[0].img)"
             @error="getAltImgUrl()"
             @click="openDialog"
           />
@@ -19,17 +19,19 @@
         >
           <img
             class="rounded-full mx-auto bg-white w-14 h-14 object-contain"
-            :src="getImgUrl('image1.png')"
+            :src="getImgUrl(itemContent[0].img)"
             @error="getAltImgUrl()"
             @click="openDialog"
           />
         </q-card-section>
 
         <q-card-section
-          class="flex-1 text-md text-left sm:text-xl md:text-2xl font-bold px-1"
+          class="flex-1 text-left text-black text-md sm:text-xl md:text-2xl font-bold px-1"
           >{{ itemName }}
           <br />
-          {{ itemSubName }}
+          <div class="text-subtitle-gray text-xs sm:text-md md:text-lg">
+            {{ itemSubName }}
+          </div>
         </q-card-section>
 
         <q-card-section class="p-0 w-4/12">
@@ -65,9 +67,9 @@
           control-color="primary"
           navigation-icon="radio_button_unchecked"
           navigation
-          arrows
           padding
-          class="bg-white shadow-1 rounded-lg"
+          arrows
+          class="bg-white h-3/5 w-11-12"
         >
           <q-carousel-slide
             v-for="contents in itemContent"

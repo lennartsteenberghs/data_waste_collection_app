@@ -98,4 +98,10 @@ export default defineComponent({
 .bg-recycle-green {
   background: #4caf50;
 }
+.text-subtitle-gray {
+  color: #414141;
+}
+.bg-subtitle-gray {
+  background: #414141;
+}
 </style>
