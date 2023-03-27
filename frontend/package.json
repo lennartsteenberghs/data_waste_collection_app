@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
-    "build:json": "node src/composables/excelToJson.mjs data/wasteitemsexcel.xlsx data/wasteitems",
+    "build:json": "node src/composables/excelToJson.mjs data/wasteitemsexcel.xlsx",
     "build": "quasar build"
   },
   "dependencies": {

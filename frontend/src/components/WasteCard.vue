@@ -69,7 +69,7 @@
           navigation
           padding
           arrows
-          class="bg-white h-3/5 w-11-12"
+          class="bg-white h-3/5 w-11/12"
         >
           <q-carousel-slide
             v-for="contents in itemContent"

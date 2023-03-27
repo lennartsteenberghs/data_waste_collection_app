@@ -2,8 +2,6 @@
 
  - parse excel during build
 
- - andere talen ook via een excel
-
  - "for more info, click the picture of the category"
 
  - upload picture
@@ -101,3 +99,4 @@ GEDAAN 24 maart:
 
 GEDAAN 27 maart:
 - changed w and h carousel
+- all translations now come from an excel

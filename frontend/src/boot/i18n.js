@@ -17,7 +17,9 @@ export default ({ app }) => {
   app.use(FlagIcon)
 }
 
-const messages = {
+const messages = require("../../data/messages.json");
+
+const messages2 = {
   'en': {
     toolbarTitle: "Let's collect data!",
     listTitle: "What did you throw away?",
