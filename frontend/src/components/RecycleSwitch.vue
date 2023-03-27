@@ -13,8 +13,8 @@
       size="xs"
       padding="none"
       :options="[
-        { label: 'Normal bin', value: false },
-        { label: 'Recycle bin', value: true },
+        { label: $t('normalBin'), value: false },
+        { label: $t('recycleBin'), value: true },
       ]"
       @click="$emit('recycledChange', inRecycleBin)"
     />
@@ -32,8 +32,8 @@
       size="xs"
       padding="none"
       :options="[
-        { label: 'Normal bin', value: false },
-        { label: 'Recycle bin', value: true },
+        { label: $t('normalBin'), value: false },
+        { label: $t('recycleBin'), value: true },
       ]"
       @click="$emit('recycledChange', inRecycleBin)"
     />

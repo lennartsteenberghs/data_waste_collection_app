@@ -1,5 +1,5 @@
 <template>
-  <q-card class="flex-1 max-w-sm p-0 rounded-lg shadow-none bg-white">
+  <q-card class="flex-1 max-w-xs p-0 rounded-lg shadow-none bg-white">
     <q-card-section class="flex items-center justify-between px-0" horizontal>
       <q-card-section class="p-0">
         <q-btn
@@ -8,7 +8,7 @@
           icon="-"
           color="recycle-green"
           round
-          size="sm"
+          size="0.9em"
           @click="decrement"
         />
         <q-btn
@@ -17,12 +17,12 @@
           icon="-"
           color="paper-yellow"
           round
-          size="sm"
+          size="0.9em"
           @click="decrement"
         />
       </q-card-section>
 
-      <q-card-section class="flex-1 text-center text-xs p-1">{{ count }}</q-card-section>
+      <q-card-section class="flex-1 text-center text-lg p-1">{{ count }}</q-card-section>
 
       <q-card-section class="p-0">
         <q-btn
@@ -31,7 +31,7 @@
           icon="+"
           color="recycle-green"
           round
-          size="sm"
+          size="0.9em"
           @click="increment"
         />
         <q-btn
@@ -40,7 +40,7 @@
           icon="+"
           color="paper-yellow"
           round
-          size="sm"
+          size="0.9em"
           @click="increment"
         />
       </q-card-section>

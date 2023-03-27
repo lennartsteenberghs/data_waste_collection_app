@@ -6,7 +6,7 @@ const postWasteData = () => {
 
     const post = async (list, binId) => {
         const body = turnIntoJSON(list)
-        const url = "https://data-waste-collection-app-backend.onrender.com/wasteinput/" + binId
+        const url = process.env.API_POST_URL + binId
         console.log("posting data to: ",url)
 
         const requestOptions = {
@@ -31,8 +31,7 @@ const postWasteData = () => {
         const newList = []
         for (let i = 0; i < list.length; i++) {
             console.log(list[i])
-            console.log(list[i].recycled)
-            const item = { 'plastic_type': list[i].id, 'amount': list[i].count, 'recycled': list[i].recycled }
+            const item = { 'plastic_type': list[i].id, 'amount': list[i].count}
             newList.push(item)
         }
         const jsonOutput = JSON.stringify(newList)

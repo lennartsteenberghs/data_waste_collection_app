@@ -1,43 +1,47 @@
 <template>
   <div class="">
-    <div class="pt-2 pl-5 pb-0 text-left">
+    <div class="pt-2 pl-5 pb-0 text-left flex items-center">
       <q-icon class="text-recycle-green text-2xl" :name="fasRecycle" />
+      <div class="ml-2 bg-recycle-green rounded-lg shadow-md py-1 px-2 text-white">
+        {{ $t("recyclingBin") }}
+      </div>
     </div>
     <div class="" v-for="item in wasteItemsRecyclable" :key="item.id">
-      <SingleWaste :item="item" />
+      <WasteCard :item="item" :binType="binType" />
     </div>
-    <div class="pl-5 pb-0 text-left">
+    <div class="pt-2 pl-5 pb-0 text-left flex items-center">
       <q-icon class="text-2xl text-paper-yellow text-opacity-85" :name="fasTrash" />
+      <div class="ml-2 bg-paper-yellow rounded-lg shadow-md py-1 px-2 text-white">
+        {{ $t("nonRecyclingBin") }}
+      </div>
     </div>
     <div class="" v-for="item in wasteItemsNonRecyclable" :key="item.id">
-      <SingleWaste :item="item" />
+      <WasteCard :item="item" :binType="binType" />
     </div>
   </div>
   <div class="submit pb-4 align-top items-start">
-    <router-link :to="{ name: 'thankyou', params: { amount: 69 } }">
-      <q-btn
-        class="bg-space-cadet"
-        round
-        flat
-        @click="uploadData"
-        label="Submit"
-        style="width: 200px"
-      />
-    </router-link>
+    <q-btn
+      class="bg-space-cadet"
+      round
+      flat
+      @click="uploadData"
+      :label="$t('submitButton')"
+      style="width: 200px"
+    />
   </div>
 </template>
 
 <script>
 import { computed } from "vue";
 import { useRouter } from "vue-router";
-import SingleWaste from "./SingleWaste.vue";
+import WasteCard from "./WasteCard.vue";
 import postWasteData from "src/composables/postWasteData";
 import getCO2Amount from "src/composables/getCO2Amount";
 import { fasRecycle, fasTrash } from "@quasar/extras/fontawesome-v6";
 
 export default {
-  props: ["wasteItems", "binId"],
-  components: { SingleWaste },
+  props: ["wasteItems", "binId", "binType"],
+  components: { WasteCard },
   setup(props) {
     const { postDataError, post } = postWasteData();
     const router = useRouter();
@@ -55,12 +59,18 @@ export default {
 
     const uploadData = () => {
       let finalWasteItems = props.wasteItems.filter((item) => item.count > 0);
-      // go to next page with router
-      // TODO: add prop of co2Amount
-      // router.push({ name: "thankyou", params: { co2Amount: 69 } });
-      console.log("co2amount in wasteList: ", co2Amount.value);
-      post(finalWasteItems, props.binId);
-      console.log(finalWasteItems);
+      if (finalWasteItems.length) {
+        post(finalWasteItems, props.binId);
+        console.log(finalWasteItems);
+        router.push({
+          name: "thankyou",
+          replace: false,
+          props: true,
+          params: { amount: co2Amount.value },
+        });
+      } else {
+        console.log("No data was entered");
+      }
     };
     return {
       uploadData,

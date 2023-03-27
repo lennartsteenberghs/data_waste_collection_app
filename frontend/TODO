@@ -1,33 +1,23 @@
+ - fix post failed
 
+ - parse excel during build
 
-- Header toevoegen
-  - add parrot and app icon into header
+ - upload picture
+ - make image quality better
 
-- change color scheme
-
-- ThankYouLayout UI aanpassen
-  - add gif
-  - add flashing red border to the link box
-
-- Load 'getMessages' immediately when starting website
-  - prop meegeven met router
-  - data anders parsen en url aanpassen in getCO2Amount.js |OK|
-  - als we niks krijgen uit get request, een andere message geven dan die van de kg |OK|
-
-
-
-
+ - set carousel to fixed size so when image is loading it doesn't look different
 
 LATER
 
-- UI aanpasbaar maken aan schermgrootte
-- support multiple languages
-- recycledbin:
-  - small error message when wrong item is in wrong bin (when switch is switched)
+- UI aanpasbaar maken aan schermgrootte (change dimensions to ratios)
 - make question mark for pop up info on how to use the app
-- Via ENV variables de urls doen
 - change font
+- remove hashtag in URL
 - Fix dat het werkt als PWA
+- add dark mode
+- animate amount of waste
+- put Mainlayout and ThankYouLayout in one page to have the same header
+- fix the return page bug
 
 
 
@@ -62,3 +52,50 @@ GEDAAN 9 maart
 GEDAAN 10 maart
 - correct image is now shown per item
 - made all colors customizable, changed color palette
+- added support for if img is not available
+- added Aruba flag header
+- added gif
+- make empty submit impossible
+- fixed bug of passing co2Saved to second screen
+
+GEDAAN 13 maart
+- meeting with alba about workshops and test phase of the app
+- implement i18n plugin for vue
+
+GEDAAN 14 maart:
+- first demo and feeback on that + future demo plans
+- change all hardcoded texts to variables for i18n translation
+
+GEDAAN 20 maart:
+- made dropdown menu with flags to change the language
+- made itemnames adaptable to language
+
+GEDAAN 21 maart:
+- removed RecycleSwitch button and functionality
+- added recycle bin and non recycle bin title
+- added functionality for different kinds of bins
+
+GEDAAN 22 maart:
+- images are now clickable for a more info dialog
+- binType is now dependent on URL
+- changed url to env variables
+
+GEDAAN 23 maart:
+- put LanguageChooser in a seperate component
+- made basic homescreen
+- updated layout 404 page and home page
+- added routing to home page
+- added basic camera implementation
+- disabled camera when not in use
+
+GEDAAN 24 maart:
+- changed camera to front camera for mobile users
+- given more logical names to files
+- added excel to JSON parser
+- retrieve items from JSON file
+- content now also retrievable from JSON in all languages
+
+GEDAAN 27 maart:
+- changed w and h carousel
+- all translations now come from an excel
+- added 'more info' subtitle
