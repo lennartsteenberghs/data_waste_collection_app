@@ -2,8 +2,6 @@
 
  - parse excel during build
 
- - "for more info, click the picture of the category"
-
  - upload picture
  - make image quality better
 
@@ -100,3 +98,4 @@ GEDAAN 24 maart:
 GEDAAN 27 maart:
 - changed w and h carousel
 - all translations now come from an excel
+- added 'more info' subtitle

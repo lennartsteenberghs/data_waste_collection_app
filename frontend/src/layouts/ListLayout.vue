@@ -16,10 +16,15 @@
       <div class="text-center text-2xl pt-8 pb-2">
         {{ $t("listTitle") }}
       </div>
+      <div
+        class="mx-auto mb-2 w-fit text-center text-xs bg-white border-red-500 border rounded-lg shadow-md py-1 px-2 text-black"
+      >
+        {{ $t("moreInformationPressPicture") }}
+      </div>
       <div class="" v-if="wasteItems.length">
         <WasteList :wasteItems="wasteItems" :binId="binId" :binType="binType" />
       </div>
-      <div v-else>Loading application...</div>
+      <div v-else>{{ $t("loadingText") }}</div>
     </q-page-container>
   </q-layout>
 </template>
