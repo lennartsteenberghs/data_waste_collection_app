@@ -18,7 +18,8 @@
           {{ $t("defaultThankYouMessage") }}
         </div>
         <div v-else class="px-2 text-center text-3xl pt-10 pb-6">
-          {{ $t("co2MessagePart1") }} {{ amount }} {{ $t("co2MessagePart2") }}
+          {{ $t("co2MessagePart1") }}
+          <AnimatedNumber :number="amount" /> {{ $t("co2MessagePart2") }}
         </div>
         <div class="">
           <iframe
@@ -48,18 +49,19 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, watch } from "vue";
 import LanguageChooser from "src/components/LanguageChooser.vue";
+import AnimatedNumber from "src/components/AnimatedNumber.vue";
 
 export default defineComponent({
   name: "ThankYouLayout",
   props: ["amount"],
-  components: { LanguageChooser },
+  components: { LanguageChooser, AnimatedNumber },
   setup(props) {
     const amount = ref(props.amount);
-    amount.value = amount.value / 1000;
-    amount.value = Math.round(amount.value * 1000) / 1000;
+
     const feedbackUrl = ref("https://forms.gle/YhFdzeCWb13hBQAV6");
+
     return { amount, feedbackUrl };
   },
 });

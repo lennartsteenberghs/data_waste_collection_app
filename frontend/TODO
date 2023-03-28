@@ -7,15 +7,19 @@
 
  - set carousel to fixed size so when image is loading it doesn't look different
 
+ - Fix dat het werkt als PWA
+    - add precaching
+    - background sync (queue API requests when offline)
+
+ - animate amount of waste
+
 LATER
 
 - UI aanpasbaar maken aan schermgrootte (change dimensions to ratios)
 - make question mark for pop up info on how to use the app
 - change font
 - remove hashtag in URL
-- Fix dat het werkt als PWA
 - add dark mode
-- animate amount of waste
 - put Mainlayout and ThankYouLayout in one page to have the same header
 - fix the return page bug
 
@@ -99,3 +103,4 @@ GEDAAN 27 maart:
 - changed w and h carousel
 - all translations now come from an excel
 - added 'more info' subtitle
+- made map of bins at university

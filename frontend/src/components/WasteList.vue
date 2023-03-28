@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
 import WasteCard from "./WasteCard.vue";
 import postWasteData from "src/composables/postWasteData";
@@ -56,6 +56,7 @@ export default {
 
     const { co2Amount, getCO2AmountError, loadCO2Amount } = getCO2Amount();
     loadCO2Amount(props.binId);
+    const tempCO2Amount = ref(7894);
 
     const uploadData = () => {
       let finalWasteItems = props.wasteItems.filter((item) => item.count > 0);
@@ -66,7 +67,7 @@ export default {
           name: "thankyou",
           replace: false,
           props: true,
-          params: { amount: co2Amount.value },
+          params: { amount: tempCO2Amount.value },
         });
       } else {
         console.log("No data was entered");
