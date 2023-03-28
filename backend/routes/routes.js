@@ -4,8 +4,7 @@ import express from "express";
 //import functions from controller
 import {
   createWaste,
-  showMotivationfact,
-  showwastetypes
+  showCO2_safed
 } from "../controllers/waste_controller.js";
 
 //init express router
