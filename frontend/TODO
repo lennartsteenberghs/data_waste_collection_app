@@ -1,7 +1,5 @@
  - fix post failed
 
- - parse excel during build
-
  - upload picture
  - make image quality better
 
@@ -102,3 +100,8 @@ GEDAAN 27 maart:
 - all translations now come from an excel
 - added 'more info' subtitle
 - made map of bins at university
+
+
+GEDAAN 28 maart:
+- parse excel during build
+- now deploys as PWA
