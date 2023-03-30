@@ -151,7 +151,6 @@ export default defineComponent({
         let context = canvas.value.getContext("2d");
         context.drawImage(video.value, 0, 0, canvas.value.width, canvas.value.height);
         photo.value = dataURItoBlob(canvas.value.toDataURL());
-        console.log(photo.value);
         disableCamera();
       } else {
         photo.value = null;
@@ -173,8 +172,6 @@ export default defineComponent({
     // post data to API and go to thankyou page
     const router = useRouter();
     const uploadData = () => {
-      console.log("Going to thankyou page");
-      console.log("sending: ", photo.value);
       post(props.finalWasteItems, props.binId, photo.value);
       router.push({
         name: "thankyou",

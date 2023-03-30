@@ -5,8 +5,6 @@
  https://stackoverflow.com/questions/49587831/how-to-append-files-and-data-to-formdata-in-vue-js
 
 
- - SEND RECYCLE TEXT/LOGO TO ALBA!!!!!
-
  - upload picture
  - make image quality better
 
@@ -15,7 +13,7 @@
  - Fix dat het werkt als InjectManifest PWA
     - background sync (queue API requests when offline)
 
- - animate amount of waste
+ - animate amount of waste (omni calculator, my plastic footprint, ...)
 
 LATER
 
