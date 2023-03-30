@@ -15,7 +15,7 @@ import {
 //create waste
 export async function createWaste(req, res) {
   const idbin = req.params.idbin;
-  const waste = req.body;
+  const waste = req.body.list;
   const boolphoto = req.params.photo;
   var idphoto = 0;
 
@@ -28,7 +28,6 @@ export async function createWaste(req, res) {
     const body = req.file.buffer;
     const contenttype = req.file.mimetype;
     await insertPhoto(idphoto, body, contenttype)
-    await insertPhotolink();
   }
   res.send("Waste insertion succeed")
 }
