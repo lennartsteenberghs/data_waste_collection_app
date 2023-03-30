@@ -50,7 +50,7 @@ import { fasCamera, fasList } from "@quasar/extras/fontawesome-v6";
 
 export default defineComponent({
   name: "MenuLayout",
-  props: ["id", "binId"],
+  props: ["binId", "binType"],
   components: { LanguageChooser },
   setup(props) {
     const router = useRouter();
@@ -59,16 +59,11 @@ export default defineComponent({
         name: "list",
         replace: false,
         props: true,
-        params: { id: props.id, binId: props.binId },
+        params: { binId: props.binId, binType: props.binType },
       });
     };
     const goToCamera = () => {
-      router.push({
-        name: "camera",
-        replace: false,
-        props: true,
-        params: { id: props.id, binId: props.binId },
-      });
+      console.log("Going to camera changed");
     };
 
     return { fasCamera, fasList, goToList, goToCamera };

@@ -24,7 +24,7 @@
       class="bg-space-cadet"
       round
       flat
-      @click="uploadData"
+      @click="listSubmitted"
       :label="$t('submitButton')"
       style="width: 200px"
     />
@@ -33,19 +33,13 @@
 
 <script>
 import { computed, ref } from "vue";
-import { useRouter } from "vue-router";
 import WasteCard from "./WasteCard.vue";
-import postWasteData from "src/composables/postWasteData";
-import getCO2Amount from "src/composables/getCO2Amount";
 import { fasRecycle, fasTrash } from "@quasar/extras/fontawesome-v6";
 
 export default {
   props: ["wasteItems", "binId", "binType"],
   components: { WasteCard },
-  setup(props) {
-    const { postDataError, post } = postWasteData();
-    const router = useRouter();
-
+  setup(props, { emit }) {
     const wasteItemsRecyclable = computed(() => {
       return props.wasteItems.filter((item) => item.mustBeRecycled);
     });
@@ -54,27 +48,17 @@ export default {
       return props.wasteItems.filter((item) => !item.mustBeRecycled);
     });
 
-    const { co2Amount, getCO2AmountError, loadCO2Amount } = getCO2Amount();
-    loadCO2Amount(props.binId);
-
-    const uploadData = () => {
+    const listSubmitted = () => {
       let finalWasteItems = props.wasteItems.filter((item) => item.count > 0);
       if (finalWasteItems.length) {
-        post(finalWasteItems, props.binId);
-        console.log(finalWasteItems);
-        router.push({
-          name: "thankyou",
-          replace: false,
-          props: true,
-          params: { amount: co2Amount.value },
-        });
+        // emit function so screen changes to camera layout
+        emit("listSubmitted", finalWasteItems);
       } else {
         console.log("No data was entered");
       }
     };
     return {
-      uploadData,
-      co2Amount,
+      listSubmitted,
       wasteItemsRecyclable,
       wasteItemsNonRecyclable,
       fasRecycle,

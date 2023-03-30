@@ -53,7 +53,7 @@
             round
           />
           <q-btn
-            @click="goToThankYouPage"
+            @click="uploadData"
             color="white"
             text-color="recycle-green"
             :icon="fasCheck"
@@ -84,7 +84,7 @@
             class="bg-white text-space-cadet"
             round
             flat
-            @click="goToThankYouPage"
+            @click="uploadData"
             label="No thanks"
             style="width: 200px"
           />
@@ -99,12 +99,13 @@ import { defineComponent, ref, onMounted, onBeforeUnmount } from "vue";
 import { useRouter } from "vue-router";
 import LanguageChooser from "src/components/LanguageChooser.vue";
 import dataURItoBlob from "src/composables/dataURItoBlob";
+import postWasteData from "src/composables/postWasteData";
 import { fasCamera, fasXmark, fasCheck } from "@quasar/extras/fontawesome-v6";
 require("md-gum-polyfill");
 
 export default defineComponent({
   name: "CameraLayout",
-  props: ["id", "binId"],
+  props: ["co2Amount", "binId", "finalWasteItems"],
   components: { LanguageChooser },
   setup(props, { refs }) {
     const hasDecided = ref(false);
@@ -115,6 +116,8 @@ export default defineComponent({
 
     const imageCaptured = ref(false);
     const hasCameraSupport = ref(true);
+
+    const { postDataError, post } = postWasteData();
 
     onMounted(() => {
       // initCamera();
@@ -167,23 +170,21 @@ export default defineComponent({
       initCamera();
     };
 
+    // post data to API and go to thankyou page
     const router = useRouter();
-    const goToList = () => {
+    const uploadData = () => {
+      console.log("Going to thankyou page");
+      console.log("sending: ", photo.value);
+      post(props.finalWasteItems, props.binId, photo.value);
       router.push({
-        name: "list",
+        name: "thankyou",
         replace: false,
         props: true,
-        params: { id: props.id, binId: props.binId },
+        params: { amount: props.co2Amount },
       });
     };
 
-    const goToThankYouPage = () => {
-      console.log("Going to thankyou page");
-      console.log("sending: ", photo.value);
-    };
-
     return {
-      goToList,
       captureImage,
       video,
       canvas,
@@ -194,7 +195,7 @@ export default defineComponent({
       fasCheck,
       hasDecided,
       verifyWaste,
-      goToThankYouPage,
+      uploadData,
     };
   },
 });

@@ -13,18 +13,33 @@
       </q-toolbar>
     </q-header>
     <q-page-container>
-      <div class="text-center text-2xl pt-8 pb-2">
-        {{ $t("listTitle") }}
+      <div v-if="!listFilledIn">
+        <div class="text-center text-2xl pt-8 pb-2">
+          {{ $t("listTitle") }}
+        </div>
+        <div
+          class="mx-auto mb-2 w-fit text-center text-xs bg-white border-red-500 border rounded-lg shadow-md py-1 px-2 text-black"
+        >
+          {{ $t("moreInformationPressPicture") }}
+        </div>
+        <div class="" v-if="wasteItems.length">
+          <WasteList
+            :wasteItems="wasteItems"
+            :binId="binId"
+            :binType="binType"
+            @listSubmitted="listSubmitted"
+          />
+        </div>
+        <div v-else>{{ $t("loadingText") }}</div>
       </div>
-      <div
-        class="mx-auto mb-2 w-fit text-center text-xs bg-white border-red-500 border rounded-lg shadow-md py-1 px-2 text-black"
-      >
-        {{ $t("moreInformationPressPicture") }}
+      <div v-else>
+        <!-- pass on co2amount, finalWasteItems, binId  -->
+        <CameraLayout
+          :co2Amount="co2Amount"
+          :binId="binId"
+          :finalWasteItems="finalWasteItems"
+        />
       </div>
-      <div class="" v-if="wasteItems.length">
-        <WasteList :wasteItems="wasteItems" :binId="binId" :binType="binType" />
-      </div>
-      <div v-else>{{ $t("loadingText") }}</div>
     </q-page-container>
   </q-layout>
 </template>
@@ -32,23 +47,43 @@
 <script>
 import { defineComponent, ref } from "vue";
 import WasteList from "../components/WasteList.vue";
+import CameraLayout from "./CameraLayout.vue";
 import LanguageChooser from "src/components/LanguageChooser.vue";
+import getCO2Amount from "src/composables/getCO2Amount";
 
 export default defineComponent({
   name: "ListLayout",
-  props: ["id", "binId"],
-  components: { WasteList, LanguageChooser },
+  props: ["binId", "binType"],
+  components: { WasteList, LanguageChooser, CameraLayout },
   setup(props) {
-    const binType = ref(props.binId); // 1 = both, 2 = only recycling, 3 = only non-recycling
+    const listFilledIn = ref(false);
+    const finalWasteItems = ref(null);
+
+    const binType = ref(props.binType); // 1 = both, 2 = only recycling, 3 = only non-recycling
 
     const wasteItems = require("../../data/wasteitems.json");
 
-    const binId = ref(props.id);
+    const binId = ref(props.binId);
+
+    // get CO2 saved for specific bin
+    const { co2Amount, getCO2AmountError, loadCO2Amount } = getCO2Amount();
+    loadCO2Amount(props.binId);
+
+    // retrieve emitted values for finalWasteItems
+    const listSubmitted = (finalList) => {
+      listFilledIn.value = true;
+      finalWasteItems.value = finalList;
+      console.log(finalWasteItems.value);
+    };
 
     return {
       wasteItems,
       binId,
       binType,
+      listFilledIn,
+      listSubmitted,
+      finalWasteItems,
+      co2Amount,
     };
   },
 });
