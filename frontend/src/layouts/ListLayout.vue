@@ -142,4 +142,10 @@ export default defineComponent({
 .bg-subtitle-gray {
   background: #414141;
 }
+.text-decline-gray {
+  color: #bebcbc;
+}
+.bg-decline-gray {
+  background: #bebcbc;
+}
 </style>

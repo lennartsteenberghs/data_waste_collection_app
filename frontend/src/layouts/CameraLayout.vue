@@ -15,59 +15,71 @@
     <q-page-container
       class="bg-space-cadet text-white h-screen flex-col justify-center content-start"
     >
-      <div
-        v-if="hasDecided"
-        class="bg-white w-56 p-2 flex-col justify-center content-start items-center mx-auto mt-20"
-      >
-        <div v-if="hasCameraSupport">
-          <video
-            v-show="!imageCaptured"
-            class="full-width bg-space-cadet"
-            autoplay
-            ref="video"
-          />
-          <canvas v-show="imageCaptured" ref="canvas" class="full-width" height="240" />
-        </div>
-        <div v-else class="text-space-cadet text-center">
-          Camera access denied. Please enable camera to take photo.
-        </div>
+      <div v-if="hasDecided">
+        <div
+          class="bg-white w-56 p-2 flex-col justify-center content-start items-center mx-auto mt-20"
+        >
+          <div v-if="hasCameraSupport">
+            <video
+              v-show="!imageCaptured"
+              class="full-width bg-space-cadet"
+              autoplay
+              ref="video"
+            />
+            <canvas v-show="imageCaptured" ref="canvas" class="full-width" height="500" />
+          </div>
+          <div v-else class="text-space-cadet text-center">
+            Camera access denied. Please enable camera to take photo.
+          </div>
 
-        <div v-if="!imageCaptured" class="text-center mt-4 text-space-cadet">
-          <q-btn
-            v-if="hasCameraSupport"
-            @click="captureImage"
-            color="white"
-            text-color="space-cadet"
-            :icon="fasCamera"
-            size="lg"
-            round
-          />
+          <div v-if="!imageCaptured" class="text-center mt-4 text-space-cadet">
+            <q-btn
+              v-if="hasCameraSupport"
+              @click="captureImage"
+              color="white"
+              text-color="space-cadet"
+              :icon="fasCamera"
+              size="lg"
+              round
+            />
+          </div>
+          <div v-else class="pt-4 flex place-content-around">
+            <q-btn
+              @click="captureImage"
+              color="white"
+              text-color="red"
+              :icon="fasXmark"
+              size="lg"
+              round
+            />
+            <q-btn
+              @click="uploadData"
+              color="white"
+              text-color="recycle-green"
+              :icon="fasCheck"
+              size="lg"
+              round
+            />
+          </div>
         </div>
-        <div v-else class="pt-4 flex place-content-around">
+        <div class="submit pt-6 align-top items-start">
           <q-btn
-            @click="captureImage"
-            color="white"
-            text-color="red"
-            :icon="fasXmark"
-            size="lg"
+            class="bg-decline-gray text-space-cadet"
             round
-          />
-          <q-btn
+            flat
             @click="uploadData"
-            color="white"
-            text-color="recycle-green"
-            :icon="fasCheck"
-            size="lg"
-            round
+            label="Don't take picture"
+            style="width: 200px"
           />
         </div>
       </div>
+
       <div v-else>
-        <div class="px-2 text-center text-3xl pt-10 pb-6">
+        <div class="px-2 text-center text-2xl pt-10 pb-3">
           Do you want to verify your waste by taking a picture of it?
         </div>
-        <div class="px-2 text-center text-xl pb-6">
-          It helps improving the quality of the project!
+        <div class="px-2 text-center text-lg pb-6">
+          It helps to improve the quality of the project!
         </div>
         <div class="submit pb-4 align-top items-start">
           <q-btn
@@ -81,7 +93,7 @@
         </div>
         <div class="submit pb-4 align-top items-start">
           <q-btn
-            class="bg-white text-space-cadet"
+            class="bg-decline-gray text-space-cadet"
             round
             flat
             @click="uploadData"

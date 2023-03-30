@@ -9,8 +9,6 @@
 
  - decrease pic size for better loading
 
- - Fix dat het werkt als InjectManifest PWA
-    - background sync (queue API requests when offline)
 
  - animate amount of waste (omni calculator, my plastic footprint, ...)
 
