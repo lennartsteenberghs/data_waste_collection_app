@@ -56,7 +56,6 @@ export default {
 
     const { co2Amount, getCO2AmountError, loadCO2Amount } = getCO2Amount();
     loadCO2Amount(props.binId);
-    const tempCO2Amount = ref(7894);
 
     const uploadData = () => {
       let finalWasteItems = props.wasteItems.filter((item) => item.count > 0);
@@ -67,7 +66,7 @@ export default {
           name: "thankyou",
           replace: false,
           props: true,
-          params: { amount: tempCO2Amount.value },
+          params: { amount: co2Amount.value },
         });
       } else {
         console.log("No data was entered");

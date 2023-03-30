@@ -5,9 +5,10 @@ const postWasteData = () => {
     const postDataError = ref(null);
 
     const post = async (list, binId) => {
+        const hasPhoto = 0;
         const body = turnIntoJSON(list)
-        const url = process.env.API_POST_URL + binId
-        console.log("posting data to: ",url)
+        const url = process.env.API_POST_URL + binId + '/' + hasPhoto
+        console.log("posting data...")
 
         const requestOptions = {
             method: 'POST',
@@ -30,7 +31,6 @@ const postWasteData = () => {
     const turnIntoJSON = (list) => {
         const newList = []
         for (let i = 0; i < list.length; i++) {
-            console.log(list[i])
             const item = { 'plastic_type': list[i].id, 'amount': list[i].count}
             newList.push(item)
         }

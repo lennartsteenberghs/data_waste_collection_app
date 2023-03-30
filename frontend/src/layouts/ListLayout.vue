@@ -41,9 +41,7 @@ export default defineComponent({
   setup(props) {
     const binType = ref(props.binId); // 1 = both, 2 = only recycling, 3 = only non-recycling
 
-    // const wasteItems = ref(wasteItemData);
     const wasteItems = require("../../data/wasteitems.json");
-    console.log(wasteItems);
 
     const binId = ref(props.id);
 

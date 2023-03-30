@@ -1,10 +1,16 @@
- - fix post failed
+ - change routing so it is first list and then you can take a picture, then upload with picture
+ - change post method so it includes pictures
+ https://blog.logrocket.com/axios-vs-fetch-best-http-requests/
+ https://www.sammeechward.com/storing-images-in-s3-from-node-server
+ https://stackoverflow.com/questions/49587831/how-to-append-files-and-data-to-formdata-in-vue-js
+
 
  - upload picture
  - make image quality better
 
- - Fix dat het werkt als PWA
-    - add precaching
+ - decrease pic size for better loading
+
+ - Fix dat het werkt als InjectManifest PWA
     - background sync (queue API requests when offline)
 
  - animate amount of waste
