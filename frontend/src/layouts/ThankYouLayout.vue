@@ -58,7 +58,7 @@ export default defineComponent({
   props: ["amount"],
   components: { LanguageChooser, AnimatedNumber },
   setup(props) {
-    const amount = ref(props.amount);
+    const amount = ref(parseInt(props.amount));
 
     const feedbackUrl = ref("https://forms.gle/YhFdzeCWb13hBQAV6");
 

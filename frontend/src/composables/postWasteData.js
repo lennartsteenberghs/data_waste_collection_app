@@ -41,7 +41,7 @@ const postWasteData = () => {
 
     const formData = new FormData();
     formData.append("image", photo)
-    formData.append("caption", body)
+    formData.append("list", body)
 
     try {
       let response = await axios.post(url, formData, { headers: { 'Content-Type': 'multipart/form-data' } })

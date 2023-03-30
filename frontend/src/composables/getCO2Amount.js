@@ -14,7 +14,7 @@ const getCO2Amount = () => {
       }
       co2Amount.value = await data.json();
       co2Amount.value = co2Amount.value.CO2_safed
-
+      console.log(co2Amount.value)
     } catch (err) {
       co2Amount.value = 0;
       getCO2AmountError.value = err.message;

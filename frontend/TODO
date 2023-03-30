@@ -1,4 +1,3 @@
- - change routing so it is first list and then you can take a picture, then upload with picture
  - change post method so it includes pictures
  https://blog.logrocket.com/axios-vs-fetch-best-http-requests/
  https://www.sammeechward.com/storing-images-in-s3-from-node-server
@@ -111,3 +110,7 @@ GEDAAN 27 maart:
 GEDAAN 28 maart:
 - parse excel during build
 - now deploys as PWA
+
+
+GEDAAN 30 maart:
+- change routing so it is first list and then you can take a picture, then upload with picture

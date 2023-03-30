@@ -159,9 +159,11 @@ export default defineComponent({
     };
 
     const disableCamera = () => {
-      video.value.srcObject.getVideoTracks().forEach((track) => {
-        track.stop();
-      });
+      if (video.value) {
+        video.value.srcObject.getVideoTracks().forEach((track) => {
+          track.stop();
+        });
+      }
     };
 
     const verifyWaste = () => {
