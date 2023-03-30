@@ -34,7 +34,10 @@ const postWasteData = () => {
   const post = async (list, binId, photo) => {
     console.log('in post method: ', photo);
 
-    const hasPhoto = 0;
+    let hasPhoto = 0;
+    if(photo){
+      hasPhoto = 1;
+    }
     const body = turnIntoJSON(list);
     const url = process.env.API_POST_URL + binId + '/' + hasPhoto;
     console.log('posting data...');
