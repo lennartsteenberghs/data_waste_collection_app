@@ -1,14 +1,7 @@
- - change post method so it includes pictures
- https://blog.logrocket.com/axios-vs-fetch-best-http-requests/
- https://www.sammeechward.com/storing-images-in-s3-from-node-server
- https://stackoverflow.com/questions/49587831/how-to-append-files-and-data-to-formdata-in-vue-js
 
+ - change images and texts
 
- - upload picture
- - make image quality better
-
- - decrease pic size for better loading
-
+ - make international
 
  - animate amount of waste (omni calculator, my plastic footprint, ...)
 
