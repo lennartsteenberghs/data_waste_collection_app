@@ -14,6 +14,7 @@ const DotenvWebpackPlugin = require('dotenv-webpack');
 
 
 module.exports = configure(function (ctx) {
+  require('dotenv').config()
   return {
     // https://v2.quasar.dev/quasar-cli-webpack/supporting-ts
     supportTS: false,
@@ -56,6 +57,10 @@ module.exports = configure(function (ctx) {
           systemvars: true
         })
       ],
+      env: {
+        VUE_APP_API_POST_URL: "https://data-waste-collection-app-backend.onrender.com/wasteinput/",
+        VUE_APP_API_CO2_AMOUNT: "https://data-waste-collection-app-backend.onrender.com/co2safed/"
+      },
 
       // transpile: false,
       // publicPath: '/',
