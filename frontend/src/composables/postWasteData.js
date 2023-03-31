@@ -13,7 +13,7 @@ const postWasteData = () => {
       hasPhoto = 1;
     }
 
-    const url = process.env.API_POST_URL + binId + '/' + hasPhoto;
+    const url = process.env.VUE_APP_API_POST_URL + binId + '/' + hasPhoto;
     console.log('posting data...');
 
     const formData = new FormData();

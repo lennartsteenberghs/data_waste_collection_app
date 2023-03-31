@@ -6,7 +6,7 @@ const getCO2Amount = () => {
   const getCO2AmountError = ref(null);
 
   const loadCO2Amount = async (binId) => {
-    const url = process.env.API_CO2_AMOUNT + binId
+    const url = process.env.VUE_APP_API_CO2_AMOUNT + binId
     try {
       let data = await fetch(url);
       if (!data.ok) {
