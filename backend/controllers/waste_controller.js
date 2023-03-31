@@ -15,7 +15,7 @@ import {
 //create waste
 export async function createWaste(req, res) {
   const idbin = req.params.idbin;
-  const waste = req.body.list;
+  const waste = JSON.parse(req.body.list);
 
   console.log(waste)
 
