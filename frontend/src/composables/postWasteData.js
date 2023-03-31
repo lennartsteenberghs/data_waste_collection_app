@@ -12,22 +12,13 @@ const postWasteData = () => {
     if(photo){
       hasPhoto = 1;
     }
-    // console.log(list);
-    // console.log(list[0]);
-
 
     const url = process.env.API_POST_URL + binId + '/' + hasPhoto;
     console.log('posting data...');
 
     const formData = new FormData();
     formData.append("image", photo)
-    formData.append("list", JSON.stringify(list))
-
-    // console.log(formData.get('list'));
-    // console.log(JSON.parse(formData.get('list'))[0]);
-    // console.log(JSON.parse(formData.get('list'))[1]);
-    // console.log(JSON.parse(formData.get('list'))[2]);
-    // console.log(JSON.parse(formData.get('list'))[3]);
+    formData.append("list", turnIntoJSON(list))
 
 
     try {
