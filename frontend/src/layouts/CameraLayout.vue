@@ -29,7 +29,7 @@
             <canvas v-show="imageCaptured" ref="canvas" class="full-width" height="500" />
           </div>
           <div v-else class="text-space-cadet text-center">
-            Camera access denied. Please enable camera to take photo.
+            {{ $t("cameraAccessDenied") }}
           </div>
 
           <div v-if="!imageCaptured" class="text-center mt-4 text-space-cadet">
@@ -76,10 +76,10 @@
 
       <div v-else>
         <div class="px-2 text-center text-2xl pt-10 pb-3">
-          Do you want to verify your waste by taking a picture of it?
+          {{ $t("verifyWaste") }}
         </div>
         <div class="px-2 text-center text-lg pb-6">
-          It helps to improve the quality of the project!
+          {{ $t("improveQualityProject") }}
         </div>
         <div class="submit pb-4 align-top items-start">
           <q-btn
