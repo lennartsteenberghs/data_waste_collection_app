@@ -5,12 +5,12 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const S3_client = new S3Client({
-        credentials: {
-          accessKeyId: process.env.S3_ACCES_KEY,
-          secretAccessKey: process.env.S3_SECRET_ACCES_KEY
-        },
-        region: process.env.S3_REGION
-      });
+  region: process.env.S3_REGION,
+  credentials: {
+    accessKeyId: process.env.S3_ACCES_KEY,
+    secretAccessKey: process.env.S3_SECRET_ACCES_KEY
+        }
+  });
 
 
 // insert photo to S3 bucket

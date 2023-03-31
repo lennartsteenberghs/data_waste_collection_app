@@ -23,7 +23,7 @@ export async function createWaste(req, res) {
   var idphoto = 0;
 
   if (boolphoto == 1){ idphoto = await getPhotoid();}
-  console.log(idphoto)
+  
   for(let i = 0; i < waste.length; i++) {
     console.log(waste[i])
     await insertWaste(waste[i], idbin, idphoto)
