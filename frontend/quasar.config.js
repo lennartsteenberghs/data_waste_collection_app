@@ -10,8 +10,11 @@
 
 
 const { configure } = require('quasar/wrappers');
+const DotenvWebpackPlugin = require('dotenv-webpack');
+
 
 module.exports = configure(function (ctx) {
+  require('dotenv').config()
   return {
     // https://v2.quasar.dev/quasar-cli-webpack/supporting-ts
     supportTS: false,
@@ -49,6 +52,15 @@ module.exports = configure(function (ctx) {
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-build
     build: {
       vueRouterMode: 'hash', // available values: 'hash', 'history'
+      plugins: [
+        new DotenvWebpackPlugin({
+          systemvars: true
+        })
+      ],
+      env: {
+        VUE_APP_API_POST_URL: "https://data-waste-collection-app-backend.onrender.com/wasteinput/",
+        VUE_APP_API_CO2_AMOUNT: "https://data-waste-collection-app-backend.onrender.com/co2safed/"
+      },
 
       // transpile: false,
       // publicPath: '/',
@@ -70,7 +82,7 @@ module.exports = configure(function (ctx) {
       // https://v2.quasar.dev/quasar-cli-webpack/handling-webpack
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
 
-      chainWebpack (/* chain */) {}
+      chainWebpack(/* chain */) { }
 
     },
 
@@ -113,13 +125,13 @@ module.exports = configure(function (ctx) {
       // manualPostHydrationTrigger: true,
 
       prodPort: 3000, // The default port that the production server should use
-                      // (gets superseded if process.env.PORT is specified at runtime)
+      // (gets superseded if process.env.PORT is specified at runtime)
 
       maxAge: 1000 * 60 * 60 * 24 * 30,
-        // Tell browser when a file from the server should expire from cache (in ms)
+      // Tell browser when a file from the server should expire from cache (in ms)
 
 
-      chainWebpackWebserver (/* chain */) {},
+      chainWebpackWebserver(/* chain */) { },
 
 
       middlewares: [
@@ -136,7 +148,7 @@ module.exports = configure(function (ctx) {
       // for the custom service worker ONLY (/src-pwa/custom-service-worker.[js|ts])
       // if using workbox in InjectManifest mode
 
-      chainWebpackCustomSW (/* chain */) {},
+      chainWebpackCustomSW(/* chain */) { },
 
 
       manifest: {
@@ -217,11 +229,11 @@ module.exports = configure(function (ctx) {
 
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
 
-      chainWebpackMain (/* chain */) {},
+      chainWebpackMain(/* chain */) { },
 
 
 
-      chainWebpackPreload (/* chain */) {},
+      chainWebpackPreload(/* chain */) { },
 
     }
   }

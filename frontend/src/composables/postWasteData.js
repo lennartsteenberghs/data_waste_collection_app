@@ -5,32 +5,6 @@ const postWasteData = () => {
 
   const postDataError = ref(null);
 
-  const post2 = async (list, binId, photo) => {
-    console.log('in post method: ', photo)
-
-    const hasPhoto = 0;
-    const body = turnIntoJSON(list)
-    const url = process.env.API_POST_URL + binId + '/' + hasPhoto
-    console.log("posting data...")
-
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: body
-    };
-
-    try {
-      let response = await fetch(url, requestOptions);
-      if (!response.ok) {
-        throw Error("post failed");
-      }
-      console.log("post succesful")
-    } catch (err) {
-      postDataError.value = err.message;
-      console.log(postDataError.value);
-    }
-  }
-
   const post = async (list, binId, photo) => {
     console.log('in post method: ', photo);
 
@@ -38,13 +12,14 @@ const postWasteData = () => {
     if(photo){
       hasPhoto = 1;
     }
-    const body = turnIntoJSON(list);
-    const url = process.env.API_POST_URL + binId + '/' + hasPhoto;
+
+    const url = process.env.VUE_APP_API_POST_URL + binId + '/' + hasPhoto;
     console.log('posting data...');
 
     const formData = new FormData();
     formData.append("image", photo)
-    formData.append("list", body)
+    formData.append("list", turnIntoJSON(list))
+
 
     try {
       let response = await axios.post(url, formData, { headers: { 'Content-Type': 'multipart/form-data' } })

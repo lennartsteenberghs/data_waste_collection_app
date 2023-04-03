@@ -21,12 +21,14 @@
     "vue-flag-icon": "^2.1.0",
     "vue-i18n": "^9.3.0-beta.16",
     "vue-router": "^4.0.0",
+    "webpack": "^5.77.0",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@intlify/vue-i18n-loader": "^5.0.0",
     "@quasar/app-webpack": "^3.0.0",
     "@quasar/quasar-app-extension-dotenv": "^1.1.0",
+    "dotenv-webpack": "^8.0.1",
     "workbox-webpack-plugin": "^6.5.4"
   },
   "browserslist": [
