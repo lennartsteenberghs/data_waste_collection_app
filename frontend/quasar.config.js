@@ -57,6 +57,10 @@ module.exports = configure(function (ctx) {
           systemvars: true
         })
       ],
+      env: {
+        VUE_APP_API_POST_URL: "https://data-waste-collection-app-backend.onrender.com/wasteinput/",
+        VUE_APP_API_CO2_AMOUNT: "https://data-waste-collection-app-backend.onrender.com/co2safed/"
+      },
 
       // transpile: false,
       // publicPath: '/',
