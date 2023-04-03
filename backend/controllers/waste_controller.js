@@ -20,7 +20,7 @@ export async function createWaste(req, res) {
   console.log(waste)
 
   const boolphoto = req.params.photo;
-  var idphoto = 0;
+  var idphoto = null;
 
   if (boolphoto == 1){ idphoto = await getPhotoid();}
   
