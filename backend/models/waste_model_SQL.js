@@ -1,5 +1,16 @@
-//import connection
-import MYSQL_pool from "../config/MYSQL_DB.js";
+import mysql from "mysql2";
+import dotenv from 'dotenv'
+dotenv.config()
+
+//create the connection pool to database
+const MYSQL_pool = mysql.createPool({
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  port: process.env.MYSQL_PORT,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
+}).promise();
+
 
 //insert waste data to database
 export async function insertWaste(data, idbin, idphoto) {
