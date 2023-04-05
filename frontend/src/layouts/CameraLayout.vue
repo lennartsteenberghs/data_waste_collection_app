@@ -1,115 +1,98 @@
 <template>
-  <q-layout view="hHh lpR lfr">
-    <q-header elevated>
-      <q-toolbar class="px-5 pt-5 pb-2 bg-space-cadet">
-        <q-avatar square>
-          <img class="" :src="require('../assets/aruba.png')" />
-        </q-avatar>
-
-        <q-toolbar-title class="text-center text-2xl">
-          {{ $t("toolbarTitle") }}</q-toolbar-title
-        >
-        <LanguageChooser />
-      </q-toolbar>
-    </q-header>
-    <q-page-container
-      class="bg-space-cadet text-white h-screen flex-col justify-center content-start"
-    >
-      <div v-if="hasDecided">
-        <div
-          class="bg-white w-56 p-2 flex-col justify-center content-start items-center mx-auto mt-20"
-        >
-          <div v-if="hasCameraSupport">
-            <video
-              v-show="!imageCaptured"
-              class="full-width bg-space-cadet"
-              autoplay
-              ref="video"
-            />
-            <canvas v-show="imageCaptured" ref="canvas" class="full-width" height="500" />
-          </div>
-          <div v-else class="text-space-cadet text-center">
-            {{ $t("cameraAccessDenied") }}
-          </div>
-
-          <div v-if="!imageCaptured" class="text-center mt-4 text-space-cadet">
-            <q-btn
-              v-if="hasCameraSupport"
-              @click="captureImage"
-              color="white"
-              text-color="space-cadet"
-              :icon="fasCamera"
-              size="lg"
-              round
-            />
-          </div>
-          <div v-else class="pt-4 flex place-content-around">
-            <q-btn
-              @click="captureImage"
-              color="white"
-              text-color="red"
-              :icon="fasXmark"
-              size="lg"
-              round
-            />
-            <q-btn
-              @click="uploadData"
-              color="white"
-              text-color="recycle-green"
-              :icon="fasCheck"
-              size="lg"
-              round
-            />
-          </div>
+  <div class="bg-space-cadet h-screen text-white">
+    <div v-if="hasDecided">
+      <div
+        class="bg-white w-56 p-2 flex-col justify-center content-start items-center mx-auto mt-20"
+      >
+        <div v-if="hasCameraSupport">
+          <video
+            v-show="!imageCaptured"
+            class="full-width bg-space-cadet"
+            autoplay
+            ref="video"
+          />
+          <canvas v-show="imageCaptured" ref="canvas" class="full-width" height="500" />
         </div>
-        <div class="submit pt-6 align-top items-start">
+        <div v-else class="text-space-cadet text-center">
+          {{ $t("cameraAccessDenied") }}
+        </div>
+
+        <div v-if="!imageCaptured" class="text-center mt-4 text-space-cadet">
           <q-btn
-            class="bg-decline-gray text-space-cadet"
+            v-if="hasCameraSupport"
+            @click="captureImage"
+            color="white"
+            text-color="space-cadet"
+            :icon="fasCamera"
+            size="lg"
             round
-            flat
+          />
+        </div>
+        <div v-else class="pt-4 flex place-content-around">
+          <q-btn
+            @click="captureImage"
+            color="white"
+            text-color="red"
+            :icon="fasXmark"
+            size="lg"
+            round
+          />
+          <q-btn
             @click="uploadData"
-            label="Don't take picture"
-            style="width: 200px"
+            color="white"
+            text-color="recycle-green"
+            :icon="fasCheck"
+            size="lg"
+            round
           />
         </div>
       </div>
-
-      <div v-else>
-        <div class="px-2 text-center text-2xl pt-10 pb-3">
-          {{ $t("verifyWaste") }}
-        </div>
-        <div class="px-2 text-center text-lg pb-6">
-          {{ $t("improveQualityProject") }}
-        </div>
-        <div class="submit pb-4 align-top items-start">
-          <q-btn
-            class="bg-white text-space-cadet"
-            round
-            flat
-            @click="verifyWaste"
-            label="Take a picture"
-            style="width: 200px"
-          />
-        </div>
-        <div class="submit pb-4 align-top items-start">
-          <q-btn
-            class="bg-decline-gray text-space-cadet"
-            round
-            flat
-            @click="uploadData"
-            label="No thanks"
-            style="width: 200px"
-          />
-        </div>
+      <div class="submit pt-6 align-top items-start">
+        <q-btn
+          class="bg-decline-gray text-space-cadet"
+          round
+          flat
+          @click="uploadData"
+          label="Don't take picture"
+          style="width: 200px"
+        />
       </div>
-    </q-page-container>
-  </q-layout>
+    </div>
+
+    <div v-else>
+      <div class="px-2 text-center text-2xl pt-10 pb-3">
+        {{ $t("verifyWaste") }}
+      </div>
+      <div class="px-2 text-center text-lg pb-6">
+        {{ $t("improveQualityProject") }}
+      </div>
+      <div class="submit pb-4 align-top items-start">
+        <q-btn
+          class="bg-white text-space-cadet"
+          round
+          flat
+          @click="verifyWaste"
+          label="Take a picture"
+          style="width: 200px"
+        />
+      </div>
+      <div class="submit pb-4 align-top items-start">
+        <q-btn
+          class="bg-decline-gray text-space-cadet"
+          round
+          flat
+          @click="uploadData"
+          label="No thanks"
+          style="width: 200px"
+        />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import { defineComponent, ref, onMounted, onBeforeUnmount } from "vue";
 import { useRouter } from "vue-router";
-import LanguageChooser from "src/components/LanguageChooser.vue";
 import dataURItoBlob from "src/composables/dataURItoBlob";
 import postWasteData from "src/composables/postWasteData";
 import { fasCamera, fasXmark, fasCheck } from "@quasar/extras/fontawesome-v6";
@@ -118,8 +101,8 @@ require("md-gum-polyfill");
 export default defineComponent({
   name: "CameraLayout",
   props: ["co2Amount", "binId", "finalWasteItems"],
-  components: { LanguageChooser },
-  setup(props, { refs }) {
+  components: {},
+  setup(props) {
     const hasDecided = ref(false);
 
     const video = ref(null);

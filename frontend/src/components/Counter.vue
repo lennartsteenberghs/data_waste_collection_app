@@ -52,11 +52,11 @@
 import { ref } from "vue";
 
 export default {
-  name: "hello",
+  name: "counter",
   props: ["item"],
   setup(props, { emit }) {
     const count = ref(0);
-    const mustBeRecycled = ref(props.item.mustBeRecycled);
+    const mustBeRecycled = ref(props.item.mustBeRecycled); // decides color of buttons
 
     const decrement = () => {
       if (count.value) {
@@ -72,7 +72,3 @@ export default {
   },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-
-<style scoped></style>

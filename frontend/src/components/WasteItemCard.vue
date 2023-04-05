@@ -93,7 +93,7 @@
 
 <script>
 import { ref, computed } from "vue";
-import Counter from "./Counter.vue";
+import Counter from "src/components/Counter.vue";
 import { useI18n } from "vue-i18n";
 
 export default {
