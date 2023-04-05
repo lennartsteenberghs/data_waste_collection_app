@@ -94,6 +94,7 @@
 <script>
 import { ref, computed } from "vue";
 import Counter from "src/components/Counter.vue";
+import getImageFunctions from "src/composables/getImageFunctions";
 import { useI18n } from "vue-i18n";
 
 export default {
@@ -104,19 +105,7 @@ export default {
       props.item.count = newCount;
     };
 
-    const getImgUrl = (imageName) => {
-      let imgUrl = require("../assets/app-icon.png");
-      try {
-        imgUrl = require("../assets/item" + props.item.id + "/" + imageName);
-      } catch (e) {
-        console.log("image could not be found for item with id =", props.item.id);
-        imgUrl = require("../assets/app-icon.png");
-      }
-      return imgUrl;
-    };
-    const getAltImgUrl = () => {
-      return require("../assets/app-icon.png");
-    };
+    const { getImgUrl, getAltImgUrl } = getImageFunctions();
 
     const { locale } = useI18n({ useScope: "global" });
 
