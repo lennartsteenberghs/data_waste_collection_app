@@ -5,7 +5,7 @@ const getImageFunctions = () => {
     try {
       imgUrl = require("../assets/itemimages/" + imageName);
     } catch (e) {
-      console.log("image could not be found for item with id =", props.item.id);
+      console.log("image could not be found");
       imgUrl = require("../assets/app-icon.png");
     }
     return imgUrl;
