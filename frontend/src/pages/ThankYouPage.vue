@@ -7,7 +7,7 @@
           {{ $t("defaultThankYouMessage") }}
         </div>
         <div v-else class="px-2 text-center text-3xl pt-10 pb-6">
-          {{ $t("co2MessagePart1") }}
+          {{ $t("co2MessagePart1") }} {{ amount }} {{ $t("co2MessagePart2") }}
         </div>
         <div class="">
           <iframe
