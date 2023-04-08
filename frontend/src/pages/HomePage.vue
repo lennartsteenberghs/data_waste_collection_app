@@ -1,33 +1,31 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <Header />
-    <q-page-container class="h-full">
-      <div v-if="!listFilledIn">
-        <div class="text-center text-2xl pt-8 pb-2">
-          {{ $t("listTitle") }}
-        </div>
-        <div
-          class="mx-auto mb-2 w-fit text-center text-xs bg-white border-red-500 border rounded-lg shadow-md py-1 px-2 text-black"
-        >
-          {{ $t("moreInformationPressPicture") }}
-        </div>
-        <div class="" v-if="wasteItems.length">
-          <ListLayout
-            :wasteItems="wasteItems"
-            :binId="binId"
-            :binType="binType"
-            @listSubmitted="listSubmitted"
-          />
-        </div>
-        <div v-else>{{ $t("loadingText") }}</div>
+    <q-page-container v-if="!listFilledIn" class="h-full">
+      <div class="text-center text-2xl pt-8 pb-2">
+        {{ $t("listTitle") }}
       </div>
-      <div v-else>
-        <CameraLayout
-          :co2Amount="co2Amount"
+      <div
+        class="mx-auto mb-2 w-fit text-center text-xs bg-white border-red-500 border rounded-lg shadow-md py-1 px-2 text-black"
+      >
+        {{ $t("moreInformationPressPicture") }}
+      </div>
+      <div class="" v-if="wasteItems.length">
+        <ListLayout
+          :wasteItems="wasteItems"
           :binId="binId"
-          :finalWasteItems="finalWasteItems"
+          :binType="binType"
+          @listSubmitted="listSubmitted"
         />
       </div>
+      <div v-else>{{ $t("loadingText") }}</div>
+    </q-page-container>
+    <q-page-container v-else class="h-full bg-space-cadet">
+      <CameraLayout
+        :co2Amount="co2Amount"
+        :binId="binId"
+        :finalWasteItems="finalWasteItems"
+      />
     </q-page-container>
   </q-layout>
 </template>
