@@ -1,23 +1,17 @@
-import ListLayout from 'src/layouts/ListLayout.vue'
-import ThankYouLayout from 'layouts/ThankYouLayout.vue'
+import HomePage from 'src/pages/HomePage.vue'
+import ThankYouPage from 'src/pages/ThankYouPage.vue'
 
 const routes = [
   {
     path: '/home/:binId/:binType',
-    name: 'list',
-    component: ListLayout,
+    name: 'home',
+    component: HomePage,
     props: true
   },
-  // {
-  //   path: '/menu/:binId/:binType',
-  //   name: 'home',
-  //   component: MenuLayout,
-  //   props: true
-  // },
   {
     path: '/thankyou/:amount',
     name: 'thankyou',
-    component: ThankYouLayout,
+    component: ThankYouPage,
     props: true
   },
   //redirect
@@ -27,7 +21,7 @@ const routes = [
   },
   {
     path: '/:catchAll(.*)*',
-    component: () => import('pages/ErrorNotFound.vue')
+    component: () => import('src/pages/Error404Page.vue')
   }
 ]
 

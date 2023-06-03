@@ -1,151 +1,83 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar class="px-5 pt-5 pb-2 bg-space-cadet">
-        <q-avatar square>
-          <img class="" :src="require('../assets/aruba.png')" />
-        </q-avatar>
-
-        <q-toolbar-title class="text-center text-2xl">
-          {{ $t("toolbarTitle") }}</q-toolbar-title
-        >
-        <LanguageChooser />
-      </q-toolbar>
-    </q-header>
-    <q-page-container>
-      <div v-if="!listFilledIn">
-        <div class="text-center text-2xl pt-8 pb-2">
-          {{ $t("listTitle") }}
-        </div>
-        <div
-          class="mx-auto mb-2 w-fit text-center text-xs bg-white border-red-500 border rounded-lg shadow-md py-1 px-2 text-black"
-        >
-          {{ $t("moreInformationPressPicture") }}
-        </div>
-        <div class="" v-if="wasteItems.length">
-          <WasteList
-            :wasteItems="wasteItems"
-            :binId="binId"
-            :binType="binType"
-            @listSubmitted="listSubmitted"
-          />
-        </div>
-        <div v-else>{{ $t("loadingText") }}</div>
+  <div class="">
+    <div class="pt-2 pl-5 pb-0 text-left flex items-center">
+      <q-icon class="text-recycle-green text-2xl" :name="fasRecycle" />
+      <div class="ml-2 bg-recycle-green rounded-lg shadow-md py-1 px-2 text-white">
+        {{ $t("recyclingBin") }}
       </div>
-      <div v-else>
-        <!-- pass on co2amount, finalWasteItems, binId  -->
-        <CameraLayout
-          :co2Amount="co2Amount"
-          :binId="binId"
-          :finalWasteItems="finalWasteItems"
-        />
+    </div>
+    <div class="" v-for="item in wasteItemsRecyclable" :key="item.id">
+      <WasteItemCard :item="item" :binType="binType" />
+    </div>
+    <div class="pt-2 pl-5 pb-0 text-left flex items-center">
+      <q-icon class="text-2xl text-paper-yellow text-opacity-85" :name="fasTrash" />
+      <div class="ml-2 bg-paper-yellow rounded-lg shadow-md py-1 px-2 text-white">
+        {{ $t("nonRecyclingBin") }}
       </div>
-    </q-page-container>
-  </q-layout>
+    </div>
+    <div class="" v-for="item in wasteItemsNonRecyclable" :key="item.id">
+      <WasteItemCard :item="item" :binType="binType" />
+    </div>
+  </div>
+  <div class="submit pb-4 align-top items-start">
+    <q-btn
+      class="bg-space-cadet"
+      round
+      flat
+      @click="listSubmitted"
+      :label="$t('submitButton')"
+      style="width: 200px"
+    />
+  </div>
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
-import WasteList from "../components/WasteList.vue";
-import CameraLayout from "./CameraLayout.vue";
-import LanguageChooser from "src/components/LanguageChooser.vue";
-import getCO2Amount from "src/composables/getCO2Amount";
+import { computed } from "vue";
+import WasteItemCard from "src/components/WasteItemCard.vue";
+import { fasRecycle, fasTrash } from "@quasar/extras/fontawesome-v6";
 
-export default defineComponent({
-  name: "ListLayout",
-  props: ["binId", "binType"],
-  components: { WasteList, LanguageChooser, CameraLayout },
-  setup(props) {
-    const listFilledIn = ref(false);
-    const finalWasteItems = ref(null);
+export default {
+  props: ["wasteItems", "binId", "binType"],
+  components: { WasteItemCard },
+  setup(props, { emit }) {
+    const wasteItemsRecyclable = computed(() => {
+      return props.wasteItems.filter((item) => item.mustBeRecycled);
+    });
 
-    const binType = ref(props.binType); // 1 = both, 2 = only recycling, 3 = only non-recycling
+    const wasteItemsNonRecyclable = computed(() => {
+      return props.wasteItems.filter((item) => !item.mustBeRecycled);
+    });
 
-    const wasteItems = require("../../data/wasteitems.json");
-
-    const binId = ref(props.binId);
-
-    // get CO2 saved for specific bin
-    const { co2Amount, getCO2AmountError, loadCO2Amount } = getCO2Amount();
-    loadCO2Amount(props.binId);
-
-    // retrieve emitted values for finalWasteItems
-    const listSubmitted = (finalList) => {
-      listFilledIn.value = true;
-      finalWasteItems.value = finalList;
-      console.log(finalWasteItems.value);
+    const listSubmitted = () => {
+      let finalWasteItems = props.wasteItems.filter((item) => item.count > 0);
+      if (finalWasteItems.length) {
+        // emit function so screen changes to camera layout
+        emit("listSubmitted", finalWasteItems);
+      } else {
+        console.log("No data was entered");
+      }
     };
-
     return {
-      wasteItems,
-      binId,
-      binType,
-      listFilledIn,
       listSubmitted,
-      finalWasteItems,
-      co2Amount,
+      wasteItemsRecyclable,
+      wasteItemsNonRecyclable,
+      fasRecycle,
+      fasTrash,
     };
   },
-});
+};
 </script>
 
-<style>
-/* Custom colors */
-
-.text-aw-red {
-  color: #c8102e !important;
+<style scoped>
+button {
+  border: 0;
+  color: white;
+  border-radius: 20px;
 }
-.bg-aw-red {
-  background: #c8102e !important;
+.btn:hover {
+  cursor: pointer;
 }
-.text-aw-blue {
-  color: #418fde !important;
-}
-.bg-aw-blue {
-  background: #418fde !important;
-}
-.text-aw-yellow {
-  color: #fbe122 !important;
-}
-.bg-aw-yellow {
-  background: #fbe122 !important;
-}
-.text-aw-orange {
-  color: #e69100 !important;
-}
-.bg-aw-orange {
-  background: #e69100 !important;
-}
-
-/* same as yellow-500 in Tailwind CSS */
-.text-paper-yellow {
-  color: #eab308 !important;
-}
-.bg-paper-yellow {
-  background: #eab308 !important;
-}
-.text-space-cadet {
-  color: #151e3f;
-}
-.bg-space-cadet {
-  background: #151e3f;
-}
-.text-recycle-green {
-  color: #4caf50;
-}
-.bg-recycle-green {
-  background: #4caf50;
-}
-.text-subtitle-gray {
-  color: #414141;
-}
-.bg-subtitle-gray {
-  background: #414141;
-}
-.text-decline-gray {
-  color: #bebcbc;
-}
-.bg-decline-gray {
-  background: #bebcbc;
+.submit {
+  text-align: center;
 }
 </style>

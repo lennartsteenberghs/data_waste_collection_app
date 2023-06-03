@@ -64,54 +64,86 @@
             />
           </div>
         </div>
-        <div class="submit pt-6 align-top items-start">
-          <q-btn
-            class="bg-decline-gray text-space-cadet"
-            round
-            flat
-            @click="uploadData"
-            label="Don't take picture"
-            style="width: 200px"
-          />
+        <div v-else class="text-space-cadet text-center">
+          {{ $t("cameraAccessDenied") }}
         </div>
-      </div>
 
-      <div v-else>
-        <div class="px-2 text-center text-2xl pt-10 pb-3">
-          {{ $t("verifyWaste") }}
-        </div>
-        <div class="px-2 text-center text-lg pb-6">
-          {{ $t("improveQualityProject") }}
-        </div>
-        <div class="submit pb-4 align-top items-start">
+        <div v-if="!imageCaptured" class="text-center mt-4 text-space-cadet">
           <q-btn
-            class="bg-white text-space-cadet"
+            v-if="hasCameraSupport"
+            @click="captureImage"
+            color="white"
+            text-color="space-cadet"
+            :icon="fasCamera"
+            size="lg"
             round
-            flat
-            @click="verifyWaste"
-            label="Take a picture"
-            style="width: 200px"
           />
         </div>
-        <div class="submit pb-4 align-top items-start">
+        <div v-else class="pt-4 flex place-content-around">
           <q-btn
-            class="bg-decline-gray text-space-cadet"
+            @click="captureImage"
+            color="white"
+            text-color="red"
+            :icon="fasXmark"
+            size="lg"
             round
-            flat
+          />
+          <q-btn
             @click="uploadData"
-            label="No thanks"
-            style="width: 200px"
+            color="white"
+            text-color="recycle-green"
+            :icon="fasCheck"
+            size="lg"
+            round
           />
         </div>
       </div>
-    </q-page-container>
-  </q-layout>
+      <div class="submit pt-6 align-top items-start">
+        <q-btn
+          class="bg-decline-gray text-space-cadet"
+          round
+          flat
+          @click="uploadData"
+          label="Don't take picture"
+          style="width: 200px"
+        />
+      </div>
+    </div>
+
+    <div v-else>
+      <div class="px-2 text-center text-2xl pt-10 pb-3">
+        {{ $t("verifyWaste") }}
+      </div>
+      <div class="px-2 text-center text-lg pb-6">
+        {{ $t("improveQualityProject") }}
+      </div>
+      <div class="submit pb-4 align-top items-start">
+        <q-btn
+          class="bg-white text-space-cadet"
+          round
+          flat
+          @click="verifyWaste"
+          label="Take a picture"
+          style="width: 200px"
+        />
+      </div>
+      <div class="submit pb-4 align-top items-start">
+        <q-btn
+          class="bg-decline-gray text-space-cadet"
+          round
+          flat
+          @click="uploadData"
+          label="No thanks"
+          style="width: 200px"
+        />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import { defineComponent, ref, onMounted, onBeforeUnmount } from "vue";
 import { useRouter } from "vue-router";
-import LanguageChooser from "src/components/LanguageChooser.vue";
 import dataURItoBlob from "src/composables/dataURItoBlob";
 import postWasteData from "src/composables/postWasteData";
 import { fasCamera, fasXmark, fasCheck } from "@quasar/extras/fontawesome-v6";
@@ -120,8 +152,8 @@ require("md-gum-polyfill");
 export default defineComponent({
   name: "CameraLayout",
   props: ["co2Amount", "binId", "finalWasteItems"],
-  components: { LanguageChooser },
-  setup(props, { refs }) {
+  components: {},
+  setup(props) {
     const hasDecided = ref(false);
 
     const video = ref(null);

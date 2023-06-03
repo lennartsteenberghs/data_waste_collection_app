@@ -31,10 +31,11 @@ export default {
   props: [],
   setup(props) {
     const { locale } = useI18n({ useScope: "global" });
+    // unimplemented languages can be commented out
     const languages = ref([
       { flag: "us", value: "en", label: "English" },
-      { flag: "aw", value: "aw", label: "Papiamentu" },
-      { flag: "es", value: "es", label: "Español" },
+      // { flag: "aw", value: "aw", label: "Papiamentu" },
+      // { flag: "es", value: "es", label: "Español" },
       { flag: "nl", value: "nl", label: "Nederlands" },
     ]);
 
