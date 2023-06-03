@@ -1,68 +1,17 @@
 <template>
-  <q-layout view="hHh lpR lfr">
-    <q-header elevated>
-      <q-toolbar class="px-5 pt-5 pb-2 bg-space-cadet">
-        <q-avatar square>
-          <img class="" :src="require('../assets/aruba.png')" />
-        </q-avatar>
-
-        <q-toolbar-title class="text-center text-2xl">
-          {{ $t("toolbarTitle") }}</q-toolbar-title
-        >
-        <LanguageChooser />
-      </q-toolbar>
-    </q-header>
-    <q-page-container
-      class="bg-space-cadet text-white h-screen flex-col justify-center content-start"
-    >
-      <div v-if="hasDecided">
-        <div
-          class="bg-white w-56 p-2 flex-col justify-center content-start items-center mx-auto mt-20"
-        >
-          <div v-if="hasCameraSupport">
-            <video
-              v-show="!imageCaptured"
-              class="full-width bg-space-cadet"
-              autoplay
-              playsInline
-              muted
-              ref="video"
-            />
-            <canvas v-show="imageCaptured" ref="canvas" class="full-width" height="500" />
-          </div>
-          <div v-else class="text-space-cadet text-center">
-            {{ $t("cameraAccessDenied") }}
-          </div>
-
-          <div v-if="!imageCaptured" class="text-center mt-4 text-space-cadet">
-            <q-btn
-              v-if="hasCameraSupport"
-              @click="captureImage"
-              color="white"
-              text-color="space-cadet"
-              :icon="fasCamera"
-              size="lg"
-              round
-            />
-          </div>
-          <div v-else class="pt-4 flex place-content-around">
-            <q-btn
-              @click="captureImage"
-              color="white"
-              text-color="red"
-              :icon="fasXmark"
-              size="lg"
-              round
-            />
-            <q-btn
-              @click="uploadData"
-              color="white"
-              text-color="recycle-green"
-              :icon="fasCheck"
-              size="lg"
-              round
-            />
-          </div>
+  <div class="bg-space-cadet h-screen text-white">
+    <div v-if="hasDecided">
+      <div
+        class="bg-white w-56 p-2 flex-col justify-center content-start items-center mx-auto mt-20"
+      >
+        <div v-if="hasCameraSupport">
+          <video
+            v-show="!imageCaptured"
+            class="full-width bg-space-cadet"
+            autoplay
+            ref="video"
+          />
+          <canvas v-show="imageCaptured" ref="canvas" class="full-width" height="500" />
         </div>
         <div v-else class="text-space-cadet text-center">
           {{ $t("cameraAccessDenied") }}
