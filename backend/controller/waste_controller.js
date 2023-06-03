@@ -15,11 +15,9 @@ import {
 //create waste
 export async function createWaste(req, res) {
   const idbin = req.params.idbin;
-  const waste = JSON.parse(req.body.list);
-
-  console.log(waste)
-
   const boolphoto = req.params.photo;
+  const waste = req.body.list;
+
   var idphoto = null;
 
   if (boolphoto == 1){ idphoto = await getPhotoid();}
@@ -34,7 +32,7 @@ export async function createWaste(req, res) {
     const contenttype = req.file.mimetype;
     await insertPhoto(idphoto, body, contenttype)
   }
-  res.send("Waste insertion succeed")
+  res.send("Waste insertion succeeded")
 }
 
 //show CO2 safed
@@ -46,7 +44,7 @@ export async function showCO2_safed(req, res) {
 
 //redirect to generated link
 export async function showPhoto(req, res) {
-  const idphoto = req.params.id;
+  const idphoto = req.params.idphoto;
   const link = await generateLink(idphoto)
   res.redirect(link)
 };

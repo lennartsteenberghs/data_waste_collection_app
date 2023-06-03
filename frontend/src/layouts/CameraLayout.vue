@@ -24,6 +24,8 @@
               v-show="!imageCaptured"
               class="full-width bg-space-cadet"
               autoplay
+              playsInline
+              muted
               ref="video"
             />
             <canvas v-show="imageCaptured" ref="canvas" class="full-width" height="500" />

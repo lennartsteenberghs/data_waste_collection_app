@@ -27,5 +27,5 @@ app.use((err, req, res, next) => {
 
 //PORT
 app.listen(5000, () => {
-  console.log("Server running successfully");
+  console.log("Server running locally on port 5000");
 });

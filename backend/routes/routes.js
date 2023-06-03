@@ -9,7 +9,7 @@ import {
   createWaste,
   showCO2_safed, 
   showPhoto
-} from "../controllers/waste_controller.js";
+} from "../controller/waste_controller.js";
 
 const storage = multer.memoryStorage()
 const upload = multer({ storage: storage })
@@ -24,7 +24,7 @@ router.post("/wasteinput/:idbin/:photo", upload.single('image'), createWaste);
 router.get("/co2safed/:idbin", showCO2_safed);
 
 //get photo based on id
-router.get('/getphoto/:id', showPhoto);
+router.get('/getphoto/:idphoto', showPhoto);
 
 //export default router
 export default router;
