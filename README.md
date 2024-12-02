@@ -26,3 +26,25 @@ By combining these functionalities, the project aims to support research into th
    - The app provides feedback and tips on proper recycling practices to promote sustainable habits.
 
 ---
+
+## Technical Design
+
+The development of the application follows the Model-View-Controller (MVC) software design pattern. This approach separates the application's functionality into three interconnected components:
+
+1. **Model**:
+   - Represents the application’s data and business logic.
+   - In this project, the Model is implemented in the APIs.
+2. **View**:
+   - Represents the user interface or presentation layer.
+   - The two frontends in this project function as the View, as they are what users interact with.
+3. **Controller**:
+   - Acts as an intermediary between the Model and the View.
+   - Handles user input and updates the Model accordingly. In this project, the Controller is implemented in the APIs.
+
+## Owner Application
+
+There is a separate repository for the web application designed for analyzing and managing the collected data:   
+  [GitHub Repository](https://github.com/lennartsteenberghs/statisticsdontwastedata)
+
+---
+
