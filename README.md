@@ -40,6 +40,9 @@ The development of the application follows the Model-View-Controller (MVC) softw
 3. **Controller**:
    - Acts as an intermediary between the Model and the View.
    - Handles user input and updates the Model accordingly. In this project, the Controller is implemented in the APIs.
+     
+
+---
 
 ## Owner Application
 
